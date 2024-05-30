@@ -10,14 +10,12 @@ import HomeView from './views/HomeView.vue'
     <main class="content">
       <HomeView />
     </main>
-    <FooterComponent />
+    <footer>
+      <FooterComponent />
+    </footer>
   </div>
 </template>
 
 <style scoped>
-.general {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 </style>
