@@ -1,19 +1,23 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import NavBar from './components/NavBar.vue'
 import FooterComponent from './components/FooterComponent.vue'
+import HomeView from './views/HomeView.vue'
 </script>
 
 <template>
-<div class="general">
-  <NavBar/>
-
-  <HelloWorld/>
-
-  <FooterComponent/>
-</div>
+  <div class="general">
+    <NavBar />
+    <main class="content">
+      <HomeView />
+    </main>
+    <FooterComponent />
+  </div>
 </template>
 
 <style scoped>
-
+.general {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 </style>
