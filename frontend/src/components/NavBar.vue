@@ -12,23 +12,23 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-/* import AboutView from './views/AboutView.vue';
-import PedagogyView from './views/PedagogyView.vue';
-import TrainingView from './views/TrainingView.vue';
-import EvaluationView from './views/EvaluationView.vue'; */
+import AboutView from '../views/AboutView.vue';
+import PedagogyView from '../views/PedagogyView.vue';
+import TrainingView from '../views/TrainingView.vue';
+import AssessmentView from '../views/AssessmentView.vue';
 
 const router = useRouter();
 const route = useRoute();
 
 const tabs = [
-  { name: 'Inicio', component: HomeView},
-/*   { name: 'Quienes Somos', component: AboutView},
-  { name: 'Pedagogía', component: PedagogyView},
-  { name: 'Formación', component: TrainingView},
-  { name: 'Evaluación', component: EvaluationView} */
+  { name: 'Inicio', path: '/', component: HomeView },
+  { name: 'Quienes Somos', path: '/about', component: AboutView },
+  { name: 'Pedagogía', path: '/pedagogy', component: PedagogyView },
+  { name: 'Formación', path: '/training', component: TrainingView },
+  { name: 'Evaluación', path: '/assessment', component: AssessmentView }
 ];
 
 const isMenuOpen = ref(false);
