@@ -65,7 +65,7 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1.5rem;
   font-weight: 500;
   font-family: inherit;
   background-color: #fb6ff1;
@@ -100,7 +100,7 @@ h1 {
 p {
   font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
-  font-size:14px;
+  font-size: 1.5rem;
   color: #333333;
   text-align: left;
 }

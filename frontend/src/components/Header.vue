@@ -6,7 +6,7 @@
       <!--Content before waves-->
     <div class="inner-header flex">
       <div class="header-content">
-        <h1>Soft Skills</h1>
+        <h1>Soft&nbsp;skills</h1>
       </div>
       <svg class="triangulitos" width="1013" height="1131" viewBox="0 0 1013 1131" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M622.257 576.998C622.446 576.263 623.356 576.003 623.912 576.525L942.993 876.131C943.559 876.663 943.333 877.603 942.589 877.816L515.198 999.85C514.453 1000.06 513.755 999.386 513.947 998.637L622.257 576.998Z" fill="#99127B"/>
@@ -39,15 +39,17 @@
 <style scoped>
 h1 {
   color: black;
+  font-size: 4rem;
+  font-weight: 900;
 }
 .inner-header {
   position: relative;
 }
 .triangulitos {
   position: relative;
-  top: -2.7rem;
-  right: 1rem;
-  width: 5rem;
+  top: -5rem;
+  right: 3rem;
+  width: 8rem;
   filter: drop-shadow(0px 0px 7px #99127B);
 }
 
