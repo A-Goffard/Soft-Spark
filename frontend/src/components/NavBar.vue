@@ -54,7 +54,7 @@ const isActiveTab = (component) => {
   align-items: center;
   padding: 1rem;
   background-color: transparent;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 1000; 
@@ -118,7 +118,7 @@ const isActiveTab = (component) => {
   cursor: pointer;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  background-color: #FFC000;
+  background-color: #FF7CE2;
   color: #FFFFFF;
   font-size: 1.25rem;
   transition: background-color 0.3s, color 0.3s;
@@ -129,7 +129,7 @@ const isActiveTab = (component) => {
 
 .nav-links li:hover,
 .nav-links li.active {
-  background-color: #FF9966;
+  background-color: rgb(255, 56, 212);
 }
 
 @media (max-width: 950px) {
@@ -144,7 +144,7 @@ const isActiveTab = (component) => {
     right: 0;
     width: 15rem;
     height: 100vh;
-    background-color: rgba(255, 192, 0, 1);
+    background-color: rgb(255, 56, 212, 0.7);
     flex-direction: column;
     align-items: center;
     justify-content: center;
