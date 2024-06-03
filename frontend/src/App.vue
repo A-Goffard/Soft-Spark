@@ -2,7 +2,6 @@
 import NavBar from './components/NavBar.vue'
 import FooterComponent from './components/FooterComponent.vue'
 import HomeView from './views/HomeView.vue'
-import About from './components/About.vue'
 </script>
 
 <template>
