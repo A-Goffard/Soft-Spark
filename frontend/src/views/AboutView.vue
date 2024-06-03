@@ -32,9 +32,9 @@
       </div>
 
       <div class="main">
-        <h1>Quienes somos</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, vero rem natus dicta voluptate commodi officia sunt quis vitae, tempore soluta consectetur eum in ullam id, voluptas ipsum. Vero, blanditiis!</p>
-        <button>Impact measurement report</button>
+        <h1>Who are we?</h1>
+        <p>It is within the framework of the European project "Soft Skills" co-financed by the Erasmus + program, that 9 European partners from France, Belgium, Spain, Austria and Slovenia have co-developped the materials that you will find on this website. These partners are active in the field of vocational training. Whether they are training centers, integration companies or adapted companies, they have an expertise in the training of people with a low level of qualification and/or a disability. Click on the logos to learn more about them.</p>
+        <a href="#"><img src="" alt=""></a>
       </div>
     
     
