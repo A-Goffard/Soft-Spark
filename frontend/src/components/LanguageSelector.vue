@@ -35,15 +35,15 @@
     justify-content: left;
     padding: 0.5rem;
     background-color: transparent;
-    position: fixed;
+    position: absolute;
     top: 2rem;
     right: 1rem;
     z-index: 1100; 
   }
   select {
     padding: 0.5rem;
-    background-color: #FFC000;
-    border: 1px solid #f7c83a;
+    background-color: transparent;
+    border: 1px solid transparent;
     border-radius: 4px;
   }
   </style>

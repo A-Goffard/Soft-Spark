@@ -6,12 +6,12 @@
 </template>
 
 <script setup>
-// No se necesita script aquí si no tienes lógica específica
+
 </script>
 
 <style scoped>
 div {
-  background-color: #FFFF00;
+  background-color: #FF7CE2;
   color: white;
   padding: 1rem;
   display: flex;

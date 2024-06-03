@@ -11,6 +11,8 @@ const messages = {
       paragraph5: 'Our approach: to take into account the whole process of acquisition of Soft Skills. We developped numerous complementary materials which are accessible on this website for free.',
       paragraph6: 'In addition to these free materials, a digital platform called Zerobarrier, accessible for a fee. This platform will allow you to manage and track the process of Soft Skills acquisition.',
       button1: 'Impact measurement report',
+      subtitle2: 'Who are we?',
+      partners: 'It is within the framework of the European project "Soft Skills" co-financed by the Erasmus + program, that 9 European partners from France, Belgium, Spain, Austria and Slovenia have co-developped the materials that you will find on this website. These partners are active in the field of vocational training. Whether they are training centers, integration companies or adapted companies, they have an expertise in the training of people with a low level of qualification and/or a disability. Click on the logos to learn more about them.',
       // Agrega todas las traducciones
     }
   },
@@ -24,6 +26,9 @@ const messages = {
       paragraph5: 'Nuestro enfoque: tener en cuenta todo el proceso de adquisición de las soft skills. Hemos elaborado numerosos materiales complementarios a los que se puede acceder gratuitamente en este sitio web.',
       paragraph6: 'Además de estos materiales gratuitos, existe una plataforma digital llamada Zerobarrier, a la que se puede acceder bajo cuota. Esta plataforma le permitirá gestionar y seguir el proceso de adquisición de soft skills.',
       button1: 'Informe de medición de impacto',
+      subtitle2: '¿Quiénes somos?',
+      partners: 'Es en el marco del proyecto europeo "Soft Skills" cofinanciado por el programa Erasmus +, que 9 socios europeos de Francia, Bélgica, España, Austria y Eslovenia han co desarrollado los materiales que encontrarás en esta web. Estos socios trabajan en el ámbito de la formación profesional. Ya sean centros de formación, empresas de integración o empresas adaptadas, tienen experiencia en la formación de personas con un bajo nivel de cualificación y/o una discapacidad. Haga clic en los logotipos para saber más sobre ellos.',
+
       // Agrega todas las traducciones
     }
   },
@@ -37,6 +42,9 @@ const messages = {
       paragraph5: 'Notre approche : prendre en compte l\'ensemble du process d\'acquisition des Soft Skills en developpant de nombreux supports complémentaires et accessibles gratuitement sur ce site.',
       paragraph6: 'En plus de ces supports gratuits, une plateforme numérique appelée Zerobarrier, accessible contre paiement, est mobilisable. Cette plateforme vous permettra de gérer et de suivre le process d\'acquisition des Soft Skills.',
       button1: 'Rapport de mesure d’impact',
+      subtitle2: 'Qui sommes-nous?',
+      partners: 'C\'est dans le cadre du projet européen "Soft Skills" cofinancé par le programme Erasmus +, que 9 partenaires européens de France, Belgique, Espagne, Autriche et Slovénie ont co-construits les supports que vous trouverez sur ce site. Ces partenaires sont actifs dans le domaine de la formation professionnelle : qu\'il s\'agisse de centres de formation, d\'entreprises d\'insertion ou d\'entreprises adaptées, ils ont tous une expertise dans la formation des personnes ayant un faible niveau de qualification et/ou en situation de handicap. Cliquez sur les logos pour en savoir plus sur eux.',
+
       // Agrega todas las traducciones
     }
   },
@@ -50,6 +58,9 @@ const messages = {
       paragraph5: 'Dabei wurde der Ansatz verfolgt, den gesamten Erwerbsprozess von Soft Skills zu berücksichtigen. Dazu wurden zahlreiche ergänzende Materialien entwickelt, die auf dieser Website kostenfrei zugänglich sind.',
       paragraph6: 'Zusätzlich zu diesen kostenlosen Materialien ist die digitale Plattform Zerobarrier gegen eine Gebühr zugänglich. Diese Plattform ermöglicht es Ihnen, den Erwerbsprozess von Soft Skills für Teilnehmer/innen online zu verwalten und zu dokumentieren.',
       button1: 'Bericht zur Wirkungsmessung',
+      subtitle2: 'Wer sind die Partner-Organisationen?',
+      partners: 'Im Rahmen des europäischen Projekts "Soft skills", das durch das Erasmus+ Programm kofinanziert wird, haben neun europäische Partnerorganisationen aus Frankreich, Belgien, Spanien, Österreich und Slowenien gemeinsam die Materialien entwickelt, die Sie auf dieser Website finden. Alle Partnerorganisationen sind im Bereich der beruflichen Bildung tätig. Egal, ob es sich um Ausbildungszentren, Integrationsfirmen oder sozialökonomische Betriebe handelt, sie haben Expertise in der Ausbildung von niedrig-qualifizierten Personen und/oder Menschen mit Behinderungen. Klicken Sie auf die Logos, um mehr über die Organisationen zu erfahren.',
+
       // Agrega todas las traducciones
     }
   },
@@ -63,10 +74,13 @@ const messages = {
       paragraph5: 'Naš pristop in ponujene možnosti usposabljanja mehkih veščin vključujejo celoten postopek v procesu učenja in pridobivanja mehkih veščin s posameznimi koraki napredovanja znotraj 4 stopenj zahtevnosti. Razvili smo številna učna gradiva in pripomočke za pomoč in uspešno učenje. Na tej spletni strani so dostopni brezplačno.',
       paragraph6: 'Poleg omenjenih brezplačnih gradiv je za doplačilo na voljo tudi digitalna platforma z imenom Zerobarrier. Ta platforma omogoča celotno usposabljanje in smernice v procesu učenja in usvajanja mehkih veščin, spremljanje napredka udeležencev usposabljanja in evalvacijo za vse vključene v celotnem postopku usposabljanja in usvajanja mehkih veščin.',
       button1: 'Poročilo o meritvi vpliva',
+      subtitle2: 'Kdo smo?',
+      partners: 'V okviru evropskega projekta "Soft Skills", ki je sofinanciran s strani programa Erasmus +, je 9 evropskih partnerjev iz Francije, Belgije, Španije, Avstrije in Slovenije soustvarjalo in razvilo zelo uporabna učna gradiva z učnimi sredstvi in pripomočki, ki jih boste našli na tej spletni strani. Velikega pomena je, da so partnerji dejavni na področju poklicnega usposabljanja in poznajo posebnosti učenja oseb z nižjimi poklicnimi kvalifikacijami in nižjim izobrazbenim standardom. Ne glede na to, ali gre za izobraževalne centre, integracijska podjetja ali organizacije za usposabljanje in rehabilitacijo, so partnerji projekta strokovnjaki in kompetentni na področju usposabljanju oseb z nižjo stopnjo izobrazbe in / ali invalidnostjo. Če želite izvedeti več o njih, kliknite na njihove logotipe.',
+
       // Agrega todas las traducciones
     }
   },
-  es: {
+  eu: {
     message: {
       subtitle: 'Soft skill-ak prestatu eta garatu',
       paragraph1: 'Soft skillak interesatzen zaizkizu eta zure praktikan integratu nahiko zenituzke?',
@@ -76,6 +90,9 @@ const messages = {
       paragraph5: 'Gure ikuspegia: soft skill-ak eskuratzeko prozesu osoa kontuan hartzea. webgune honetan, doan ikus ditzakezun material osagarri ugari egin ditugu.',
       paragraph6: 'Doako material horiez gain, Zerobarrier izeneko plataforma digital bat ere badago, kuotaren arabera. Plataforma horri esker, soft skills eskuratzeko prozesua kudeatu eta jarraitu ahal izango duzu.',
       button1: 'Eragin neurketa txostena',
+      subtitle2: 'Nortzuk gara?',
+      partners: 'Erasmus + programak kofinantzatutako "Soft Skills" proiektu europarraren esparruan, Frantzia, Belgika, Espainia, Austria eta Esloveniako 9 bazkide europarrek garatu dituzte webgune honetan aurkituko dituzun materialak. Bazkide horiek lanbide-heziketaren esparruan lan egiten dute. Prestakuntza-zentroak, integrazio-enpresak edo enpresa egokituak direlarik, kualifikazio-maila txikia eta/edo desgaitasuna duten pertsonen prestakuntzan esperientzia dute. Egin klik logotipoetan haiei buruz gehiago jakiteko.',
+
       // Agrega todas las traducciones
     }
   },
