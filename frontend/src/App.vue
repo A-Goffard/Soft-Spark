@@ -1,23 +1,20 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
 import FooterComponent from './components/FooterComponent.vue'
-import HomeView from './views/HomeView.vue'
 </script>
 
 <template>
   <div class="general">
     <NavBar />
     <main class="content">
-      <HomeView />
+      <router-view />
     </main>
-    <FooterComponent />
+    <footer>
+      <FooterComponent />
+    </footer>
   </div>
 </template>
 
 <style scoped>
-.general {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 </style>
