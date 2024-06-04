@@ -6,7 +6,7 @@
     <div class="inner-header flex">
       <div class="header-content">
         <h1>{{ $t('message.subtitle2') }}</h1>
-        <p class="aboutx">{{ $t('message.partners') }}</p>
+        <p>{{ $t('message.partners') }}</p>
       </div>
     </div>
       <div>
