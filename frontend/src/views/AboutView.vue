@@ -1,22 +1,12 @@
 <template>
   <div class="general">
-  
-    <Header />
-    <div class="main">
-      <h1>{{ $t('message.subtitle2') }}</h1>
-      <p>{{ $t('message.partners') }}</p>
-      <a href="#"><img src="" alt=""></a>
-    </div>
-
-    <div class="general">
     
     <div class="header">
       <!--Content before waves-->
     <div class="inner-header flex">
       <div class="header-content">
-        <h1>¿Quiénes somos?</h1>
-        <p class="aboutx">Es en el marco del proyecto europeo "Soft Skills" cofinanciado por el  programa Erasmus +, que 9 socios europeos de Francia, Bélgica, España,  Austria y Eslovenia han co desarrollado los materiales que encontrarás  en esta web. Estos socios trabajan en el ámbito de la formación  profesional. Ya sean centros de formación, empresas de integración o  empresas adaptadas, tienen experiencia en la formación de personas con  un bajo nivel de cualificación y/o una discapacidad. Haga clic en los  logotipos para saber más sobre ellos.
-          </p>
+        <h1>{{ $t('message.subtitle2') }}</h1>
+        <p>{{ $t('message.partners') }}</p>
         </div>
           
         </div>
@@ -35,7 +25,7 @@
         </svg>
       </div>
 
-      <div class="main">
+      <div class="mainJ">
         <div class="imgSponsors">
         <a href="https://www.chanceb-gruppe.at/" target="_black" class="sponsors"><img src="/public/sponsors/CHance B.png" alt="" class="sponsors"></a>
         <a href="https://www.center-db.si/" target="_black" class="sponsors"><img src="/public/sponsors/CUDV.png" alt="" class="sponsors"></a>
@@ -46,12 +36,7 @@
         <a href="https://www.grupopenascal.com/" target="_black" class="sponsors"><img src="/public/sponsors/Penascal.png" alt="" class="sponsors"></a>
         <a href="http://www.solivers.eu/accueil" target="_black" class="sponsors"><img src="/public/sponsors/solivers-2017.png" alt="" class="solivers"></a>
       </div>
-          
-        <a href=""><button>Impact measurement report</button></a>
-
       </div>
-      
-
     </div>
   </div>
 
@@ -63,27 +48,18 @@ h1 {
   text-align: center;
   margin: 1rem;
 }
-.aboutx{
-  font-size: 2rem;
-  text-align: center;
-  width: 70%;
-  margin: auto
+.mainJ {
+  width: 100vw;
+  background-color: white;
+  padding-bottom: 2rem;
 }
-.inner-header {
-  position: relative;
-}
-.triangulitos {
-  position: relative;
-  top: -2.7rem;
-  right: 1rem;
-  width: 5rem;
-  filter: drop-shadow(0px 0px 7px #521a00);
-}
-
-.header {
+.header-content {
+  max-width: 75rem;
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .imgSponsors{
   margin: auto;
@@ -128,6 +104,5 @@ h1 {
 </style>
   
   <script setup>
-import Header from '../components/Header.vue';
 
   </script>
