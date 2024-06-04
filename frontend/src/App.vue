@@ -178,7 +178,7 @@ p {
     min-height:40px;
   }
   h1 {
-    font-size:24px;
+    font-size: 3rem;
   }
 }
 

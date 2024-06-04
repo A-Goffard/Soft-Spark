@@ -100,7 +100,11 @@ h1 {
 	-webkit-transform: scale(1.3);
 	transform: scale(1.3);
 }
-
+@media (max-width: 750px){
+  p {
+    font-size: 1.3rem;
+  }
+}
 </style>
   
   <script setup>
