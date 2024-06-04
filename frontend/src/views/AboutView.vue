@@ -1,25 +1,14 @@
 <template>
   <div class="general">
-  
-    <Header />
-    <div class="main">
-      <h1>{{ $t('message.subtitle2') }}</h1>
-      <p>{{ $t('message.partners') }}</p>
-      <a href="#"><img src="" alt=""></a>
-    </div>
-
-    <div class="general">
-    
     <div class="header">
+      
       <!--Content before waves-->
     <div class="inner-header flex">
       <div class="header-content">
-        <h1>¿Quiénes somos?</h1>
-        <p class="aboutx">Es en el marco del proyecto europeo "Soft Skills" cofinanciado por el  programa Erasmus +, que 9 socios europeos de Francia, Bélgica, España,  Austria y Eslovenia han co desarrollado los materiales que encontrarás  en esta web. Estos socios trabajan en el ámbito de la formación  profesional. Ya sean centros de formación, empresas de integración o  empresas adaptadas, tienen experiencia en la formación de personas con  un bajo nivel de cualificación y/o una discapacidad. Haga clic en los  logotipos para saber más sobre ellos.
-          </p>
-        </div>
-          
-        </div>
+        <h1>{{ $t('message.subtitle2') }}</h1>
+        <p class="aboutx">{{ $t('message.partners') }}</p>
+      </div>
+    </div>
       <div>
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -34,100 +23,96 @@
         </g>
         </svg>
       </div>
-
-      <div class="main">
-        <div class="imgSponsors">
-        <a href="https://www.chanceb-gruppe.at/" target="_black" class="sponsors"><img src="/public/sponsors/CHance B.png" alt="" class="sponsors"></a>
-        <a href="https://www.center-db.si/" target="_black" class="sponsors"><img src="/public/sponsors/CUDV.png" alt="" class="sponsors"></a>
-        <a href="https://www.discovia.fr/home" target="_black" class="sponsors"><img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="" class="sponsors" title="hola"></a>
-        <a href="http://www.leplope.be/index.php" target="_black" class="sponsors"><img src="/public/sponsors/le-plope-1-3.gif" alt="" class="sponsors"></a>
-        <a href="https://www.regiedesecrivains.com/" target="_black" class="sponsors"><img src="/public/sponsors/logo régie.jpg" alt="" class="sponsors"></a>
-        <a href="http://www.workinn.be/" target="_black" class="sponsors"><img src="/public/sponsors/logo_workinn.png" alt="" class="sponsors"></a>
-        <a href="https://www.grupopenascal.com/" target="_black" class="sponsors"><img src="/public/sponsors/Penascal.png" alt="" class="sponsors"></a>
-        <a href="http://www.solivers.eu/accueil" target="_black" class="sponsors"><img src="/public/sponsors/solivers-2017.png" alt="" class="solivers"></a>
-      </div>
-          
-        <a href=""><button>Impact measurement report</button></a>
-
-      </div>
-      
-
     </div>
+    <div class="main">
+          <div class="imgSponsors">
+            <a href="https://www.chanceb-gruppe.at/" target="_black" class="sponsors"><img
+                src="/public/sponsors/CHance B.png" alt="" class="sponsors"></a>
+            <a href="https://www.center-db.si/" target="_black" class="sponsors"><img src="/public/sponsors/CUDV.png"
+                alt="" class="sponsors"></a>
+            <a href="https://www.discovia.fr/home" target="_black" class="sponsors"><img
+                src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="" class="sponsors" title="hola"></a>
+            <a href="http://www.leplope.be/index.php" target="_black" class="sponsors"><img
+                src="/public/sponsors/le-plope-1-3.gif" alt="" class="sponsors"></a>
+            <a href="https://www.regiedesecrivains.com/" target="_black" class="sponsors"><img
+                src="/public/sponsors/logo régie.jpg" alt="" class="sponsors"></a>
+            <a href="http://www.workinn.be/" target="_black" class="sponsors"><img
+                src="/public/sponsors/logo_workinn.png" alt="" class="sponsors"></a>
+            <a href="https://www.grupopenascal.com/" target="_black" class="sponsors"><img
+                src="/public/sponsors/Penascal.png" alt="" class="sponsors"></a>
+            <a href="http://www.solivers.eu/accueil" target="_black" class="sponsors"><img
+                src="/public/sponsors/solivers-2017.png" alt="" class="solivers"></a>
+          </div>
+          <a href=""><button>Impact measurement report</button></a>
+        </div>
   </div>
+</template>
 
-  </template>
-  
 <style scoped>
 h1 {
   color: black;
   text-align: center;
-  margin: 1rem;
+  margin: 4rem;
 }
-.aboutx{
+
+.aboutx {
   font-size: 2rem;
   text-align: center;
   width: 70%;
   margin: auto
 }
+
 .inner-header {
   position: relative;
 }
-.triangulitos {
-  position: relative;
-  top: -2.7rem;
-  right: 1rem;
-  width: 5rem;
-  filter: drop-shadow(0px 0px 7px #521a00);
-}
-
 .header {
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.imgSponsors{
+
+.imgSponsors {
   margin: auto;
-  width: 80%;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap:2 rem;
   padding: 1rem;
 }
-.sponsors{
+.sponsors {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto; 
+  margin: auto;
 }
-.sponsorsGray{
+
+.sponsorsGray {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto; 
+  margin: auto;
 }
-.solivers{
+
+.solivers {
   background-color: rgb(255, 255, 255);
   height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto; 
+  margin: auto;
 }
 
 .sponsors img {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
+
 .sponsors:hover img {
-	-webkit-transform: scale(1.3);
-	transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
-
 </style>
-  
-  <script setup>
-import Header from '../components/Header.vue';
-
-  </script>
+<script setup>
+</script>
