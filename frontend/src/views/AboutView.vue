@@ -2,6 +2,7 @@
   <div class="general">
     
     <div class="header">
+      
       <!--Content before waves-->
     <div class="inner-header flex">
       <div class="header-content">
@@ -39,14 +40,13 @@
       </div>
     </div>
   </div>
+</template>
 
-  </template>
-  
 <style scoped>
 h1 {
   color: black;
   text-align: center;
-  margin: 1rem;
+  margin: 4rem;
 }
 .mainJ {
   width: 100vw;
@@ -61,44 +61,48 @@ h1 {
   align-items: center;
   text-align: center;
 }
-.imgSponsors{
+
+.imgSponsors {
   margin: auto;
-  width: 80%;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap:2 rem;
   padding: 1rem;
 }
-.sponsors{
+.sponsors {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto; 
+  margin: auto;
 }
-.sponsorsGray{
+
+.sponsorsGray {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto; 
+  margin: auto;
 }
-.solivers{
+
+.solivers {
   background-color: rgb(255, 255, 255);
   height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto; 
+  margin: auto;
 }
 
 .sponsors img {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
+
 .sponsors:hover img {
-	-webkit-transform: scale(1.3);
-	transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
 }
 @media (max-width: 750px){
   p {

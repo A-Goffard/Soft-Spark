@@ -25,7 +25,7 @@ const route = useRoute();
 
 const tabs = [
   { name: 'Inicio', path: '/', component: HomeView },
-  { name: 'Quienes Somos', path: '/about', component: AboutView },
+  { name: 'Quiénes Somos', path: '/about', component: AboutView },
   { name: 'Pedagogía', path: '/pedagogy', component: PedagogyView },
   { name: 'Formación', path: '/training', component: TrainingView },
   { name: 'Evaluación', path: '/assessment', component: AssessmentView }
