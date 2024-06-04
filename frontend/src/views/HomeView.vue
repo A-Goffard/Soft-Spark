@@ -13,7 +13,7 @@
       <img src="/public/2.png" alt="Skills">
       <p>{{ $t('message.paragraph5') }}</p>
       <p>{{ $t('message.paragraph6') }}</p>
-      <button>{{ $t('message.button1') }}</button>
+      <button class="btn">{{ $t('message.button1') }}</button>
     </div>
 
   </div>
