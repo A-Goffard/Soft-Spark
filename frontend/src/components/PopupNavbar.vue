@@ -4,7 +4,7 @@
       <img src="/iconoaccesibilidad.png" alt="Menu Icon">
     </div>
     
-    <div v-if="isNavbarVisible" class="popup-navbar" ref="popupNavbar">
+    <div :class="['popup-navbar', { 'visible': isNavbarVisible }]" ref="popupNavbar">
       <ul>
         <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">Incremento de texto</button></li>
         <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">Decremento de texto</button></li>
@@ -12,7 +12,7 @@
         <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">Alto contraste</button></li>
         <li><button @click="handleButtonClick(5)"><img src="/contrastenegativo.png" alt="Icon 5">Contraste Negativo</button></li>
         <li><button @click="handleButtonClick(6)"><img src="/readablefont.png" alt="Icon 6">Fuente Legible</button></li>
-        <li><button @click="handleButtonClick(7)"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
+        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
       </ul>
     </div>
   </div>
@@ -70,6 +70,17 @@ const toggleHighContrast = () => {
   }
 };
 
+/* --------------------------------TEXT-TO-SPEECH FUNCTION------------------ */
+const readPageAloud = () => {
+  const speech = new SpeechSynthesisUtterance();
+  speech.lang = 'es-ES'; // Set the language to Spanish (Spain)
+  speech.text = document.body.innerText;
+  speech.pitch = 1;
+  speech.rate = 1;
+
+  window.speechSynthesis.speak(speech);
+};
+
 /* --------------------------CLICK OUTSIDE NAVBAR TO CLOSE IT------------------- */
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
@@ -79,7 +90,6 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 </script>
-
 
 <style scoped>
 :root {
@@ -115,16 +125,20 @@ body {
 .popup-navbar {
   position: fixed;
   top: 50%;
-  right: 0;
+  right: -250px; /* Start off-screen */
   transform: translateY(-50%);
   width: 250px;
   background-color: greenyellow;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   z-index: 999; /* Ensure the navbar is above other content */
-  transition: transform 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.popup-navbar.visible {
+  right: 0; /* Move on-screen */
 }
 
 .popup-navbar ul {
