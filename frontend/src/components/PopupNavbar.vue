@@ -71,14 +71,44 @@ const toggleHighContrast = () => {
 };
 
 /* --------------------------------TEXT-TO-SPEECH FUNCTION------------------ */
-const readPageAloud = () => {
-  const speech = new SpeechSynthesisUtterance();
-  speech.lang = 'es-ES'; // Set the language to Spanish (Spain)
-  speech.text = document.body.innerText;
-  speech.pitch = 1;
-  speech.rate = 1;
+let speechSynthesisUtterance = null;
+let chunkIndex = 0;
+let chunks = [];
 
-  window.speechSynthesis.speak(speech);
+const readPageAloud = () => {
+  const maxChunkLength = 160; // Maximum number of characters per chunk
+  const text = document.body.innerText;
+  chunks = text.match(new RegExp('.{1,' + maxChunkLength + '}', 'g'));
+  chunkIndex = 0;
+
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+  }
+
+  speakChunk();
+};
+
+const speakChunk = () => {
+  if (chunkIndex >= chunks.length) return;
+
+  speechSynthesisUtterance = new SpeechSynthesisUtterance();
+  speechSynthesisUtterance.lang = 'es-ES';
+  speechSynthesisUtterance.text = chunks[chunkIndex];
+  speechSynthesisUtterance.pitch = 1;
+  speechSynthesisUtterance.rate = 1;
+
+  speechSynthesisUtterance.onend = () => {
+    chunkIndex++;
+    speakChunk();
+  };
+
+  speechSynthesisUtterance.onerror = (event) => {
+    console.error('Speech synthesis error:', event.error);
+    chunkIndex++;
+    speakChunk();
+  };
+
+  window.speechSynthesis.speak(speechSynthesisUtterance);
 };
 
 /* --------------------------CLICK OUTSIDE NAVBAR TO CLOSE IT------------------- */
@@ -179,3 +209,4 @@ body {
   background-color: red;
 }
 </style>
+
