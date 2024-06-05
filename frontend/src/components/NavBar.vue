@@ -49,6 +49,7 @@ const isActiveTab = (component) => {
 
 <style scoped>
 .navbar {
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +62,7 @@ const isActiveTab = (component) => {
 }
 
 .menu-icon {
+  color: black;
   display: none;
   cursor: pointer;
   position: relative;
@@ -74,7 +76,7 @@ const isActiveTab = (component) => {
 .menu-icon-line::after {
   content: '';
   display: block;
-  background-color: #FFFFFF;
+  background-color: black;
   height: 3px;
   border-radius: 2px;
   transition: all 0.3s;
@@ -114,12 +116,12 @@ const isActiveTab = (component) => {
 }
 
 .nav-links li {
+  color: black;
   margin: 0 1rem;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  background-color: #FF7CE2;
-  color: #FFFFFF;
+  background-color: rgb(255, 255, 200);;
   font-size: 1.25rem;
   transition: background-color 0.3s, color 0.3s;
   display: flex;
@@ -129,7 +131,7 @@ const isActiveTab = (component) => {
 
 .nav-links li:hover,
 .nav-links li.active {
-  background-color: rgb(255, 56, 212);
+  background-color: rgb(255, 192, 0);
 }
 
 @media (max-width: 950px) {
@@ -144,7 +146,7 @@ const isActiveTab = (component) => {
     right: 0;
     width: 15rem;
     height: 100vh;
-    background-color: rgb(255, 56, 212, 0.7);
+    background-color: rgb(255, 255, 0.7);
     flex-direction: column;
     align-items: center;
     justify-content: center;

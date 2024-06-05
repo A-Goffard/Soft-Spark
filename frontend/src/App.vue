@@ -57,8 +57,6 @@ img {
   justify-content: center;
   align-items: center;
   align-content: center;
-  max-width: 75rem;
-  margin: auto;
 }
 
 .btn {
@@ -68,39 +66,22 @@ img {
   font-size: 1.5rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #fb6ff1;
+  background-color: rgb(255, 255, 161);
   cursor: pointer;
   transition: border-color 0.25s;
   margin: 1rem;
   transition: ease all 250ms;
 }
 .btn:hover {
-  border-color: #e68bfd;
-  box-shadow: 0px 0px 6px 1px rgb(230, 139, 253, 1);
+  border-color: rgb(255, 255, 200);
+  box-shadow: 0px 0px 6px 1px rgb(255, 226, 211);
+  background-color: rgb(255, 192, 0);
 }
 
 
-.btnS {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #FFC000;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  margin: 1rem;
-  transition: ease all 250ms;
-}
-.btnS:hover {
-  border-color: #FFC000;
-  box-shadow: 0px 0px 10px 5px rgba(255, 255, 0, 1);
-}
 /* WAVES */
-.main {
-  background-color: white;
-  padding: 2rem;
+main {
+  background: linear-gradient(rgb(255, 220, 114), white);
 }
 
 body {
@@ -126,9 +107,10 @@ p {
 .header {
   position:relative;
   text-align:center;
-  background: linear-gradient(60deg, rgb(255, 211, 245, 1) 0%, rgb(230, 139, 253, 1) 100%);
+  background: white;
   color:white;
 }
+
 .logo {
   width:50px;
   fill:white;
@@ -138,7 +120,7 @@ p {
 }
 
 .inner-header {
-  height:65vh;
+  height:30rem;
   width:100%;
   margin: 0;
   padding: 0;
