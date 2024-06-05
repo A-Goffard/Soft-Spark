@@ -10,7 +10,7 @@ import PopupNavbar from './components/PopupNavbar.vue';
   <div class="general">
     <NavBar />
     <main class="content">
-      <HomeView />
+      <router-view />
     </main>
     <FooterComponent />
     <PopupNavbar /> <!-- Include PopupNavbar component -->
