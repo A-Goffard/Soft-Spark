@@ -33,7 +33,7 @@
             <a href="https://www.center-db.si/" target="_black" class="sponsors"><img src="/public/sponsors/CUDV.png"
                 alt="" class="sponsors"></a>
             <a href="https://www.discovia.fr/home" target="_black" class="sponsors"><img
-                src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="" class="sponsors" title="hola"></a>
+                src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="" class="sponsors"></a>
             <a href="http://www.leplope.be/index.php" target="_black" class="sponsors"><img
                 src="/public/sponsors/le-plope-1-3.gif" alt="" class="sponsors"></a>
             <a href="https://www.regiedesecrivains.com/" target="_black" class="sponsors"><img
@@ -63,11 +63,14 @@ h1 {
 }
 .imgSponsors {
   margin: auto;
-  width: 90%;
+  width: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap:2 rem;
-  padding: 1rem;
+  gap: 3rem;
+  padding: 2rem;
+}
+.main{
+  max-width: 75%;
 }
 .sponsors {
   display: flex;
@@ -83,14 +86,12 @@ h1 {
   align-items: center;
   margin: auto;
 }
-
 .sponsors img {
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }
-
 .sponsors:hover img {
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
