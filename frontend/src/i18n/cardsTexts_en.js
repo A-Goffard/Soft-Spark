@@ -6,7 +6,6 @@ const cardTexts = [
       material: 'Catalogue.pdf',
       material2: '',
       version: '1.0',
-      
     },
     {
       id: 2,
