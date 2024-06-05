@@ -2,6 +2,7 @@
 import NavBar from './components/NavBar.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import LanguageSelector from './components/LanguageSelector.vue';
+import PopupNavbar from './components/PopupNavbar.vue';
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import LanguageSelector from './components/LanguageSelector.vue';
     <footer>
       <FooterComponent />
     </footer>
+    <PopupNavbar /> <!-- Include PopupNavbar component -->
   </div>
 </template>
 
@@ -28,12 +30,15 @@ import LanguageSelector from './components/LanguageSelector.vue';
 }
 
 :root {
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: default;
+  
 }
+
 
 h2, h3, h4, p {
   margin: 1rem;
