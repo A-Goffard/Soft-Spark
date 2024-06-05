@@ -25,7 +25,7 @@ const route = useRoute();
 
 const tabs = [
   { name: 'Inicio', path: '/', component: HomeView },
-  { name: 'Quienes Somos', path: '/about', component: AboutView },
+  { name: 'Quiénes Somos', path: '/about', component: AboutView },
   { name: 'Pedagogía', path: '/pedagogy', component: PedagogyView },
   { name: 'Formación', path: '/training', component: TrainingView },
   { name: 'Evaluación', path: '/assessment', component: AssessmentView }
@@ -49,18 +49,20 @@ const isActiveTab = (component) => {
 
 <style scoped>
 .navbar {
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
   background-color: transparent;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 1000; 
 }
 
 .menu-icon {
+  color: black;
   display: none;
   cursor: pointer;
   position: relative;
@@ -74,7 +76,7 @@ const isActiveTab = (component) => {
 .menu-icon-line::after {
   content: '';
   display: block;
-  background-color: #FFFFFF;
+  background-color: black;
   height: 3px;
   border-radius: 2px;
   transition: all 0.3s;
@@ -114,12 +116,12 @@ const isActiveTab = (component) => {
 }
 
 .nav-links li {
+  color: black;
   margin: 0 1rem;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  background-color: #FFC000;
-  color: #FFFFFF;
+  background-color: rgb(255, 255, 200);;
   font-size: 1.25rem;
   transition: background-color 0.3s, color 0.3s;
   display: flex;
@@ -129,7 +131,7 @@ const isActiveTab = (component) => {
 
 .nav-links li:hover,
 .nav-links li.active {
-  background-color: #FF9966;
+  background-color: rgb(255, 192, 0);
 }
 
 @media (max-width: 950px) {
@@ -144,7 +146,7 @@ const isActiveTab = (component) => {
     right: 0;
     width: 15rem;
     height: 100vh;
-    background-color: rgba(255, 192, 0, 1);
+    background-color: rgb(255, 255, 0.7);
     flex-direction: column;
     align-items: center;
     justify-content: center;

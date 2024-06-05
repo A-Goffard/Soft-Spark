@@ -9,6 +9,7 @@ import PopupNavbar from './components/PopupNavbar.vue';
 <template>
   <div class="general">
     <NavBar />
+    <LanguageSelector />
     <main class="content">
       <router-view />
     </main>

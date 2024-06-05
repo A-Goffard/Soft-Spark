@@ -1,21 +1,16 @@
 <template>
-    <div class="general">
+  <div class="general">
     
     <div class="header">
       
       <!--Content before waves-->
     <div class="inner-header flex">
       <div class="header-content">
-        <h1>Soft Skills 2.0</h1>
-      </div>
-      <svg class="triangulitos" width="1013" height="1131" viewBox="0 0 1013 1131" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M622.257 576.998C622.446 576.263 623.356 576.003 623.912 576.525L942.993 876.131C943.559 876.663 943.333 877.603 942.589 877.816L515.198 999.85C514.453 1000.06 513.755 999.386 513.947 998.637L622.257 576.998Z" fill="#FFFF00"/>
-        <path d="M463.212 128.189C463.211 127.421 464.049 126.944 464.72 127.332L848.253 349.339C848.921 349.726 848.921 350.683 848.252 351.063L465.721 568.386C465.052 568.766 464.215 568.285 464.214 567.519L463.212 128.189Z" fill="#FF9966"/>
-        <path d="M321.42 384.386C321.962 383.855 322.872 384.09 323.083 384.814L447.54 813.283C447.756 814.027 447.075 814.726 446.323 814.532L1.70789 700.02C0.955805 699.827 0.70656 698.888 1.26245 698.343L321.42 384.386Z" fill="#FFC000"/>
-      </svg>
-
-    </div>
-
+        <h1>{{ $t('message.subtitle2') }}</h1>
+        <p>{{ $t('message.partners') }}</p>
+        </div>
+          
+        </div>
       <div>
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -31,42 +26,89 @@
         </svg>
       </div>
 
-      <div class="main">
-        <h1>Quienes somos</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, vero rem natus dicta voluptate commodi officia sunt quis vitae, tempore soluta consectetur eum in ullam id, voluptas ipsum. Vero, blanditiis!</p>
-        <button>Impact measurement report</button>
+      <div class="mainJ">
+        <div class="imgSponsors">
+        <a href="https://www.chanceb-gruppe.at/" target="_black" class="sponsors"><img src="/public/sponsors/CHance B.png" alt="" class="sponsors"></a>
+        <a href="https://www.center-db.si/" target="_black" class="sponsors"><img src="/public/sponsors/CUDV.png" alt="" class="sponsors"></a>
+        <a href="https://www.discovia.fr/home" target="_black" class="sponsors"><img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="" class="sponsors" title="hola"></a>
+        <a href="http://www.leplope.be/index.php" target="_black" class="sponsors"><img src="/public/sponsors/le-plope-1-3.gif" alt="" class="sponsors"></a>
+        <a href="https://www.regiedesecrivains.com/" target="_black" class="sponsors"><img src="/public/sponsors/logo régie.jpg" alt="" class="sponsors"></a>
+        <a href="http://www.workinn.be/" target="_black" class="sponsors"><img src="/public/sponsors/logo_workinn.png" alt="" class="sponsors"></a>
+        <a href="https://www.grupopenascal.com/" target="_black" class="sponsors"><img src="/public/sponsors/Penascal.png" alt="" class="sponsors"></a>
+        <a href="http://www.solivers.eu/accueil" target="_black" class="sponsors"><img src="/public/sponsors/solivers-2017.png" alt="" class="solivers"></a>
       </div>
-    
-    
-    
-    
+      </div>
     </div>
   </div>
+</template>
 
-  </template>
-  
 <style scoped>
 h1 {
   color: black;
+  text-align: center;
+  margin: 4rem;
 }
-.inner-header {
-  position: relative;
+.mainJ {
+  width: 100vw;
+  background-color: white;
+  padding-bottom: 2rem;
 }
-.triangulitos {
-  position: relative;
-  top: -2.7rem;
-  right: 1rem;
-  width: 5rem;
-  filter: drop-shadow(0px 0px 7px #FF9966);
-}
-
-.header {
+.header-content {
+  max-width: 75rem;
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+.imgSponsors {
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:2 rem;
+  padding: 1rem;
+}
+.sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
 
+.sponsorsGray {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.solivers {
+  background-color: rgb(255, 255, 255);
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.sponsors img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.sponsors:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+@media (max-width: 750px){
+  p {
+    font-size: 1.3rem;
+  }
+}
 </style>
   
   <script setup>

@@ -1,17 +1,22 @@
 <template>
-  <div>
+  <div class="general">
     <!-- Contenido del Footer -->
     <p>&#169; Powered by <a href="#">Voltus V</a> | Peñascal F5</p>
+  <ul>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms of Use</a></li>
+    <li><a href="#">Legal</a></li>
+  </ul>
   </div>
 </template>
 
 <script setup>
-// No se necesita script aquí si no tienes lógica específica
+
 </script>
 
 <style scoped>
 div {
-  background-color: #FFFF00;
+  background-color: rgb(255, 192, 0);
   color: white;
   padding: 1rem;
   display: flex;
@@ -22,6 +27,16 @@ div {
 a{
   color: black;
   font-weight: 600;
-  cursor: default;
 }
+.general {
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  text-decoration: none;
+  list-style:none;
+  display: flex;
+  gap: 2rem;
+}
+
 </style>
