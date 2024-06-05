@@ -27,7 +27,7 @@
         </svg>
       </div>
     </div>
-    <div class="main">
+    <div class="mainJ">
           <div class="imgSponsors">
             <a href="https://www.chanceb-gruppe.at/" target="_black" class="sponsors"><img
                 src="/public/sponsors/CHance B.png" alt="" class="sponsors"></a>
@@ -46,7 +46,7 @@
             <a href="http://www.solivers.eu/accueil" target="_black" class="sponsors"><img
                 src="/public/sponsors/solivers-2017.png" alt="" class="solivers"></a>
           </div>
-          <a href=""><button>Impact measurement report</button></a>
+          <button class="btn">{{ $t('message.button1') }}</button>
         </div>
   </div>
 </template>
@@ -58,9 +58,22 @@ h1 {
   margin: 4rem;
 }
 .mainJ {
-  width: 100vw;
+  max-width: 80%;
   background-color: white;
   padding-bottom: 2rem;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.btn{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .header-content {
   max-width: 75rem;
@@ -72,7 +85,7 @@ h1 {
 }
 
 .textAbout{
-  width: 80%;
+  width: 90%;
   margin: auto;
   text-align: center;
 }
