@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue';
 import PedagogyView from '../views/PedagogyView.vue';
 import TrainingView from '../views/TrainingView.vue';
 import AssessmentView from '../views/AssessmentView.vue';
+import CatalogueView from '../views/CatalogueView.vue';
 
 const routes = [
   { path: '/', name: 'Inicio', component: HomeView },
@@ -11,6 +12,7 @@ const routes = [
   { path: '/pedagogy', name: 'Pedagogía', component: PedagogyView },
   { path: '/training', name: 'Formación', component: TrainingView },
   { path: '/assessment', name: 'Evaluación', component: AssessmentView },
+  { path: '/catalogue', name: 'Catalogo', component: CatalogueView },
 ];
 
 const router = createRouter({

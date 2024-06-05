@@ -19,6 +19,7 @@ import AboutView from '../views/AboutView.vue';
 import PedagogyView from '../views/PedagogyView.vue';
 import TrainingView from '../views/TrainingView.vue';
 import AssessmentView from '../views/AssessmentView.vue';
+import CatalogueView from '../views/CatalogueView.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -28,7 +29,8 @@ const tabs = [
   { name: 'Quiénes Somos', path: '/about', component: AboutView },
   { name: 'Pedagogía', path: '/pedagogy', component: PedagogyView },
   { name: 'Formación', path: '/training', component: TrainingView },
-  { name: 'Evaluación', path: '/assessment', component: AssessmentView }
+  { name: 'Evaluación', path: '/assessment', component: AssessmentView },
+  { name: 'Catalogo', path: '/catalogue', component: CatalogueView },
 ];
 
 const isMenuOpen = ref(false);

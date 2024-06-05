@@ -6,7 +6,9 @@
     <div class="inner-header flex">
       <div class="header-content">
         <h1>{{ $t('message.subtitle2') }}</h1>
-        <p>{{ $t('message.partners') }}</p>
+        <div class="textAbout">
+          <p>{{ $t('message.partners') }}</p>
+        </div>
       </div>
     </div>
       <div>
@@ -54,23 +56,11 @@ h1 {
   text-align: center;
   margin: 4rem;
 }
-
-.aboutx {
-  font-size: 2rem;
+.textAbout{
+  width: 80%;
+  margin: auto;
   text-align: center;
-  width: 70%;
-  margin: auto
 }
-
-.inner-header {
-  position: relative;
-}
-.header {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
 .imgSponsors {
   margin: auto;
   width: 90%;
@@ -85,14 +75,6 @@ h1 {
   align-items: center;
   margin: auto;
 }
-
-.sponsorsGray {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-
 .solivers {
   background-color: rgb(255, 255, 255);
   height: 4rem;
@@ -115,4 +97,5 @@ h1 {
 }
 </style>
 <script setup>
+
 </script>
