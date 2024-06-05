@@ -13,6 +13,8 @@ class PDFFile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     filename = db.Column(db.String(150), nullable=False)
     file_data = db.Column(db.LargeBinary, nullable=False)
+    version = db.Column(db.String(50), nullable=False)  # Nueva columna para la versión
+    language = db.Column(db.String(50), nullable=False)  # Nueva columna para el idioma
 
 # Inicializa la base de datos
 def create_tables():
@@ -27,12 +29,17 @@ def index():
 # Ruta para subir un archivo PDF
 @app.route('/upload', methods=['POST'])
 def upload_pdf():
-    if 'file' not in request.files:
-        return 'No file part', 400
+    if 'file' not in request.files or 'version' not in request.form or 'language' not in request.form:
+        return 'Missing required data', 400
+    
     file = request.files['file']
+    version = request.form['version']
+    language = request.form['language']
+    
     if file.filename == '':
         return 'No selected file', 400
-    pdf_file = PDFFile(filename=file.filename, file_data=file.read())
+    
+    pdf_file = PDFFile(filename=file.filename, file_data=file.read(), version=version, language=language)
     db.session.add(pdf_file)
     db.session.commit()
     return f'File {file.filename} uploaded successfully', 200
@@ -48,7 +55,7 @@ def get_pdf(id):
 @app.route('/pdf-list', methods=['GET'])
 def get_pdf_list():
     pdf_files = PDFFile.query.all()
-    pdf_list = [{"id": pdf.id, "filename": pdf.filename} for pdf in pdf_files]
+    pdf_list = [{"id": pdf.id, "filename": pdf.filename, "version": pdf.version, "language": pdf.language} for pdf in pdf_files]
     return jsonify(pdf_list)
 
 if __name__ == '__main__':

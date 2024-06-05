@@ -61,7 +61,7 @@ img {
   margin: auto;
 }
 
-button {
+.btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -74,11 +74,29 @@ button {
   margin: 1rem;
   transition: ease all 250ms;
 }
-button:hover {
+.btn:hover {
   border-color: #e68bfd;
   box-shadow: 0px 0px 6px 1px rgb(230, 139, 253, 1);
 }
 
+
+.btnS {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #FFC000;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 1rem;
+  transition: ease all 250ms;
+}
+.btnS:hover {
+  border-color: #FFC000;
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 0, 1);
+}
 /* WAVES */
 .main {
   background-color: white;
@@ -178,7 +196,7 @@ p {
     min-height:40px;
   }
   h1 {
-    font-size:24px;
+    font-size: 3rem;
   }
 }
 

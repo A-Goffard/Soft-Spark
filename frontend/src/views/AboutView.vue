@@ -1,5 +1,6 @@
 <template>
   <div class="general">
+    
     <div class="header">
       
       <!--Content before waves-->
@@ -56,6 +57,20 @@ h1 {
   text-align: center;
   margin: 4rem;
 }
+.mainJ {
+  width: 100vw;
+  background-color: white;
+  padding-bottom: 2rem;
+}
+.header-content {
+  max-width: 75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .textAbout{
   width: 80%;
   margin: auto;
@@ -95,6 +110,11 @@ h1 {
 .sponsors:hover img {
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
+}
+@media (max-width: 750px){
+  p {
+    font-size: 1.3rem;
+  }
 }
 </style>
 <script setup>
