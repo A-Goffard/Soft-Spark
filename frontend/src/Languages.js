@@ -5,9 +5,9 @@ const messages = {
     message: {
       subtitle: 'Train and develop soft skills',
       paragraph1: 'Are you interested in Soft Skills and would like to integrate them into your practice?',
-      paragraph2: 'Soft Skills are relational and human skills close to personality traits that are essential in professional life and that complement specialized skills and knowledges (Hard Skills). Each and every one of us acquires them partialy regardless of our professional or personal background.',
+      paragraph2: 'Soft Skills are relational and human skills close to personality traits that are essential in professional life and that complement specialized skills and knowledge (Hard Skills). Each and every one of us acquires them partialy regardless of our professional or personal background.',
       paragraph3: 'Today, however, Soft Skills training seems to be more naturally geared towards hig-qualified people.',
-      paragraph4: 'The Erasmus+ "Soft skills" project is aiming at facilitating access to soft skills for people with low levels of qualification and/or with disabilities, in order to favour their vocational and even social inclusion and equal opportunities. Mastering a professional activity does not only require the implementation of technical skills specific to the job (hard skills), it also relies on soft skills.',
+      paragraph4: 'The Erasmus+ « Soft skills »  project is aiming at facilitating access to soft skills for people with low levels of qualification and/or with disabilities, in order to favour their vocational and even social inclusion and equal opportunities. Mastering a professional activity does not only require the implementation of technical skills specific to the job (hard skills), it also relies on soft skills.',
       paragraph5: 'Our approach: to take into account the whole process of acquisition of Soft Skills. We developped numerous complementary materials which are accessible on this website for free.',
       paragraph6: 'In addition to these free materials, a digital platform called Zerobarrier, accessible for a fee. This platform will allow you to manage and track the process of Soft Skills acquisition.',
       button1: 'Impact measurement report',

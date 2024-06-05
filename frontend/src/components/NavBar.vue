@@ -19,16 +19,18 @@ import AboutView from '../views/AboutView.vue';
 import PedagogyView from '../views/PedagogyView.vue';
 import TrainingView from '../views/TrainingView.vue';
 import AssessmentView from '../views/AssessmentView.vue';
+import HumanResourceView from '../views/HumanResourceView.vue';
 
 const router = useRouter();
 const route = useRoute();
 
 const tabs = [
   { name: 'Inicio', path: '/', component: HomeView },
-  { name: 'Quiénes Somos', path: '/about', component: AboutView },
   { name: 'Pedagogía', path: '/pedagogy', component: PedagogyView },
   { name: 'Formación', path: '/training', component: TrainingView },
-  { name: 'Evaluación', path: '/assessment', component: AssessmentView }
+  { name: 'Evaluación', path: '/assessment', component: AssessmentView },
+  { name: 'RRHH', path: '/humanresources', component: HumanResourceView },
+  { name: 'Socios', path: '/about', component: AboutView },
 ];
 
 const isMenuOpen = ref(false);

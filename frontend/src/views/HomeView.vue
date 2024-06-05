@@ -5,7 +5,6 @@
     
       <div class="header">
         
-        <!--Content before waves-->
       <div class="inner-header flex">
         <div class="header-content">
           <h1 class="title">Soft&nbsp;skills</h1>
@@ -56,6 +55,7 @@
 .text {
   margin: auto;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   max-width: 75rem;
   display: flex;
   flex-direction: column;
@@ -63,10 +63,13 @@
   align-items: center;
   align-content: center;
 }
-.title {
-  color: black;
-  font-size: 4rem;
-  font-weight: 900;
+
+
+.inner-header {
+  height:30rem;
+  width:100%;
+  margin: 0;
+  padding: 0;
 }
 .inner-header {
   position: relative;
@@ -79,11 +82,34 @@
   filter: drop-shadow(0px 0px 7px #ffd65b);
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  justify-content: center;
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .triangulitos {
+    position: relative;
+    top: -4rem;
+    right: 5rem;
+    width: 5rem;
+    filter: drop-shadow(0px 0px 7px #ffd65b);
+  }
+}
+
+@media (max-width: 450px) {
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .triangulitos {
+    position: relative;
+    top: -4rem;
+    right: 5rem;
+    width: 4rem;
+    filter: drop-shadow(0px 0px 7px #ffd65b);
+  }
 }
 </style>
 

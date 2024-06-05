@@ -1,12 +1,9 @@
 <template>
-    <div class="general">
-    
-    <div class="header">
-      
-      <!--Content before waves-->
+  <div class="header">
+        
     <div class="inner-header flex">
       <div class="header-content">
-        <h1>Soft&nbsp;skills</h1>
+        <h1 class="title">Soft&nbsp;skills</h1>
       </div>
       <svg class="triangulitos" width="1013" height="1131" viewBox="0 0 1013 1131" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M622.257 576.998C622.446 576.263 623.356 576.003 623.912 576.525L942.993 876.131C943.559 876.663 943.333 877.603 942.589 877.816L515.198 999.85C514.453 1000.06 513.755 999.386 513.947 998.637L622.257 576.998Z" fill="#FFFF00"/>
@@ -23,21 +20,20 @@
         <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
         </defs>
         <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255, 255, 0, 0.7" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255, 153, 102, 0.7)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 192, 0, 0.7)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#FFE491" />
         </g>
         </svg>
       </div>
 
     </div>
-  </div>
 
   </template>
   
 <style scoped>
-h1 {
+title {
   color: black;
   font-size: 4rem;
   font-weight: 900;
