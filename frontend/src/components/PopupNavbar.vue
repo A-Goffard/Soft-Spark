@@ -6,6 +6,7 @@
     
     <div :class="['popup-navbar', { 'visible': isNavbarVisible }]" ref="popupNavbar">
       <ul>
+        <li><h3>Herramientas de accesibilidad</h3></li>
         <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">{{ $t('text_increase') }}</button></li>
         <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">{{ $t('text_decrease') }}</button></li>
         <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">{{ $t('text_reset') }}</button></li>
@@ -18,7 +19,6 @@
     </div>
   </div>
 </template>
-
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
@@ -92,10 +92,10 @@ const toggleGreyScale = () => {
   isGreyScale.value = !isGreyScale.value;
   if (isGreyScale.value) {
     document.body.classList.add('grey-scale');
-    console.log("Greyscale mode enabled");
+    console.log("Greyscale mode enabled: body.classList ->", document.body.classList);
   } else {
     document.body.classList.remove('grey-scale');
-    console.log("Greyscale mode disabled");
+    console.log("Greyscale mode disabled: body.classList ->", document.body.classList);
   }
 
   console.log(`Grey scale mode ${isGreyScale.value ? 'enabled' : 'disabled'}`);
@@ -151,9 +151,6 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 </script>
-
-
-
 
 <style scoped>
 .container {
@@ -247,8 +244,6 @@ body.negative-contrast * {
 }
 
 body.grey-scale {
-  filter: grayscale(100%);
+  filter: grayscale(100%) !important;
 }
 </style>
-
-
