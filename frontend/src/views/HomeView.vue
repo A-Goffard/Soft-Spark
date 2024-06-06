@@ -31,6 +31,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  text-align: center;
   background: linear-gradient(var(--ligthorange) 0%, var(--white) 100%);
 }
 .text {
