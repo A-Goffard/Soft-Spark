@@ -6,17 +6,19 @@
     
     <div :class="['popup-navbar', { 'visible': isNavbarVisible }]" ref="popupNavbar">
       <ul>
-        <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">Incremento de texto</button></li>
-        <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">Decremento de texto</button></li>
-        <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">Restablecer texto</button></li>
-        <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">Alto contraste</button></li>
-        <li><button @click="handleButtonClick(5)"><img src="/contrastenegativo.png" alt="Icon 5">Contraste Negativo</button></li>
-        <li><button @click="handleButtonClick(6)"><img src="/readablefont.png" alt="Icon 6">Fuente Legible</button></li>
-        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
+        <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">{{ $t('text_increase') }}</button></li>
+        <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">{{ $t('text_decrease') }}</button></li>
+        <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">{{ $t('text_reset') }}</button></li>
+        <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">{{ $t('high_contrast') }}</button></li>
+        <li><button @click="toggleNegativeContrast"><img src="/contrastenegativo.png" alt="Icon 5">{{ $t('negative_contrast') }}</button></li>
+        <li><button @click="handleButtonClick(6)"><img src="/readablefont.png" alt="Icon 6">{{ $t('readable_font') }}</button></li>
+        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">{{ $t('read_aloud') }}</button></li>
+        <li><button @click="toggleGreyScale"><img src="/greyscale.png" alt="Icon 8">{{ $t('grey_scale') }}</button></li>
       </ul>
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
@@ -56,19 +58,41 @@ const resetTextSize = () => {
 };
 
 /* --------------------------------HIGH CONTRAST TOGGLE FUNCTION------------------ */
-
 const isHighContrast = ref(false);
 
 const toggleHighContrast = () => {
   isHighContrast.value = !isHighContrast.value;
   if (isHighContrast.value) {
-    document.documentElement.style.setProperty('--bg-color', 'var(--high-contrast-bg)');
-    document.documentElement.style.setProperty('--text-color', 'var(--high-contrast-text)');
+    document.body.classList.add('high-contrast');
   } else {
-    document.documentElement.style.setProperty('--bg-color', 'white');
-    document.documentElement.style.setProperty('--text-color', 'black');
+    document.body.classList.remove('high-contrast');
   }
+
+  console.log(`High contrast mode ${isHighContrast.value ? 'enabled' : 'disabled'}`);
 };
+
+/* ------------------------------NEGATIVE CONTRAST TOGGLE FUNCTION------------------ */
+const isNegativeContrast = ref(false);
+
+const toggleNegativeContrast = () => {
+  isNegativeContrast.value = !isNegativeContrast.value;
+  if (isNegativeContrast.value) {
+    document.body.classList.add('negative-contrast');
+  } else {
+    document.body.classList.remove('negative-contrast');
+  }
+
+  console.log(`Negative contrast mode ${isNegativeContrast.value ? 'enabled' : 'disabled'}`);
+};
+
+/* -----------------------------GREYSCALE TOGGLE FUNCTION--------------------------- */
+
+const toggleGreyScale = () => {
+  isGreyScale.value = !isGreyScale.value;
+  document.body.classList.toggle('grey-scale', isGreyScale.value);
+  console.log(`Grey scale mode ${isGreyScale.value ? 'enabled' : 'disabled'}`);
+};
+
 
 /* --------------------------------TEXT-TO-SPEECH FUNCTION------------------ */
 let speechSynthesisUtterance = null;
@@ -121,19 +145,8 @@ onBeforeUnmount(() => {
 });
 </script>
 
+
 <style scoped>
-:root {
-  --bg-color: white;
-  --text-color: black;
-  --high-contrast-bg: black;
-  --high-contrast-text: yellow;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
 .container {
   position: relative;
 }
@@ -207,6 +220,25 @@ body {
 
 .popup-navbar button:hover {
   background-color: red;
+}
+
+body.high-contrast {
+  background-color: black;
+  color: yellow;
+}
+
+body.negative-contrast {
+  background-color: black;
+  color: white;
+}
+
+body.negative-contrast * {
+  background-color: inherit;
+  color: inherit;
+}
+
+body.grey-scale {
+  filter: grayscale(100%) !important;
 }
 </style>
 
