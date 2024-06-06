@@ -87,7 +87,7 @@ h2, h3, h4, p {
   margin: 1rem;
 }
 
-img {
+.img {
   width: 90%;
   margin: 1rem;
   border-radius: 8px;
@@ -108,7 +108,7 @@ img {
   margin: auto;
 }
 
-button {
+.btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -121,7 +121,7 @@ button {
   margin: 1rem;
   transition: ease all 250ms;
 }
-button:hover {
+.btn:hover {
   background-color: var(--orange);
   border-color: var(--ligthyellow);
   box-shadow: 0px 0px 6px 1px var(--salmon);

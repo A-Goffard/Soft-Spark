@@ -86,13 +86,20 @@ const toggleNegativeContrast = () => {
 };
 
 /* -----------------------------GREYSCALE TOGGLE FUNCTION--------------------------- */
+const isGreyScale = ref(false);
 
 const toggleGreyScale = () => {
   isGreyScale.value = !isGreyScale.value;
-  document.body.classList.toggle('grey-scale', isGreyScale.value);
+  if (isGreyScale.value) {
+    document.body.classList.add('grey-scale');
+    console.log("Greyscale mode enabled");
+  } else {
+    document.body.classList.remove('grey-scale');
+    console.log("Greyscale mode disabled");
+  }
+
   console.log(`Grey scale mode ${isGreyScale.value ? 'enabled' : 'disabled'}`);
 };
-
 
 /* --------------------------------TEXT-TO-SPEECH FUNCTION------------------ */
 let speechSynthesisUtterance = null;
@@ -144,6 +151,8 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 </script>
+
+
 
 
 <style scoped>
@@ -238,7 +247,8 @@ body.negative-contrast * {
 }
 
 body.grey-scale {
-  filter: grayscale(100%) !important;
+  filter: grayscale(100%);
 }
 </style>
+
 
