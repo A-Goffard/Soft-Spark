@@ -46,6 +46,10 @@
             <a href="http://www.solivers.eu/accueil" target="_black" class="sponsors"><img
                 src="/public/sponsors/solivers-2017.png" alt="" class="solivers"></a>
           </div>
+          <div class="socios">
+            <img src="/public/logos/logoBlackAndWhite1.png" alt="" id="logoSoft1">
+            <img src="/public/logos/logoBlackAndWhite2.png" alt="" id="logoSoft2">
+          </div>
           <button class="btn">{{ $t('message.button1') }}</button>
         </div>
   </div>
@@ -83,7 +87,6 @@ h1 {
   align-items: center;
   text-align: center;
 }
-
 .textAbout{
   width: 90%;
   margin: auto;
@@ -114,6 +117,27 @@ h1 {
   align-items: center;
   margin: auto;
 }
+.socios{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: solid 1px rgb(#ffc000); 
+  width: 60%;
+  border-radius: 4rem;  
+  -webkit-box-shadow: 0px 0px 43px 3px rgba(255,192,0,1);
+  -moz-box-shadow: 0px 0px 43px 3px rgba(255,192,0,1);
+  box-shadow: 0px 0px 43px 3px rgba(255,192,0,1);
+  margin-top: 2rem;
+}
+#logoSoft1{
+  width: 21rem;
+  height: 13rem;
+}
+#logoSoft2{
+  width: 21rem;
+  height: 13rem;
+}
 .sponsors img {
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -132,4 +156,10 @@ h1 {
 </style>
 <script setup>
 
+let imagen = document.getElementById("logoSoft1")
+imagen.addEventListener("mouseover",function(){
+
+    this.src= "/public/logos/logoBlackAndWhite2.png"
+
+})
 </script>

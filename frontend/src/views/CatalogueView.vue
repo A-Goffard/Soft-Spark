@@ -5,6 +5,10 @@
             <div class="inner-header flex">
                 <div class="header-content">
                     <div class="carrusel">
+                        <h1>CATALOGO</h1>
+                        <h2>CATÁLOGO EUROPEO DE REFERENCIAS DE SOFT SKILLS</h2>
+                        <p>El “catálogo europeo de referencias de soft skills” ofrece una visión general del enfoque de soft skills que ha seguido el proyecto: contiene la lista de soft skills definidas en el marco del proyecto, los niveles de adquisición y sus definiciones, así como una descripción del proceso de adquisición de las soft skills y de la contextualización y la evaluación vinculadas a él.</p>
+                        <ul>descargar pdf</ul>
                     </div>
                 </div>
             </div>
@@ -34,6 +38,11 @@
     height: 40rem;
     margin-top: 20rem;
     border: solid 1px black;
+}
+p{
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.4rem;
 }
 .waves{
     margin-top: 20rem;
