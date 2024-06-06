@@ -115,11 +115,11 @@ const isActiveTab = (component) => {
 }
 
 .nav-links li {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  background-color: #FF7CE2;
+  background-color: var(--ligthyellow);
   color: var(--black);
   font-size: 1.25rem;
   transition: background-color 0.3s, color 0.3s;
@@ -130,10 +130,10 @@ const isActiveTab = (component) => {
 
 .nav-links li:hover,
 .nav-links li.active {
-  background-color: rgb(255, 56, 212);
+  background-color: var(--orange);
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
   .menu-icon {
     display: block;
     z-index: 10000;
@@ -145,7 +145,7 @@ const isActiveTab = (component) => {
     right: 0;
     width: 15rem;
     height: 100vh;
-    background-color: rgb(255, 56, 212, 0.7);
+    background-color: var(--ligthyellow);
     flex-direction: column;
     align-items: center;
     justify-content: center;

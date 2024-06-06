@@ -35,12 +35,15 @@ import LanguageSelector from './components/LanguageSelector.vue';
 
   --ligthorange: #ffe9a5;
   --orange: #FFC000;
+  --orangetransp: #ffbf00c8;
 
   --ligthyellow: #ffffa4;
   --yellow: #FFFF00;
+  --yellowtransp: #ffff00bb;
 
   --ligthsalmon: #ffd6c1;
   --salmon: #FF9966;
+  --salmontransp: #ff9966ca;
 
 
   font-synthesis: none;
@@ -83,15 +86,16 @@ button {
   font-size: 1.5rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #fb6ff1;
+  background-color: var(--ligthorange);
   cursor: pointer;
   transition: border-color 0.25s;
   margin: 1rem;
   transition: ease all 250ms;
 }
 button:hover {
-  border-color: #e68bfd;
-  box-shadow: 0px 0px 6px 1px rgb(230, 139, 253, 1);
+  background-color: var(--orange);
+  border-color: var(--ligthyellow);
+  box-shadow: 0px 0px 6px 1px var(--salmon);
 }
 
 /* WAVES */
@@ -118,12 +122,7 @@ p {
   text-align: left;
 }
 
-.header {
-  position:relative;
-  text-align:center;
-  background: linear-gradient(60deg, rgb(255, 211, 245, 1) 0%, rgb(230, 139, 253, 1) 100%);
-  color:white;
-}
+
 .logo {
   width:50px;
   fill:white;

@@ -3,7 +3,10 @@
   <div class="general">
     <Header />
 
-    <div class="main">
+    <div class="hometext">
+      <div class="text">
+
+
       <h1>{{ $t('message.subtitle') }}</h1>
       <p>{{ $t('message.paragraph1') }}</p>
       <p>{{ $t('message.paragraph2') }}</p>
@@ -15,11 +18,25 @@
       <p>{{ $t('message.paragraph6') }}</p>
       <button>{{ $t('message.button1') }}</button>
     </div>
+    </div>
 
   </div>
 </template>
 
 <style scoped>
+.hometext{
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: linear-gradient(var(--ligthorange) 0%, var(--white) 100%);
+}
+.text {
+  max-width: 75rem;
+  margin: auto;
+}
 
 </style>
 
