@@ -2,19 +2,21 @@
     <div class="general">
       <div class="main">
         <h1>Pedagogía</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, vero rem natus dicta voluptate commodi officia sunt quis vitae, tempore soluta consectetur eum in ullam id, voluptas ipsum. Vero, blanditiis!</p>
-        <button>Impact measurement report</button>
+        <DestinationList />
       </div>
     
 
   </div>
 
-  </template>
+</template>
   
 <style scoped>
 
 
 </style>
   
-  <script setup>
-  </script>
+  
+  
+<script setup>
+import DestinationList from '../components/DestinationList.vue';
+ </script>
