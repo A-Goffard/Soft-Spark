@@ -53,8 +53,9 @@
           <button class="btn">{{ $t('message.button1') }}</button>
         </div>
   </div>
-</template>
 
+  </template>
+  
 <style scoped>
 h1 {
   color: black;

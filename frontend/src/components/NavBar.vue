@@ -15,24 +15,36 @@
 import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import AboutView from '../views/AboutView.vue';
+import HumanResources from '../views/HumanResources.vue.vue';
 import PedagogyView from '../views/PedagogyView.vue';
 import TrainingView from '../views/TrainingView.vue';
 import AssessmentView from '../views/AssessmentView.vue';
+<<<<<<< HEAD
 import CatalogueView from '../views/CatalogueView.vue';
+=======
+import AboutView from '../views/AboutView.vue';
+>>>>>>> dev
 
 const router = useRouter();
 const route = useRoute();
 
 const tabs = [
+<<<<<<< HEAD
   { name: 'Inicio', path: '/', component: HomeView },
   { name: 'Quiénes Somos', path: '/about', component: AboutView },
   { name: 'Pedagogía', path: '/pedagogy', component: PedagogyView },
   { name: 'Formación', path: '/training', component: TrainingView },
   { name: 'Evaluación', path: '/assessment', component: AssessmentView },
   { name: 'Catalogo', path: '/catalogue', component: CatalogueView },
+=======
+  { path: '/', name: 'Home', component: HomeView },
+  { path: '/pedagogy', name: 'Pedagogy', component: PedagogyView },
+  { path: '/training', name: 'Training materials', component: TrainingView },
+  { path: '/assessment', name: 'Assessment', component: AssessmentView },
+  { path: '/humanresources', name: 'Human resources', component: HumanResources },
+  { path: '/about', name: 'Partners', component: AboutView },
+>>>>>>> dev
 ];
-
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
@@ -76,7 +88,7 @@ const isActiveTab = (component) => {
 .menu-icon-line::after {
   content: '';
   display: block;
-  background-color: #FFFFFF;
+  background-color: var(--black);
   height: 3px;
   border-radius: 2px;
   transition: all 0.3s;
@@ -116,12 +128,12 @@ const isActiveTab = (component) => {
 }
 
 .nav-links li {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  background-color: #FF7CE2;
-  color: #FFFFFF;
+  background-color: var(--ligthyellow);
+  color: var(--black);
   font-size: 1.25rem;
   transition: background-color 0.3s, color 0.3s;
   display: flex;
@@ -131,10 +143,10 @@ const isActiveTab = (component) => {
 
 .nav-links li:hover,
 .nav-links li.active {
-  background-color: rgb(255, 56, 212);
+  background-color: var(--orange);
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
   .menu-icon {
     display: block;
     z-index: 10000;
@@ -146,7 +158,7 @@ const isActiveTab = (component) => {
     right: 0;
     width: 15rem;
     height: 100vh;
-    background-color: rgb(255, 56, 212, 0.7);
+    background-color: var(--ligthyellow);
     flex-direction: column;
     align-items: center;
     justify-content: center;
