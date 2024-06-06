@@ -19,31 +19,18 @@ import HumanResources from '../views/HumanResources.vue.vue';
 import PedagogyView from '../views/PedagogyView.vue';
 import TrainingView from '../views/TrainingView.vue';
 import AssessmentView from '../views/AssessmentView.vue';
-<<<<<<< HEAD
-import CatalogueView from '../views/CatalogueView.vue';
-=======
 import AboutView from '../views/AboutView.vue';
->>>>>>> dev
 
 const router = useRouter();
 const route = useRoute();
 
 const tabs = [
-<<<<<<< HEAD
-  { name: 'Inicio', path: '/', component: HomeView },
-  { name: 'Quiénes Somos', path: '/about', component: AboutView },
-  { name: 'Pedagogía', path: '/pedagogy', component: PedagogyView },
-  { name: 'Formación', path: '/training', component: TrainingView },
-  { name: 'Evaluación', path: '/assessment', component: AssessmentView },
-  { name: 'Catalogo', path: '/catalogue', component: CatalogueView },
-=======
   { path: '/', name: 'Home', component: HomeView },
   { path: '/pedagogy', name: 'Pedagogy', component: PedagogyView },
   { path: '/training', name: 'Training materials', component: TrainingView },
   { path: '/assessment', name: 'Assessment', component: AssessmentView },
   { path: '/humanresources', name: 'Human resources', component: HumanResources },
   { path: '/about', name: 'Partners', component: AboutView },
->>>>>>> dev
 ];
 const isMenuOpen = ref(false);
 
