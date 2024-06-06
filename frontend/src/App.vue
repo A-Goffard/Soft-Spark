@@ -28,20 +28,6 @@ import LanguageSelector from './components/LanguageSelector.vue';
 }
 
 :root {
-
-  --naranja: rgb(255, 192, 0);
-  --naranajaclaro: rgb(255, 220, 114);
-
-  --salmonclaro: rgb(255, 226, 211);
-  --salmon: rgba(255, 153, 102);
-
-  --amarillo: rgba(255, 255, 0);
-  --amarilloclaro: rgb(255, 255, 161);
-
-  --blanco: rgb(255, 255, 255);
-  --negro: rgb(0, 0, 0);
-  --grisoscuro: rgb(51, 51, 51);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -51,17 +37,6 @@ import LanguageSelector from './components/LanguageSelector.vue';
 
 h2, h3, h4, p {
   margin: 1rem;
-}
-
-h1 {
-  color: black;
-  text-align: center;
-  margin: 4rem;
-}
-.title {
-  color: black;
-  font-size: 4rem;
-  font-weight: 900;
 }
 
 img {
@@ -82,31 +57,32 @@ img {
   justify-content: center;
   align-items: center;
   align-content: center;
+  max-width: 75rem;
+  margin: auto;
 }
 
-.btn {
+button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1.5rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--amarilloclaro);
+  background-color: #fb6ff1;
   cursor: pointer;
   transition: border-color 0.25s;
   margin: 1rem;
   transition: ease all 250ms;
 }
-.btn:hover {
-  border-color: rgb(255, 255, 200);
-  box-shadow: 0px 0px 6px 1px rgb(255, 226, 211);
-  background-color: var(--naranja);
+button:hover {
+  border-color: #e68bfd;
+  box-shadow: 0px 0px 6px 1px rgb(230, 139, 253, 1);
 }
 
-
 /* WAVES */
-main {
-  background: linear-gradient(var(--naranajaclaro), white);
+.main {
+  background-color: white;
+  padding: 2rem;
 }
 
 body {
@@ -115,25 +91,37 @@ body {
 
 h1 {
   font-family: 'Lato', sans-serif;
-  font-weight:300;
   letter-spacing: 2px;
-  font-size:48px;
-  text-align: left;
+  font-size:3rem;
   padding: 1rem;
 }
 p {
   font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
   font-size: 1.5rem;
-  color: rgb(51, 51, 51);
+  color: #333333;
   text-align: left;
 }
 
 .header {
   position:relative;
   text-align:center;
-  background: white;
+  background: linear-gradient(60deg, rgb(255, 211, 245, 1) 0%, rgb(230, 139, 253, 1) 100%);
   color:white;
+}
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height:65vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
 }
 
 .flex { /*Flexbox for containers*/
@@ -143,7 +131,54 @@ p {
   text-align: center;
 }
 
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
 
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
 
 
 </style>

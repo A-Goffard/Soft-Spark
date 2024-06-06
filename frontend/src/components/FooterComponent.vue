@@ -16,7 +16,7 @@
 
 <style scoped>
 div {
-  background-color: rgb(255, 192, 0);
+  background-color: #FF7CE2;
   color: white;
   padding: 1rem;
   display: flex;
