@@ -75,7 +75,7 @@ const isActiveTab = (component) => {
 .menu-icon-line::after {
   content: '';
   display: block;
-  background-color: #FFFFFF;
+  background-color: var(--black);
   height: 3px;
   border-radius: 2px;
   transition: all 0.3s;
@@ -120,7 +120,7 @@ const isActiveTab = (component) => {
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   background-color: #FF7CE2;
-  color: #FFFFFF;
+  color: var(--black);
   font-size: 1.25rem;
   transition: background-color 0.3s, color 0.3s;
   display: flex;
