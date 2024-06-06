@@ -30,7 +30,24 @@ import PopupNavbar from './components/PopupNavbar.vue';
 }
 
 :root {
-  
+  --black: #000000;
+  --white: #ffffff;
+
+  --darkgrey: #333333;
+
+  --ligthorange: #ffe9a5;
+  --orange: #FFC000;
+  --orangetransp: #ffbf00c8;
+
+  --ligthyellow: #ffffa4;
+  --yellow: #FFFF00;
+  --yellowtransp: #ffff00bb;
+
+  --ligthsalmon: #ffd6c1;
+  --salmon: #FF9966;
+  --salmontransp: #ff9966ca;
+
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -62,31 +79,33 @@ img {
   justify-content: center;
   align-items: center;
   align-content: center;
+  max-width: 75rem;
+  margin: auto;
 }
 
-.btn {
+button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1.5rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: rgb(255, 255, 161);
+  background-color: var(--ligthorange);
   cursor: pointer;
   transition: border-color 0.25s;
   margin: 1rem;
   transition: ease all 250ms;
 }
-.btn:hover {
-  border-color: rgb(255, 255, 200);
-  box-shadow: 0px 0px 6px 1px rgb(255, 226, 211);
-  background-color: rgb(255, 192, 0);
+button:hover {
+  background-color: var(--orange);
+  border-color: var(--ligthyellow);
+  box-shadow: 0px 0px 6px 1px var(--salmon);
 }
 
-
 /* WAVES */
-main {
-  background: linear-gradient(rgb(255, 220, 114), white);
+.main {
+  background-color: white;
+  padding: 2rem;
 }
 
 body {
@@ -95,10 +114,8 @@ body {
 
 h1 {
   font-family: 'Lato', sans-serif;
-  font-weight:300;
   letter-spacing: 2px;
-  font-size:48px;
-  text-align: left;
+  font-size:3rem;
   padding: 1rem;
 }
 p {
@@ -109,12 +126,6 @@ p {
   text-align: left;
 }
 
-.header {
-  position:relative;
-  text-align:center;
-  background: white;
-  color:white;
-}
 
 .logo {
   width:50px;
@@ -125,7 +136,7 @@ p {
 }
 
 .inner-header {
-  height:30rem;
+  height:65vh;
   width:100%;
   margin: 0;
   padding: 0;
@@ -138,54 +149,7 @@ p {
   text-align: center;
 }
 
-.waves {
-  position:relative;
-  width: 100%;
-  height:15vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
-  min-height:100px;
-  max-height:150px;
-}
 
-/* Animation */
-
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
-}
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-@keyframes move-forever {
-  0% {
-   transform: translate3d(-90px,0,0);
-  }
-  100% { 
-    transform: translate3d(85px,0,0);
-  }
-}
-/*Shrinking for mobile*/
-@media (max-width: 768px) {
-  .waves {
-    height:40px;
-    min-height:40px;
-  }
-  h1 {
-    font-size: 3rem;
-  }
-}
 
 
 </style>
