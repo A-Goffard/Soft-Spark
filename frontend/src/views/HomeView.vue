@@ -10,13 +10,13 @@
       <h1>{{ $t('message.subtitle') }}</h1>
       <p>{{ $t('message.paragraph1') }}</p>
       <p>{{ $t('message.paragraph2') }}</p>
-      <img src="/public/1.png" alt="Skills">
+      <img class="img" src="/public/1.png" alt="Skills">
       <p>{{ $t('message.paragraph3') }}</p>
       <p>{{ $t('message.paragraph4') }}</p>
-      <img src="/public/2.png" alt="Skills">
+      <img class="img" src="/public/2.png" alt="Skills">
       <p>{{ $t('message.paragraph5') }}</p>
       <p>{{ $t('message.paragraph6') }}</p>
-      <button>{{ $t('message.button1') }}</button>
+      <button class="btn">{{ $t('message.button1') }}</button>
     </div>
     </div>
 
@@ -31,6 +31,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  text-align: center;
   background: linear-gradient(var(--ligthorange) 0%, var(--white) 100%);
 }
 .text {
