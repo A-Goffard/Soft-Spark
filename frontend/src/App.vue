@@ -37,6 +37,7 @@ import LanguageSelector from './components/LanguageSelector.vue';
   --orange: #FFC000;
   --orangetransp: #ffbf00c8;
 
+  --ligtheryellow: #fefee6;
   --ligthyellow: #ffffa4;
   --yellow: #FFFF00;
   --yellowtransp: #ffff00bb;
@@ -57,7 +58,7 @@ h2, h3, h4, p {
   margin: 1rem;
 }
 
-img {
+.img {
   width: 90%;
   margin: 1rem;
   border-radius: 8px;
@@ -79,7 +80,9 @@ img {
   margin: auto;
 }
 
-button {
+/*BUTTONS*/
+
+.btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -92,15 +95,37 @@ button {
   margin: 1rem;
   transition: ease all 250ms;
 }
-button:hover {
+.btn:hover {
   background-color: var(--orange);
   border-color: var(--ligthyellow);
   box-shadow: 0px 0px 6px 1px var(--salmon);
 }
 
+/* CARDS */
+
+.card {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 1rem;
+  transition: ease all 250ms;
+  border: solid 2px var(--ligthorange);
+}
+.card:hover {
+  background-color: var(--ligtheryellow);
+  border-color: var(--orange);
+  box-shadow: 0px 0px 10px 5px var(--salmon);
+}
+
 /* WAVES */
 .main {
-  background-color: white;
+  background-color: var(--white);
   padding: 2rem;
 }
 
@@ -118,14 +143,14 @@ p {
   font-family: 'Lato', sans-serif;
   letter-spacing: 1px;
   font-size: 1.5rem;
-  color: #333333;
+  color: var(--darkgrey);
   text-align: left;
 }
 
 
 .logo {
   width:50px;
-  fill:white;
+  fill:var(--white);
   padding-right:15px;
   display:inline-block;
   vertical-align: middle;
