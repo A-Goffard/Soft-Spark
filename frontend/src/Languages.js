@@ -80,11 +80,13 @@ const messages = {
       trainingmaterial9text: 'At the end of the training, these satisfaction surveys can be completed by the trainers who followed the training and by the trainer who provided the training; the objective being to question their satisfaction and to improve the training',
       trainingmaterial9download1: 'Satisfaction survey for training of trainers - EN.doc',
 
-      trainingmaterial10title: 'Training for tutors/trainers in WBL???',
+      trainingmaterial10title: 'Training for tutors/trainers in WBL??? faltatexto',
       trainingmaterial10text: 'faltatexto',
-      trainingmaterial11title: 'Training for HRM in WBL???',
-      trainingmaterial11text: 'faltatexto',
+      trainingmaterial10download1: 'faltatexto',
 
+      trainingmaterial11title: 'Training for HRM in WBL??? faltatexto',
+      trainingmaterial11text: 'faltatexto',
+      trainingmaterial11download1: 'faltatexto',
 
       assessment1title: 'SOFT SKILLS PLACEMENT AND ASSESSMENT PROTOCOL',
       assessment1text: 'The “soft skills placement and assessment protocol” gives you all the keys to assess and attest the acquisition of a soft skill. It describes the different moments and methods of assessment and gives you tools to do the placement and assessment properly.',
@@ -116,11 +118,11 @@ const messages = {
       assessment6title: 'SOFT SKILLS CHECKLIST FOR TRAINERS',
       assessment6text: 'The “soft skills checklist for trainers” allows trainers, technical supervisors, tutors and assessors to verify their knowledge related to soft skills after a training of trainers but also to have a global view on the materials and tools necessary for the implementation of placements, trainings or soft skills assessments within their organization.',
       assessment6download1: 'Soft skills checklist for Trainers-EN- finalized - 05 08 2021.pdf',
-      assessment6title: 'faltatexto',
-      assessment6text: 'faltatexto',
-      assessment6download1: 'Placement and assessment methods for soft skills in WBL situations?????falta',
+      assessment7title: 'faltatexto',
+      assessment7text: 'faltatexto',
+      assessment7download1: 'Placement and assessment methods for soft skills in WBL situations?????faltatexto',
 
-      humanresources1title: 'HRM Protocol???falta',
+      humanresources1title: 'HRM Protocol???faltatexto',
       humanresources1text: 'faltatexto',
       humanresources1download1: 'faltatexto',
       // Agrega todas las traducciones

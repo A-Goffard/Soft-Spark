@@ -2,17 +2,19 @@
   <div class="general">
     <div class="main">
       <h1>Training</h1>
-      <p>Carrusel    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, vero rem natus dicta voluptate commodi officia sunt quis vitae, tempore soluta consectetur eum in ullam id, voluptas ipsum. Vero, blanditiis!</p>
       <DestinationList />
       <div class="cards">
-        <Catalogue/>
-        <SSPictograms/>
-        <SSBase/>
-        <Wheels/>
-        <Summary/>
-        <Zerobarrier/>
-        <Occupational/>
-        <CorporateCulture/>
+        <Kit/>
+        <ToolCardsTrainSoftSkills/>
+        <CertificatesTrainees/>
+        <AttendanceSheet/>
+        <SurveyTrainees/>
+        <Techniques/>
+        <SSTTrainers/>
+        <CertificatesTrainers/>
+        <SurveyTrainers/>
+        <TTWBL/>
+        <THWBL/>
       </div>
       
     </div>
@@ -23,26 +25,20 @@
 </template>
 
 <style scoped>
-.general {
-padding-top: 5rem;
-}
-.cards {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-align-content: center;
-}
+
 </style>
 
 <script setup>
 import DestinationList from '../components/DestinationList.vue';
-import Catalogue from '../components/pedagogy/Catalogue.vue';
-import SSPictograms from '../components/pedagogy/SSPictograms.vue';
-import SSBase from '../components/pedagogy/SSBase.vue';
-import Wheels from '../components/pedagogy/Wheels.vue';
-import Summary from '../components/pedagogy/Summary.vue';
-import Zerobarrier from '../components/pedagogy/Zerobarrier.vue';
-import Occupational from '../components/pedagogy/Occupational.vue';
-import CorporateCulture from '../components/pedagogy/CorporateCulture.vue';
-</script>
+import Kit from '../components/training/Kit.vue';
+import ToolCardsTrainSoftSkills from '../components/training/ToolCardsTrainSoftSkills.vue';
+import CertificatesTrainees from '../components/training/CertificatesTrainees.vue';
+import AttendanceSheet from '../components/training/AttendanceSheet.vue';
+import SurveyTrainees from '../components/training/SurveyTrainees.vue';
+import Techniques from '../components/training/Techniques.vue';
+import SSTTrainers from '../components/training/SSTTrainers.vue';
+import CertificatesTrainers from '../components/training/CertificatesTrainers.vue';
+import SurveyTrainers from '../components/training/SurveyTrainers.vue';
+import TTWBL from '../components/training/TTWBL.vue';
+import THWBL from '../components/training/THWBL.vue';
+ </script>

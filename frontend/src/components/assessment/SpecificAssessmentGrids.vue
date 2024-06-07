@@ -1,14 +1,21 @@
 <template>
     <div>
-        <div class="card">
-            <div class="text">
-                <h2>{{ $t('message.pedagogy1title') }}</h2>
-                <p>{{ $t('message.pedagogy1text') }}</p>
+        <div class="comp-card">
+            <div class="comp-text">
+                <h2>{{ $t('message.assessment5title') }}</h2>
+                <p>{{ $t('message.assessment5text') }}</p>
         
             </div>
             
-            <div class="downloads">
-                <button class="btn">{{ $t('message.pedagogy1download1') }}</button>
+            <div class="comp-downloads">
+                <button class="btn">{{ $t('message.assessment5download1') }}</button>
+                <button class="btn">{{ $t('message.assessment5download2') }}</button>
+                <button class="btn">{{ $t('message.assessment5download3') }}</button>
+                <button class="btn">{{ $t('message.assessment5download4') }}</button>
+                <button class="btn">{{ $t('message.assessment5download5') }}</button>
+                <button class="btn">{{ $t('message.assessment5download6') }}</button>
+                <button class="btn">{{ $t('message.assessment5download7') }}</button>
+
             </div>
             
         </div>
@@ -17,29 +24,7 @@
     </template>
     
     <style scoped>
-    .card {
-        border-radius: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 1.5rem;
-    
-      }
-    .text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .downloads {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
+
     </style>
     
     <script setup>
