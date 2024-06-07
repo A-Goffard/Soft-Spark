@@ -4,7 +4,7 @@ import NavBar from './components/NavBar.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import LanguageSelector from './components/LanguageSelector.vue';
 import PopupNavbar from './components/PopupNavbar.vue';
-import i18n from './i18n'; // Adjust the path as necessary
+
 
 const isHighContrast = ref(false);
 
