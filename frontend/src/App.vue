@@ -84,50 +84,7 @@ h2, h3, h4, p {
   margin: auto;
 }
 
-/*BUTTONS*/
 
-.btn {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--ligthorange);
-  cursor: pointer;
-  transition: border-color 0.25s;
-  margin: 1rem;
-  transition: ease all 250ms;
-}
-.btn:hover {
-  background-color: var(--orange);
-  border-color: var(--ligthyellow);
-  box-shadow: 0px 0px 6px 1px var(--salmon);
-}
-
-/* CARDS */
-
-.card {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--white);
-  cursor: pointer;
-  transition: border-color 0.25s;
-  margin: 1rem;
-  transition: ease all 250ms;
-  border: solid 2px var(--ligthorange);
-}
-.card:hover {
-  background-color: var(--ligtheryellow);
-  border-color: var(--orange);
-  box-shadow: 0px 0px 10px 5px var(--salmon);
-}
-
-/* WAVES */
 .main {
   background-color: var(--white);
   padding: 2rem;
@@ -174,7 +131,88 @@ p {
   text-align: center;
 }
 
+/*BUTTONS*/
+
+.btn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--ligthorange);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 1rem;
+  transition: ease all 250ms;
+}
+.btn:hover {
+  background-color: var(--orange);
+  border-color: var(--ligthyellow);
+  box-shadow: 0px 0px 6px 1px var(--salmon);
+}
+
+/* CARDS */
+
+.comp-card {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 1rem;
+  transition: ease all 250ms;
+  border: solid 2px var(--ligthorange);
+}
+.comp-card:hover {
+  background-color: var(--ligtheryellow);
+  border-color: var(--orange);
+  box-shadow: 0px 0px 10px 5px var(--salmon);
+}
+
+/*COMPONENT CSS CARDS*/
+
+.comp-card {
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+
+}
+.comp-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.comp-downloads {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 
 
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+
+  .comp-card {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+}
 </style>

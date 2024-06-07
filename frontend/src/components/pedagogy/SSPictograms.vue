@@ -2,13 +2,13 @@
     <div>
         <div class="comp-card">
             <div class="comp-text">
-                <h2>{{ $t('message.pedagogy3title') }}</h2>
-                <p>{{ $t('message.pedagogy3text') }}</p>
+                <h2>{{ $t('message.pedagogy2title') }}</h2>
+                <p>{{ $t('message.pedagogy2text') }}</p>
         
             </div>
             
             <div class="comp-downloads">
-                <button class="btn">{{ $t('message.pedagogy3download1') }}</button>
+                <button class="btn">{{ $t('message.pedagogy2download1') }}</button>
             </div>
             
         </div>
