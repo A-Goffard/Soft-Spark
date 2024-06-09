@@ -29,9 +29,9 @@
 </style>
 
 <script setup>
-import { useI17n } from 'vue-i17n';
+import { useI18n } from 'vue-i18n';
 
-const { t } = useI17n();
+const { t } = useI18n();
 
 const handleFile = (fileName) => {
 const fileExtension = fileName.split('.').pop().toLowerCase();
