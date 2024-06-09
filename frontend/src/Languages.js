@@ -15,7 +15,7 @@ const messages = {
       partners: 'It is within the framework of the European project "Soft Skills" co-financed by the Erasmus + program, that 9 European partners from France, Belgium, Spain, Austria and Slovenia have co-developed the materials that you will find on this website. These partners are active in the field of vocational training. Whether they are training centres, integration companies or adapted companies, they have an expertise in the training of people with a low level of qualification and/or a disability. Click on the logos to learn more about them.',
       pedagogy1title: 'EUROPEAN CATALOGUE OF SOFT SKILLS REFERENCES',
       pedagogy1text: 'The “European catalogue of soft skills references” gives an overview of the soft skills approach the project followed: it contains the list of soft skills defined within the framework of the project, the levels of acquisition and their definitions as well as a description of the soft skills acquisition process and the placement and assessment linked to it;',
-      pedagogy1download1: 'Catalogue.pdf',
+      pedagogy1download1: 'Catalogue EN.pdf',
       pedagogy2title: 'SOFT SKILLS LIST WITH PICTOGRAMS',
       pedagogy2text: 'This document illustrates the 5 categories and the 20 soft skills defined in the project using pictograms. A good communication document and a good pedagogical support to remember and retain the soft skills and their definitions.',
       pedagogy2download1: 'Soft Skills list with pictograms.pdf',
