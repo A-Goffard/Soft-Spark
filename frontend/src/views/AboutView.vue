@@ -13,22 +13,28 @@
     </div>
     <div class="mainJ">
       <div class="imgSponsors">
-        <a href="https://www.chanceb-gruppe.at/" target="_blank" class="sponsors">
+        <a href="https://www.chanceb-gruppe.at/" target="_blank" class="sponsors"
+           @mouseover="hoverFirstGroup(true)" @mouseout="hoverFirstGroup(false)">
           <img src="/public/sponsors/CHance B.png" alt="" class="sponsors">
         </a>
-        <a href="https://www.center-db.si/" target="_blank" class="sponsors">
+        <a href="https://www.center-db.si/" target="_blank" class="sponsors"
+           @mouseover="hoverFirstGroup(true)" @mouseout="hoverFirstGroup(false)">
           <img src="/public/sponsors/CUDV.png" alt="" class="sponsors">
         </a>
-        <a href="https://www.discovia.fr/home" target="_blank" class="sponsors">
+        <a href="https://www.discovia.fr/home" target="_blank" class="sponsors"
+           @mouseover="hoverFirstGroup(true)" @mouseout="hoverFirstGroup(false)">
           <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="" class="sponsors">
         </a>
-        <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors">
+        <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors"
+           @mouseover="hoverLastGroup(true)" @mouseout="hoverLastGroup(false)">
           <img src="/public/sponsors/le-plope-1-3.gif" alt="" class="sponsors">
         </a>
-        <a href="http://www.workinn.be/" target="_blank" class="sponsors">
+        <a href="http://www.workinn.be/" target="_blank" class="sponsors"
+           @mouseover="hoverLastGroup(true)" @mouseout="hoverLastGroup(false)">
           <img src="/public/sponsors/logo_workinn.png" alt="" class="sponsors">
         </a>
-        <a href="https://www.regiedesecrivains.com/" target="_blank" class="sponsors">
+        <a href="https://www.regiedesecrivains.com/" target="_blank" class="sponsors"
+           @mouseover="hoverLastGroup(true)" @mouseout="hoverLastGroup(false)">
           <img src="/public/sponsors/logo régie.jpg" alt="" class="sponsors">
         </a>
         <a href="https://www.grupopenascal.com/" target="_blank" class="sponsors">
@@ -42,15 +48,26 @@
         </a>
       </div>
       <div class="socios">
-        <img src="/public/logos/softskill1.png" id="logoSoft1" alt="">
-        <img src="/public/logos/softskill2.png" id="logoSoft2" alt="">
+        <img :class="{ grayscale: !hoverSoft1 }" src="/public/logos/softskill1.png" id="logoSoft1" alt="">
+        <img :class="{ grayscale: !hoverSoft2 }" src="/public/logos/softskill2.png" id="logoSoft2" alt="">
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// No necesitas importar ni registrar la directiva aquí si ya lo hiciste en el archivo principal
+import { ref } from 'vue'
+
+const hoverSoft1 = ref(false)
+const hoverSoft2 = ref(false)
+
+const hoverFirstGroup = (hovering) => {
+  hoverSoft1.value = hovering
+}
+
+const hoverLastGroup = (hovering) => {
+  hoverSoft2.value = hovering
+}
 </script>
 
 <style scoped>
@@ -142,12 +159,14 @@ h1 {
 #logoSoft1 {
   width: 21rem;
   height: 13rem;
-  filter: grayscale(1);
 }
 
 #logoSoft2 {
   width: 21rem;
   height: 13rem;
+}
+
+.grayscale {
   filter: grayscale(1);
 }
 
