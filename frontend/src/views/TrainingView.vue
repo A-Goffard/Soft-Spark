@@ -1,9 +1,22 @@
 <template>
   <div class="general">
     <div class="main">
-      <h1>Formacion</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, vero rem natus dicta voluptate commodi officia sunt quis vitae, tempore soluta consectetur eum in ullam id, voluptas ipsum. Vero, blanditiis!</p>
-      <button>Impact measurement report</button>
+      <h1>Training</h1>
+      <DestinationList />
+      <div class="cards">
+        <Kit/>
+        <ToolCardsTrainSoftSkills/>
+        <CertificatesTrainees/>
+        <AttendanceSheet/>
+        <SurveyTrainees/>
+        <Techniques/>
+        <SSTTrainers/>
+        <CertificatesTrainers/>
+        <SurveyTrainers/>
+        <TTWBL/>
+        <THWBL/>
+      </div>
+      
     </div>
   
 
@@ -12,9 +25,22 @@
 </template>
 
 <style scoped>
-
-
+.general {
+  padding-top: 5rem;
+}
 </style>
 
 <script setup>
-</script>
+import DestinationList from '../components/DestinationList.vue';
+import Kit from '../components/training/Kit.vue';
+import ToolCardsTrainSoftSkills from '../components/training/ToolCardsTrainSoftSkills.vue';
+import CertificatesTrainees from '../components/training/CertificatesTrainees.vue';
+import AttendanceSheet from '../components/training/AttendanceSheet.vue';
+import SurveyTrainees from '../components/training/SurveyTrainees.vue';
+import Techniques from '../components/training/Techniques.vue';
+import SSTTrainers from '../components/training/SSTTrainers.vue';
+import CertificatesTrainers from '../components/training/CertificatesTrainers.vue';
+import SurveyTrainers from '../components/training/SurveyTrainers.vue';
+import TTWBL from '../components/training/TTWBL.vue';
+import THWBL from '../components/training/THWBL.vue';
+ </script>

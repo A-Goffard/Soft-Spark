@@ -8,7 +8,10 @@
         :story-id="'s' + index"
         :title="destination.title"
         :description="destination.description"
+        :image-url="destination.imageUrl" 
+       
       />
+      
       <div class="page">
         <h4>Hover the card</h4>
         <ul>
@@ -24,12 +27,12 @@
   import DestinationCard from './DestinationCard.vue'
   
   const destinations = ref([
-    { title: 'Target numero1', description: 'Target 1 description' },
-    { title: 'Target numero2', description: 'Target 2 description' },
-    { title: 'Target numero3', description: 'Target 3 description' },
-    { title: 'Target numero4', description: 'Target 4 description' },
-    { title: 'Target numero5', description: 'Target 5 description' },
-    { title: 'Target numero6', description: 'Target 6 description' }
+    { title: 'Target numero1', description: 'Target 1 description', imageUrl: '/1.png'},
+    { title: 'Target numero2', description: 'Target 2 description', imageUrl: '/2.png'},
+    { title: 'Target numero3', description: 'Target 3 description', imageUrl: '/3.png'},
+    { title: 'Target numero4', description: 'Target 4 description', imageUrl: '/4.png'},
+    { title: 'Target numero5', description: 'Target 5 description', imageUrl: '/5.png'},
+    { title: 'Target numero6', description: 'Target 6 description', imageUrl: '/6.png'}
   ])
   </script>
   

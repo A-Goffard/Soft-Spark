@@ -1,5 +1,46 @@
-<template></template>
+<template>
+    <div>
+        <div class="comp-card">
+            <div class="comp-text">
+                <h2>{{ $t('message.trainingmaterial3title') }}</h2>
+                <p>{{ $t('message.trainingmaterial3text') }}</p>
+        
+            </div>
+            
+            <div class="comp-downloads">
 
-<style scoped></style>
+                <button class="btn" @click="handleFile($t('/level 1/message.trainingmaterial3download1'))">{{ $t('message.trainingmaterial3download1') }}</button>
+                <button class="btn" @click="handleFile($t('/level 2/message.trainingmaterial3download1'))">{{ $t('message.trainingmaterial3download2') }}</button>
+                <button class="btn" @click="handleFile($t('/level 3/message.trainingmaterial3download1'))">{{ $t('message.trainingmaterial3download3') }}</button>
+                <button class="btn" @click="handleFile($t('/level 4/message.trainingmaterial3download1'))">{{ $t('message.trainingmaterial3download4') }}</button>
 
-<script setup></script>
+            </div>
+            
+        </div>
+    
+    </div>
+</template>
+
+<style scoped>
+</style>
+
+<script setup>
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
+const handleFile = (fileName) => {
+const fileExtension = fileName.split('.').pop().toLowerCase();
+const fileUrl = `/archives/Training certificates for trainees/${fileName}`;
+if (fileExtension === 'pdf') {
+  // Abrir PDFs en una nueva pestaña
+  window.open(fileUrl, '_blank');
+} else {
+  // Descargar otros tipos de archivos
+  const link = document.createElement('a');
+  link.href = fileUrl;
+  link.download = fileName;
+  link.click();
+}
+};
+</script>

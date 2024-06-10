@@ -1,40 +1,44 @@
 <template>
-<div class="foto">
+    <div>
+        <div class="comp-card">
+            <div class="comp-text">
+                <h2>{{ $t('message.assessment1title') }}</h2>
+                <p>{{ $t('message.assessment1text') }}</p>
+        
+            </div>
+            
+            <div class="comp-downloads">
 
-    <h2>
-        Soft Skills placement and assessment protocol
-    </h2>
+                <button class="btn" @click="handleFile($t('message.assessment1download1'))">{{ $t('message.assessment1download1') }}</button>
 
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ipsam, eveniet laudantium numquam labore tenetur aliquid voluptate omnis similique rerum quam delectus quo. Vel similique possimus enim, dolores itaque pariatur?
-
-    </p>
-
-    <button class="btnS">Descarga</button>
-
-
-
-</div>
-
+            </div>
+            
+        </div>
+    
+    </div>
 </template>
 
 <style scoped>
-.foto {
-    height: 40rem;
-    width: 25rem;
-    background-color: rgb(255, 217, 159);
-    border-radius: 1rem;
-    border-color: #ea8623;
-    box-shadow: 0px 0px 10px 5px rgb(255, 203, 47);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-  }
 
 </style>
 
 <script setup>
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
+const handleFile = (fileName) => {
+const fileExtension = fileName.split('.').pop().toLowerCase();
+const fileUrl = `/archives/Placement and Assessment protocol/${fileName}`;
+if (fileExtension === 'pdf') {
+  // Abrir PDFs en una nueva pestaña
+  window.open(fileUrl, '_blank');
+} else {
+  // Descargar otros tipos de archivos
+  const link = document.createElement('a');
+  link.href = fileUrl;
+  link.download = fileName;
+  link.click();
+}
+};
 </script>
