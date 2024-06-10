@@ -20,9 +20,9 @@
     <div class="general">
       <p>&#169; Powered by <a href="#">Voltus V</a> | Peñascal F5</p>
       <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Legal</a></li>
+        <li><a href="#">{{ $t('message.footerpp') }}</a></li>
+        <li><a href="#">{{ $t('message.footertu') }}</a></li>
+        <li><a href="#">{{ $t('message.footerl') }}</a></li>
       </ul>
     </div>
   </div>

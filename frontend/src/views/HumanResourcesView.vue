@@ -1,7 +1,7 @@
 <template>
   <div class="general">
     <div class="main">
-      <h1>Human Resources</h1>
+      <h1>{{ $t('message.humanrpage') }}</h1>
       <DestinationList />
       <div class="cards">
         <HRM/>

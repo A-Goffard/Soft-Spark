@@ -4,8 +4,8 @@
       <div :class="{ 'menu-icon-line': true, 'active': isMenuOpen }"></div>
     </div>
     <ul :class="{ 'nav-links': true, 'active': isMenuOpen }">
-      <li v-for="tab in tabs" :key="tab.name" :class="{ active: isActiveTab(tab.component) }" @click="setCurrentTab(tab)">
-        {{ tab.name }}
+      <li v-for="tab in tabs" :key="tab.path" :class="{ active: isActiveTab(tab.component) }" @click="setCurrentTab(tab)">
+        {{ $t(tab.name) }}
       </li>
     </ul>
   </nav>
@@ -14,6 +14,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 import HomeView from '../views/HomeView.vue';
 import HumanResourcesView from '../views/HumanResourcesView.vue';
 import PedagogyView from '../views/PedagogyView.vue';
@@ -21,16 +22,18 @@ import TrainingView from '../views/TrainingView.vue';
 import AssessmentView from '../views/AssessmentView.vue';
 import AboutView from '../views/AboutView.vue';
 
+const { t } = useI18n();
+
 const router = useRouter();
 const route = useRoute();
 
 const tabs = [
-  { path: '/', name: 'Home', component: HomeView },
-  { path: '/pedagogy', name: 'Pedagogy', component: PedagogyView },
-  { path: '/training', name: 'Training materials', component: TrainingView },
-  { path: '/assessment', name: 'Assessment', component: AssessmentView },
-  { path: '/humanresources', name: 'Human resources', component: HumanResourcesView },
-  { path: '/about', name: 'Partners', component: AboutView },
+  { path: '/', name: 'message.homepage', component: HomeView },
+  { path: '/pedagogy', name: 'message.pedagogypage', component: PedagogyView },
+  { path: '/training', name: 'message.trainingpage', component: TrainingView },
+  { path: '/assessment', name: 'message.assessmentpage', component: AssessmentView },
+  { path: '/humanresources', name: 'message.humanrpage', component: HumanResourcesView },
+  { path: '/about', name: 'message.partnerspage', component: AboutView },
 ];
 const isMenuOpen = ref(false);
 
@@ -143,7 +146,7 @@ const isActiveTab = (component) => {
     position: fixed;
     top: 0;
     right: 0;
-    width: 15rem;
+    width: 20rem;
     height: 100vh;
     background-color: var(--ligthyellow);
     flex-direction: column;

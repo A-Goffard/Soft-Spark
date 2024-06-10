@@ -1,7 +1,7 @@
 <template>
   <div class="general">
     <div class="main">
-      <h1>Assessment</h1>
+      <h1>{{ $t('message.assessmentpage') }}</h1>
       <DestinationList />
       <div class="cards">
         <AProtocol/>

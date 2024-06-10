@@ -1,7 +1,7 @@
 <template>
   <div class="general">
     <div class="main">
-      <h1>Training</h1>
+      <h1>{{ $t('message.trainingpage') }}</h1>
       <DestinationList />
       <div class="cards">
         <Kit/>
@@ -43,4 +43,4 @@ import CertificatesTrainers from '../components/training/CertificatesTrainers.vu
 import SurveyTrainers from '../components/training/SurveyTrainers.vue';
 import TTWBL from '../components/training/TTWBL.vue';
 import THWBL from '../components/training/THWBL.vue';
- </script>
+</script>
