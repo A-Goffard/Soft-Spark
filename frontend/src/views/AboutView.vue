@@ -139,11 +139,14 @@ h1 {
 #logoSoft1 {
   width: 21rem;
   height: 13rem;
+  filter: grayscale(1);
 }
 
 #logoSoft2 {
   width: 21rem;
   height: 13rem;
+  filter: grayscale(1);
+
 }
 
 .sponsors img {
