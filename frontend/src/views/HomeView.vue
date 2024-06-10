@@ -16,7 +16,9 @@
       <img class="img" src="/public/2.png" alt="Skills">
       <p>{{ $t('message.paragraph5') }}</p>
       <p>{{ $t('message.paragraph6') }}</p>
-      <button class="btn">{{ $t('message.button1') }}</button>
+      <button class="btn" @click="handleFile($t('message.button1'))">{{ $t('message.button1') }}</button>
+
+
     </div>
     </div>
 
@@ -43,5 +45,22 @@
 
 <script setup>
 import Header from '../components/Header.vue';
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n();
+
+const handleFile = (fileName) => {
+const fileExtension = fileName.split('.').pop().toLowerCase();
+const fileUrl = `/archives/Impact measurement report/${fileName}`;
+if (fileExtension === 'pdf') {
+  // Abrir PDFs en una nueva pestaña
+  window.open(fileUrl, '_blank');
+} else {
+  // Descargar otros tipos de archivos
+  const link = document.createElement('a');
+  link.href = fileUrl;
+  link.download = fileName;
+  link.click();
+}
+};
 </script>
