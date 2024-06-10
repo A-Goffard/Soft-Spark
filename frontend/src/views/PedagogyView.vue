@@ -2,7 +2,7 @@
     <div class="general">
       <div class="main">
         <h1>Pedagogía</h1>
-        <Cards />
+        
         <DestinationList />
         <div class="cards">
           <Catalogue/>
