@@ -23,7 +23,7 @@
         </a>
         <a href="https://www.discovia.fr/home" target="_blank" class="sponsors soft2"
            @mouseover="handleHover(true, 'soft2')" @mouseout="handleHover(false, 'soft2')">
-          <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="DISCOVIA" class="sponsors">
+          <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="DISCOVIA" class="sponsors" style="width: 20rem;">
         </a>
         <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors soft1 soft2"
            @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
@@ -71,6 +71,7 @@ const handleHover = (hovering, ...groups) => {
   })
 }
 </script>
+
 
 <style scoped>
 /* Estilos de tu componente */
