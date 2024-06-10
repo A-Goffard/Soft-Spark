@@ -1,23 +1,39 @@
 <template>
-    <div class="general">
+  <div class="general">
+    <div class="main">
+      <h1>Assessment</h1>
+      <DestinationList />
+      <div class="cards">
+        <AProtocol/>
+        <GerenicPlacementGrid/>
+        <SpecificPlacementGrids/>
+        <GenericAssessmentGrid/>
+        <SpecificAssessmentGrids/>
+        <SoftSkillsChecklistForTrainers/>
+        <MethodsWBL/>
 
-      <div class="main">
-        <h1>Evaluación</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, vero rem natus dicta voluptate commodi officia sunt quis vitae, tempore soluta consectetur eum in ullam id, voluptas ipsum. Vero, blanditiis!</p>
-        <button>Impact measurement report</button>
       </div>
-    
-    
-    
-    
+      
     </div>
-
-
-  </template>
   
+
+</div>
+
+</template>
+
 <style scoped>
-
+.general {
+  padding-top: 5rem;
+}
 </style>
-  
-  <script setup>
-  </script>
+
+<script setup>
+import DestinationList from '../components/DestinationList.vue';
+import AProtocol from '../components/assessment/AProtocol.vue';
+import GerenicPlacementGrid from '../components/assessment/GerenicPlacementGrid.vue';
+import SpecificPlacementGrids from '../components/assessment/SpecificPlacementGrids.vue';
+import GenericAssessmentGrid from '../components/assessment/GenericAssessmentGrid.vue';
+import SpecificAssessmentGrids from '../components/assessment/SpecificAssessmentGrids.vue';
+import SoftSkillsChecklistForTrainers from '../components/assessment/SoftSkillsChecklistForTrainers.vue';
+import MethodsWBL from '../components/assessment/MethodsWBL.vue';
+ </script>

@@ -9,12 +9,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 CORS(app, resources={r"/*": {"origins": "http://localhost:8080"}})  # Permitir solicitudes CORS solo desde http://localhost:8080
 
-class PDFFile(db.Model):
+class File(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     filename = db.Column(db.String(150), nullable=False)
     file_data = db.Column(db.LargeBinary, nullable=False)
-    version = db.Column(db.String(50), nullable=False)  # Nueva columna para la versión
-    language = db.Column(db.String(50), nullable=False)  # Nueva columna para el idioma
+    version = db.Column(db.String(50), nullable=False)  # Columna para la versión
+    language = db.Column(db.String(50), nullable=False)  # Columna para el idioma
 
 # Inicializa la base de datos
 def create_tables():
@@ -24,11 +24,11 @@ def create_tables():
 # Ruta raíz para pruebas
 @app.route('/')
 def index():
-    return 'API de gestión de archivos PDF'
+    return 'API de gestión de archivos'
 
-# Ruta para subir un archivo PDF
+# Ruta para subir un archivo
 @app.route('/upload', methods=['POST'])
-def upload_pdf():
+def upload_file():
     if 'file' not in request.files or 'version' not in request.form or 'language' not in request.form:
         return 'Missing required data', 400
     
@@ -39,24 +39,35 @@ def upload_pdf():
     if file.filename == '':
         return 'No selected file', 400
     
-    pdf_file = PDFFile(filename=file.filename, file_data=file.read(), version=version, language=language)
-    db.session.add(pdf_file)
+    new_file = File(filename=file.filename, file_data=file.read(), version=version, language=language)
+    db.session.add(new_file)
     db.session.commit()
     return f'File {file.filename} uploaded successfully', 200
 
-@app.route('/pdf/<int:id>', methods=['GET'])
-def get_pdf(id):
-    pdf_file = PDFFile.query.get(id)
-    if pdf_file is None:
+@app.route('/file/<int:id>', methods=['GET'])
+def get_file(id):
+    file_record = File.query.get(id)
+    if file_record is None:
         return 'File not found', 404
-    return send_file(BytesIO(pdf_file.file_data), download_name=pdf_file.filename, as_attachment=True, mimetype='application/pdf')
+    
+    mime_type = ''
+    if file_record.filename.endswith('.pdf'):
+        mime_type = 'application/pdf'
+    elif file_record.filename.endswith('.doc') or file_record.filename.endswith('.docx'):
+        mime_type = 'application/msword'
+    elif file_record.filename.endswith('.zip'):
+        mime_type = 'application/zip'
+    else:
+        mime_type = 'application/octet-stream'
+    
+    return send_file(BytesIO(file_record.file_data), download_name=file_record.filename, as_attachment=True, mimetype=mime_type)
 
-# Ruta para obtener una lista de archivos PDF
-@app.route('/pdf-list', methods=['GET'])
-def get_pdf_list():
-    pdf_files = PDFFile.query.all()
-    pdf_list = [{"id": pdf.id, "filename": pdf.filename, "version": pdf.version, "language": pdf.language} for pdf in pdf_files]
-    return jsonify(pdf_list)
+# Ruta para obtener una lista de archivos
+@app.route('/file-list', methods=['GET'])
+def get_file_list():
+    files = File.query.all()
+    file_list = [{"id": file.id, "filename": file.filename, "version": file.version, "language": file.language} for file in files]
+    return jsonify(file_list)
 
 if __name__ == '__main__':
     create_tables()

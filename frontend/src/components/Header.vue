@@ -44,6 +44,7 @@ h1 {
 }
 .inner-header {
   position: relative;
+  padding-top: 5rem;
 }
 .triangulitos {
   position: relative;
