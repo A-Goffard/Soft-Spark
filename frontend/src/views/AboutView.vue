@@ -14,43 +14,43 @@
     <div class="mainJ">
       <div class="imgSponsors">
         <a href="https://www.chanceb-gruppe.at/" target="_blank" class="sponsors soft1 soft2"
-           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/CHance B.png" alt="CHANGE B" class="sponsors">
         </a>
         <a href="https://www.center-db.si/" target="_blank" class="sponsors soft1 soft2"
-           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/CUDV.png" alt="CUDV DRAGA" class="sponsors">
         </a>
         <a href="https://www.discovia.fr/home" target="_blank" class="sponsors soft2"
-           @mouseover="handleHover(true, 'soft2')" @mouseout="handleHover(false, 'soft2')">
+          @mouseover="handleHover(true, 'soft2')" @mouseout="handleHover(false, 'soft2')">
           <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="DISCOVIA" class="sponsors" style="width: 20rem;">
         </a>
         <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors soft1 soft2"
-           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/le-plope-1-3.gif" alt="LE PLOPE" class="sponsors">
         </a>
         <a href="http://www.workinn.be/" target="_blank" class="sponsors soft1 soft2"
-           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
-          <img src="/public/sponsors/logo_workinn.png" alt="WORK INN" class="sponsors">
+          @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          <img src="/public/sponsors/logo_workinn.png" alt="WORK INN" class="sponsors" id="workinn">
         </a>
         <a href="https://www.regiedesecrivains.com/" target="_blank" class="sponsors soft1 soft2"
-           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/logo régie.jpg" alt="REGIE DE ESCRIVANS" class="sponsors">
         </a>
         <a href="https://www.grupopenascal.com/" target="_blank" class="sponsors soft1 soft2"
-           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/Penascal.png" alt="PENASCAL KOOPERATIVA" class="sponsors">
         </a>
         <a href="http://www.solivers.eu/accueil" target="_blank" class="sponsors soft1 soft2"
-           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/solivers-2017.png" alt="SOLIVERS" class="solivers">
         </a>
         <a href="https://www.e2oespana.org/" target="_blank" class="sponsors soft1"
-           @mouseover="handleHover(true, 'soft1')" @mouseout="handleHover(false, 'soft1')">
-          <img src="/public/sponsors/escuelaLogo.png" alt="E2o ESPAÑA" class="sponsors">
+          @mouseover="handleHover(true, 'soft1')" @mouseout="handleHover(false, 'soft1')">
+          <img src="/public/sponsors/escuelaLogo.png" alt="E2o ESPAÑA" class="sponsors" id="escuela">
         </a>
       </div>
-      
+
       <div class="socios">
         <img :class="{ grayscale: !hoverSoft1 }" src="/public/logos/softskill1.png" id="logoSoft1" alt="">
         <img :class="{ grayscale: !hoverSoft2 }" src="/public/logos/softskill2.png" id="logoSoft2" alt="">
@@ -75,7 +75,6 @@ const handleHover = (hovering, ...groups) => {
 
 
 <style scoped>
-/* Estilos de tu componente */
 h1 {
   color: black;
   text-align: center;
@@ -83,7 +82,7 @@ h1 {
 }
 
 .mainJ {
-  max-width: 80%;
+  width: auto;;
   background-color: white;
   padding-bottom: 2rem;
   margin: auto;
@@ -116,25 +115,26 @@ h1 {
   margin: auto;
   text-align: center;
 }
-
 .imgSponsors {
   margin: auto;
-  width: auto;
+  width: 60%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 4rem;
   padding: 2rem;
 }
-
-.main {
-  max-width: 75%;
+#escuela{
+  width: 10rem;
 }
-
+#workinn{
+  width: 11rem;
+}
 .sponsors {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
+  width: auto;
 }
 
 .solivers {
@@ -152,7 +152,7 @@ h1 {
   align-items: center;
   margin: auto;
   border: solid 1px rgb(#ffc000);
-  width: 60%;
+  width: 50%;
   border-radius: 4rem;
   -webkit-box-shadow: 0px 0px 43px 3px rgba(255, 192, 0, 1);
   -moz-box-shadow: 0px 0px 43px 3px rgba(255, 192, 0, 1);
@@ -161,13 +161,11 @@ h1 {
 }
 
 #logoSoft1 {
-  width: 21rem;
-  height: 13rem;
+  width: 40%; 
 }
 
 #logoSoft2 {
-  width: 21rem;
-  height: 13rem;
+  width: 40%;
 }
 
 .grayscale {
@@ -182,13 +180,64 @@ h1 {
 }
 
 .sponsors:hover img {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
-
+@media (max-width: 1425px){
+  .imgSponsors {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    
+  }
+}
+@media (max-width: 1150px){
+  #logoSoft1 {
+    width: 20rem;
+    height: 12rem;
+  }
+  #logoSoft2 {
+    width: 20rem;
+    height: 12rem;
+  }
+  .imgSponsors{
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+}
+@media (max-width: 1090px){
+  #logoSoft1 {
+    width: 19rem;
+    height: 11rem;
+  }
+  #logoSoft2 {
+    width: 19rem;
+    height: 11rem;
+  }
+}
+@media (max-width: 1040px){
+  #logoSoft1 {
+    width: 18rem;
+    height: 10rem;
+  }
+  #logoSoft2 {
+    width: 17rem;
+    height: 10rem;
+  }
+}
+@media (max-width: 1000px){
+  #logoSoft1 {
+    width: 17rem;
+    height: 10rem;
+  }
+  #logoSoft2 {
+    width: 18rem;
+    height: 10rem;
+  }
+}
 @media (max-width: 750px) {
   p {
     font-size: 1.3rem;
   }
 }
+
 </style>
