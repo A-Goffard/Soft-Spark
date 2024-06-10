@@ -9,16 +9,16 @@
 
 <script setup>
 import { ref } from 'vue';
-import Slide from '../components/Slide.vue'
+import Slide from '../components/Slide.vue';
 
 const slides = ref([
-  { src: 'src/static/1.png' },
-  { src: 'src/static/2.png' },
-  { src: 'src/static/3.png' },
-  { src: 'src/static/4.png' },
-  { src: 'src/static/5.png' },
-  { src: 'src/static/6.png' },
-  { src: 'src/static/7.png' }
+  { src: '/1.png' },
+  { src: '/2.png' },
+  { src: '/3.png' },
+  { src: '/4.png' },
+  { src: '/5.png' },
+  { src: '/6.png' },
+  { src: '/7.png' }
 ]);
 </script>
 
