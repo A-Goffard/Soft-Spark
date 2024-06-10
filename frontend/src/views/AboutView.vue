@@ -14,7 +14,7 @@
     <div class="mainJ">
       <div class="imgSponsors">
         <a href="https://www.chanceb-gruppe.at/" target="_blank" class="sponsors">
-          <img v-change-image-on-hover="['/public/logos/softskill1.png', ]" src="/public/sponsors/CHance B.png" alt="" class="sponsors">
+          <img src="/public/sponsors/CHance B.png" alt="" class="sponsors">
         </a>
         <a href="https://www.center-db.si/" target="_blank" class="sponsors">
           <img src="/public/sponsors/CUDV.png" alt="" class="sponsors">
