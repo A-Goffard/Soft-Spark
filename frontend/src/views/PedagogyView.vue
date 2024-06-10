@@ -2,6 +2,7 @@
     <div class="general">
       <div class="main">
         <h1>Pedagogía</h1>
+        <Cards />
         <DestinationList />
         <div class="cards">
           <Catalogue/>
@@ -35,6 +36,7 @@
 </style>
 
 <script setup>
+  import Cards from '../components/Cards.vue';
   import DestinationList from '../components/DestinationList.vue';
   import Catalogue from '../components/pedagogy/Catalogue.vue';
   import SSPictograms from '../components/pedagogy/SSPictograms.vue';
