@@ -89,7 +89,7 @@ h2, h3, h4, p {
   margin: 1rem;
 }
 
-.img {
+
 .img {
   width: 90%;
   margin: 1rem;
