@@ -1,7 +1,7 @@
 <template>
     <div :class="['container', id]">
       <div :class="['image', imageId]">
-        <div class="city"></div>
+        <img :src="imageUrl" :alt="title" class="city-image" />
       </div>
       <div :class="['story', storyId]">
         <div class="info">
@@ -20,7 +20,8 @@
     imageId: String,
     storyId: String,
     title: String,
-    description: String
+    description: String,
+    imageUrl: String 
   })
   </script>
   
@@ -46,6 +47,11 @@
     width: 100%;
     height: 50%;
   }
+  .city-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Mantener la proporción de la imagen */
+}
   
   #i0, #i1, #i2, #i3, #i4, #i5 {
     background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
