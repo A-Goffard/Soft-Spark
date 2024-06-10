@@ -39,8 +39,8 @@
         </a>
       </div>
       <div class="socios">
-        <img v-change-image-on-hover="['/public/logos/softskill1.png', '/public/logos/logoBlackAndWhite1.png']" src="/public/logos/logoBlackAndWhite1.png" id="logoSoft1" alt="">
-        <img v-change-image-on-hover="['/public/logos/softskill2.png', '/public/logos/logoBlackAndWhite2.png']" src="/public/logos/logoBlackAndWhite2.png" id="logoSoft2" alt="">
+        <img src="/public/logos/softskill1.png" id="logoSoft1" alt="">
+        <img src="/public/logos/softskill2.png" id="logoSoft2" alt="">
       </div>
     </div>
   </div>
