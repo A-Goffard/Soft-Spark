@@ -25,17 +25,20 @@
         <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors">
           <img src="/public/sponsors/le-plope-1-3.gif" alt="" class="sponsors">
         </a>
-        <a href="https://www.regiedesecrivains.com/" target="_blank" class="sponsors">
-          <img src="/public/sponsors/logo régie.jpg" alt="" class="sponsors">
-        </a>
         <a href="http://www.workinn.be/" target="_blank" class="sponsors">
           <img src="/public/sponsors/logo_workinn.png" alt="" class="sponsors">
+        </a>
+        <a href="https://www.regiedesecrivains.com/" target="_blank" class="sponsors">
+          <img src="/public/sponsors/logo régie.jpg" alt="" class="sponsors">
         </a>
         <a href="https://www.grupopenascal.com/" target="_blank" class="sponsors">
           <img src="/public/sponsors/Penascal.png" alt="" class="sponsors">
         </a>
         <a href="http://www.solivers.eu/accueil" target="_blank" class="sponsors">
           <img src="/public/sponsors/solivers-2017.png" alt="" class="solivers">
+        </a>
+        <a href="http://www.solivers.eu/accueil" target="_blank" class="sponsors">
+          <img src="/public/sponsors/escuelaLogo.png" alt="" class="sponsors">
         </a>
       </div>
       <div class="socios">
@@ -97,7 +100,7 @@ h1 {
   margin: auto;
   width: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   padding: 2rem;
 }
@@ -139,11 +142,13 @@ h1 {
 #logoSoft1 {
   width: 21rem;
   height: 13rem;
+  filter: grayscale(1);
 }
 
 #logoSoft2 {
   width: 21rem;
   height: 13rem;
+  filter: grayscale(1);
 }
 
 .sponsors img {
