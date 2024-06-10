@@ -11,7 +11,9 @@
   </template>
   
 <style scoped>
-
+.general {
+  padding-top: 5rem;
+}
 </style>
   
   <script setup>
