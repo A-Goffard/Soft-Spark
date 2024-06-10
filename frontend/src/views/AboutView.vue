@@ -13,38 +13,41 @@
     </div>
     <div class="mainJ">
       <div class="imgSponsors">
-        <a href="https://www.chanceb-gruppe.at/" target="_blank" class="sponsors"
-           @mouseover="hoverFirstGroup(true)" @mouseout="hoverFirstGroup(false)">
-          <img src="/public/sponsors/CHance B.png" alt="" class="sponsors">
+        <a href="https://www.chanceb-gruppe.at/" target="_blank" class="sponsors soft1 soft2"
+           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          <img src="/public/sponsors/CHance B.png" alt="CHANGE B" class="sponsors">
         </a>
-        <a href="https://www.center-db.si/" target="_blank" class="sponsors"
-           @mouseover="hoverFirstGroup(true)" @mouseout="hoverFirstGroup(false)">
-          <img src="/public/sponsors/CUDV.png" alt="" class="sponsors">
+        <a href="https://www.center-db.si/" target="_blank" class="sponsors soft1 soft2"
+           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          <img src="/public/sponsors/CUDV.png" alt="CUDV DRAGA" class="sponsors">
         </a>
-        <a href="https://www.discovia.fr/home" target="_blank" class="sponsors"
-           @mouseover="hoverFirstGroup(true)" @mouseout="hoverFirstGroup(false)">
-          <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="" class="sponsors">
+        <a href="https://www.discovia.fr/home" target="_blank" class="sponsors soft2"
+           @mouseover="handleHover(true, 'soft2')" @mouseout="handleHover(false, 'soft2')">
+          <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="DISCOVIA" class="sponsors">
         </a>
-        <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors"
-           @mouseover="hoverLastGroup(true)" @mouseout="hoverLastGroup(false)">
-          <img src="/public/sponsors/le-plope-1-3.gif" alt="" class="sponsors">
+        <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors soft1 soft2"
+           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          <img src="/public/sponsors/le-plope-1-3.gif" alt="LE PLOPE" class="sponsors">
         </a>
-        <a href="http://www.workinn.be/" target="_blank" class="sponsors"
-           @mouseover="hoverLastGroup(true)" @mouseout="hoverLastGroup(false)">
-          <img src="/public/sponsors/logo_workinn.png" alt="" class="sponsors">
+        <a href="http://www.workinn.be/" target="_blank" class="sponsors soft1 soft2"
+           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          <img src="/public/sponsors/logo_workinn.png" alt="WORK INN" class="sponsors">
         </a>
-        <a href="https://www.regiedesecrivains.com/" target="_blank" class="sponsors"
-           @mouseover="hoverLastGroup(true)" @mouseout="hoverLastGroup(false)">
-          <img src="/public/sponsors/logo régie.jpg" alt="" class="sponsors">
+        <a href="https://www.regiedesecrivains.com/" target="_blank" class="sponsors soft1 soft2"
+           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          <img src="/public/sponsors/logo régie.jpg" alt="REGIE DE ESCRIVANS" class="sponsors">
         </a>
-        <a href="https://www.grupopenascal.com/" target="_blank" class="sponsors">
-          <img src="/public/sponsors/Penascal.png" alt="" class="sponsors">
+        <a href="https://www.grupopenascal.com/" target="_blank" class="sponsors soft1 soft2"
+           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          <img src="/public/sponsors/Penascal.png" alt="PENASCAL KOOPERATIVA" class="sponsors">
         </a>
-        <a href="http://www.solivers.eu/accueil" target="_blank" class="sponsors">
-          <img src="/public/sponsors/solivers-2017.png" alt="" class="solivers">
+        <a href="http://www.solivers.eu/accueil" target="_blank" class="sponsors soft1 soft2"
+           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
+          <img src="/public/sponsors/solivers-2017.png" alt="SOLIVERS" class="solivers">
         </a>
-        <a href="http://www.solivers.eu/accueil" target="_blank" class="sponsors">
-          <img src="/public/sponsors/escuelaLogo.png" alt="" class="sponsors">
+        <a href="https://www.e2oespana.org/" target="_blank" class="sponsors soft1"
+           @mouseover="handleHover(true, 'soft1')" @mouseout="handleHover(false, 'soft1')">
+          <img src="/public/sponsors/escuelaLogo.png" alt="E2o ESPAÑA" class="sponsors">
         </a>
       </div>
       <div class="socios">
@@ -61,12 +64,11 @@ import { ref } from 'vue'
 const hoverSoft1 = ref(false)
 const hoverSoft2 = ref(false)
 
-const hoverFirstGroup = (hovering) => {
-  hoverSoft1.value = hovering
-}
-
-const hoverLastGroup = (hovering) => {
-  hoverSoft2.value = hovering
+const handleHover = (hovering, ...groups) => {
+  groups.forEach(group => {
+    if (group === 'soft1') hoverSoft1.value = hovering
+    if (group === 'soft2') hoverSoft2.value = hovering
+  })
 }
 </script>
 
