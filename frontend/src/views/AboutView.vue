@@ -204,6 +204,8 @@ p{
   .imgSponsors {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
+    align-items: center;
+    margin: auto;
   }
   .general{
     grid-template-columns: repeat(1, 1fr);
@@ -250,7 +252,6 @@ p{
     margin-bottom: 10rem;
   }
 }
-
 @media (max-width: 1090px){
   #logoSoft1 {
     width: 19rem;
@@ -287,7 +288,7 @@ p{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10rem;
+    margin-bottom: 10rem
   }
 }
 @media (max-width: 750px) {
@@ -298,7 +299,9 @@ p{
   }
   .header{
     height: 29rem;
-    border: solid 1px ;
+    text-align: center;
+    justify-content: center;
+    width: 40rem;
   }
   .mainJ {
     width: 100%;
@@ -356,7 +359,10 @@ p{
   }
   .header{
     height: 33rem;
-    border: solid 1px ;
+    text-align: center;
+    justify-content: center;
+    width: 29rem;
+
   }
   h1{
     margin: 0;
