@@ -16,7 +16,7 @@
       <img class="img" src="/public/2.png" alt="Skills">
       <p>{{ $t('message.paragraph5') }}</p>
       <p>{{ $t('message.paragraph6') }}</p>
-      <button class="btn" @click="handleFile($t('message.button1'))">{{ $t('message.button1') }}</button>
+      <button class="btn" @click="handleFile($t('message.button1'))">{{ $t('message.btnhomed') }}</button>
 
 
     </div>

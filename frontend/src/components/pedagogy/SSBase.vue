@@ -9,7 +9,7 @@
             
             <div class="comp-downloads">
 
-                <button class="btn" @click="handleFile($t('message.pedagogy3download1'))">{{ $t('message.pedagogy3download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.pedagogy3download1'))">{{ $t('message.btnpedagogy3download1') }}</button>
 
             </div>
             

@@ -8,7 +8,7 @@
             </div>
             
             <div class="comp-downloads">
-                <button class="btn" @click="handleFile($t('message.assessment2download1'))">{{ $t('message.assessment2download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.assessment2download1'))">{{ $t('message.btnassessment2download1') }}</button>
             </div>
             
         </div>

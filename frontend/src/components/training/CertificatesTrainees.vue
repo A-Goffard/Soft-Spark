@@ -9,10 +9,10 @@
             
             <div class="comp-downloads">
 
-                <button class="btn" @click="handleFile($t('/level 1/message.trainingmaterial3download1'))">{{ $t('message.trainingmaterial3download1') }}</button>
-                <button class="btn" @click="handleFile($t('/level 2/message.trainingmaterial3download1'))">{{ $t('message.trainingmaterial3download2') }}</button>
-                <button class="btn" @click="handleFile($t('/level 3/message.trainingmaterial3download1'))">{{ $t('message.trainingmaterial3download3') }}</button>
-                <button class="btn" @click="handleFile($t('/level 4/message.trainingmaterial3download1'))">{{ $t('message.trainingmaterial3download4') }}</button>
+                <button class="btn" @click="handleFile($t('/level 1/message.trainingmaterial3download1'))">{{ $t('message.btntrainingmaterial3download1') }}</button>
+                <button class="btn" @click="handleFile($t('/level 2/message.trainingmaterial3download1'))">{{ $t('message.btntrainingmaterial3download2') }}</button>
+                <button class="btn" @click="handleFile($t('/level 3/message.trainingmaterial3download1'))">{{ $t('message.btntrainingmaterial3download3') }}</button>
+                <button class="btn" @click="handleFile($t('/level 4/message.trainingmaterial3download1'))">{{ $t('message.btntrainingmaterial3download4') }}</button>
 
             </div>
             

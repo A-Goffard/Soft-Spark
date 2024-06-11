@@ -9,13 +9,13 @@
             
             <div class="comp-downloads">
             
-                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.pedagogy7download1') }}</button>
-                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.pedagogy7download1') }}</button>
-                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.pedagogy7download1') }}</button>
-                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.pedagogy7download1') }}</button>
-                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.pedagogy7download1') }}</button>
-                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.pedagogy7download1') }}</button>
-                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.pedagogy7download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.btnpedagogy7download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.btnpedagogy7download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.btnpedagogy7download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.btnpedagogy7download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.btnpedagogy7download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.btnpedagogy7download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.pedagogy7download1'))">{{ $t('message.btnpedagogy7download1') }}</button>
 
             
             </div>

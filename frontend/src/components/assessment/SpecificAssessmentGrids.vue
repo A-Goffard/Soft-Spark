@@ -8,13 +8,13 @@
   
         <div class="comp-downloads">
 
-          <button class="btn" @click="handleFile($t('message.assessment5download1'))">{{ $t('message.assessment5download1') }}</button>
-          <button class="btn" @click="handleFile($t('message.assessment5download2'))">{{ $t('message.assessment5download2') }}</button>
-          <button class="btn" @click="handleFile($t('message.assessment5download3'))">{{ $t('message.assessment5download3') }}</button>
-          <button class="btn" @click="handleFile($t('message.assessment5download4'))">{{ $t('message.assessment5download4') }}</button>
-          <button class="btn" @click="handleFile($t('message.assessment5download5'))">{{ $t('message.assessment5download5') }}</button>
-          <button class="btn" @click="handleFile($t('message.assessment5download6'))">{{ $t('message.assessment5download6') }}</button>
-          <button class="btn" @click="handleFile($t('message.assessment5download7'))">{{ $t('message.assessment5download7') }}</button>
+          <button class="btn" @click="handleFile($t('message.assessment5download1'))">{{ $t('message.btnassessment5download1') }}</button>
+          <button class="btn" @click="handleFile($t('message.assessment5download2'))">{{ $t('message.btnassessment5download2') }}</button>
+          <button class="btn" @click="handleFile($t('message.assessment5download3'))">{{ $t('message.btnassessment5download3') }}</button>
+          <button class="btn" @click="handleFile($t('message.assessment5download4'))">{{ $t('message.btnassessment5download4') }}</button>
+          <button class="btn" @click="handleFile($t('message.assessment5download5'))">{{ $t('message.btnassessment5download5') }}</button>
+          <button class="btn" @click="handleFile($t('message.assessment5download6'))">{{ $t('message.btnassessment5download6') }}</button>
+          <button class="btn" @click="handleFile($t('message.assessment5download7'))">{{ $t('message.btnassessment5download7') }}</button>
 
         </div>
       </div>
