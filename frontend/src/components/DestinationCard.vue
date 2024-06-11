@@ -56,18 +56,10 @@ const emits = defineEmits(['click']);
   object-fit: contain; /* Mantener la proporción de la imagen */
 }
 
-#i0, #i1, #i2, #i3, #i4, #i5 {
-  background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
-}
-
 .story {
   padding: 15px;
   height: 50%;
   background: linear-gradient(to bottom, #eba65b 0%, #d99267 40%);
-}
-
-#s1, #s2, #s3, #s4, #s5 {
-  background: linear-gradient(to top, #5b62a2 0%, #7b88d1 100%);
 }
 
 .info h3 {

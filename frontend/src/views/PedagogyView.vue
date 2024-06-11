@@ -13,7 +13,6 @@
           :title="destination.title"
           :description="destination.description"
           :image-url="destination.imageUrl"
-          :component-name="destination.componentName"
           @click="changeActiveComponent(destination.componentName)"
         />
       </div>
@@ -45,8 +44,8 @@ const destinations = ref([
   { title: 'Wheels', description: 'Target 4 description', imageUrl: '/4.png', componentName: 'Wheels' },
   { title: 'Summary', description: 'Target 5 description', imageUrl: '/5.png', componentName: 'Summary' },
   { title: 'Zerobarrier', description: 'Target 6 description', imageUrl: '/6.png', componentName: 'Zerobarrier' },
-  { title: 'Occupational', description: 'Target 6 description', imageUrl: '/7.png', componentName: 'Occupational' },
-  { title: 'CorporateCulture', description: 'Target 6 description', imageUrl: '/8.png', componentName: 'CorporateCulture' },
+  { title: 'Occupational', description: 'Target 7 description', imageUrl: '/7.png', componentName: 'Occupational' },
+  { title: 'CorporateCulture', description: 'Target 8 description', imageUrl: '/8.png', componentName: 'CorporateCulture' },
 ]);
 
 const activeComponent = ref('');
