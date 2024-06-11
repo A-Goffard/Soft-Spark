@@ -44,7 +44,9 @@ const destinations = ref([
   { title: 'SSBase', description: 'Target 3 description', imageUrl: '/3.png', componentName: 'SSBase' },
   { title: 'Wheels', description: 'Target 4 description', imageUrl: '/4.png', componentName: 'Wheels' },
   { title: 'Summary', description: 'Target 5 description', imageUrl: '/5.png', componentName: 'Summary' },
-  { title: 'Zerobarrier', description: 'Target 6 description', imageUrl: '/6.png', componentName: 'Zerobarrier' }
+  { title: 'Zerobarrier', description: 'Target 6 description', imageUrl: '/6.png', componentName: 'Zerobarrier' },
+  { title: 'Occupational', description: 'Target 6 description', imageUrl: '/7.png', componentName: 'Occupational' },
+  { title: 'CorporateCulture', description: 'Target 6 description', imageUrl: '/8.png', componentName: 'CorporateCulture' },
 ]);
 
 const activeComponent = ref('');

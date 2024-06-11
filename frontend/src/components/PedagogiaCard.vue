@@ -23,23 +23,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+
 import DestinationCard from './DestinationCard.vue'
 
-const destinations = ref([
-  { title: 'Catalogue', description: 'Target 1 description', imageUrl: '/1.png', componentName: 'Catalogue' },
-  { title: 'SSPictograms', description: 'Target 2 description', imageUrl: '/2.png', componentName: 'SSPictograms' },
-  { title: 'SSBase', description: 'Target 3 description', imageUrl: '/3.png', componentName: 'SSBase' },
-  { title: 'Wheels', description: 'Target 4 description', imageUrl: '/4.png', componentName: 'Wheels' },
-  { title: 'Summary', description: 'Target 5 description', imageUrl: '/5.png', componentName: 'Summary' },
-  { title: 'Zerobarrier', description: 'Target 6 description', imageUrl: '/6.png', componentName: 'Zerobarrier' }
-]);
-
-const activeComponent = ref('');
-
-const changeActiveComponent = (componentName) => {
-  activeComponent.value = componentName;
-};
 </script>
 
 <style scoped>
