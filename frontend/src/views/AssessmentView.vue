@@ -16,11 +16,11 @@
           @click="changeActiveComponent(destination.componentName)"
         />
       </div>
+
       <div class="cards">
         <component :is="getComponent(activeComponent)" />
       </div>
     </div>
-  
 
 </div>
 
@@ -49,7 +49,7 @@
   perspective: 1000px;
 }
 </style>
-../components/PedagogiaCard.vue
+
 <script setup>
 import { ref } from 'vue';
 import DestinationCard from '../components/DestinationCard.vue';
