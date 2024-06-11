@@ -1,28 +1,59 @@
 <template>
   <div class="container">
     <div class="navbar-trigger" @click="toggleNavbar">
-      <img src="/iconoaccesibilidad.png" alt="Menu Icon">
+      <img src="/accesibility.png" alt="Menu Icon">
     </div>
     
     <div :class="['popup-navbar', { 'visible': isNavbarVisible }]" ref="popupNavbar">
       <ul>
         <li><h3>Herramientas de accesibilidad</h3></li>
-        <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">{{ $t('text_increase') }}</button></li>
-        <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">{{ $t('text_decrease') }}</button></li>
-        <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">{{ $t('text_reset') }}</button></li>
-        <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">{{ $t('high_contrast') }}</button></li>
-        <li><button @click="toggleNegativeContrast"><img src="/contrastenegativo.png" alt="Icon 5">{{ $t('negative_contrast') }}</button></li>
-        <li><button @click="handleButtonClick(6)"><img src="/readablefont.png" alt="Icon 6">{{ $t('readable_font') }}</button></li>
-        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">{{ $t('read_aloud') }}</button></li>
-        <li><button @click="toggleGreyScale"><img src="/greyscale.png" alt="Icon 8">{{ $t('grey_scale') }}</button></li>
+        <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">Incremento de texto</button></li>
+        <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">Decremento de texto</button></li>
+        <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">Restablecer texto</button></li>
+        <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">Alto contraste</button></li>
+        <li><button @click="toggleNegativeContrast"><img src="/contrastenegativo.png" alt="Icon 5">Contraste Negativo</button></li>
+        <li><button @click="handleButtonClick(6)"><img src="/readablefont.png" alt="Icon 6">Fuente Legible</button></li>
+        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
+        <li><button @click="toggleGreyScale"><img src="/greyscale.png" alt="Icon 8">Escalas de grises</button></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, inject, onMounted, onBeforeUnmount } from 'vue';
 
+/* --------------------------------HIGH CONTRAST/GREY SCALE TOGGLE FUNCTION------------------ */
+
+const isHighContrast = ref(false);
+
+const isGreyScale = ref(false);
+const isNegativeContrast = inject('isNegativeContrast'); // Add this line
+const toggleNegativeContrast = inject('toggleNegativeContrast'); // Add this line
+
+const toggleHighContrast = () => {
+  isHighContrast.value = !isHighContrast.value;
+  if (isHighContrast.value) {
+    document.documentElement.style.setProperty('--bg-color', 'var(--high-contrast-bg)');
+    document.documentElement.style.setProperty('--text-color', 'var(--high-contrast-text)');
+  } else {
+    document.documentElement.style.setProperty('--bg-color', 'white');
+    document.documentElement.style.setProperty('--text-color', 'black');
+  }
+};
+
+/* ----------------GREYSCALE PART--------------- */
+
+const toggleGreyScale = () => {
+  isGreyScale.value = !isGreyScale.value;
+  if (isGreyScale.value) {
+    document.documentElement.style.filter = 'grayscale(100%)';
+  } else {
+    document.documentElement.style.filter = '';
+  }
+};
+
+/* ------------------------------POPUP NAVBAR------------------------ */
 const isNavbarVisible = ref(false);
 const popupNavbar = ref(null);
 
@@ -37,7 +68,7 @@ const handleClickOutside = (event) => {
   }
 };
 
-/* -----------------------INCREMENT, DECREMENT, RESET TEXT SIZE, AND TOGGLE HIGH CONTRAST------------------- */
+/* -----------------------INCREMENT, DECREMENT, RESET TEXT SIZE------------------ */
 const handleButtonClick = (itemNumber) => {
   console.log(`Button ${itemNumber} clicked`);
   // Add your button click handling logic here
@@ -57,86 +88,26 @@ const resetTextSize = () => {
   document.documentElement.style.fontSize = '';
 };
 
-/* --------------------------------HIGH CONTRAST TOGGLE FUNCTION------------------ */
-const isHighContrast = ref(false);
-
-const toggleHighContrast = () => {
-  isHighContrast.value = !isHighContrast.value;
-  if (isHighContrast.value) {
-    document.body.classList.add('high-contrast');
-  } else {
-    document.body.classList.remove('high-contrast');
-  }
-
-  console.log(`High contrast mode ${isHighContrast.value ? 'enabled' : 'disabled'}`);
-};
-
-/* ------------------------------NEGATIVE CONTRAST TOGGLE FUNCTION------------------ */
-const isNegativeContrast = ref(false);
-
-const toggleNegativeContrast = () => {
-  isNegativeContrast.value = !isNegativeContrast.value;
-  if (isNegativeContrast.value) {
-    document.body.classList.add('negative-contrast');
-  } else {
-    document.body.classList.remove('negative-contrast');
-  }
-
-  console.log(`Negative contrast mode ${isNegativeContrast.value ? 'enabled' : 'disabled'}`);
-};
-
-/* -----------------------------GREYSCALE TOGGLE FUNCTION--------------------------- */
-const isGreyScale = ref(false);
-
-const toggleGreyScale = () => {
-  isGreyScale.value = !isGreyScale.value;
-  if (isGreyScale.value) {
-    document.body.classList.add('grey-scale');
-    console.log("Greyscale mode enabled: body.classList ->", document.body.classList);
-  } else {
-    document.body.classList.remove('grey-scale');
-    console.log("Greyscale mode disabled: body.classList ->", document.body.classList);
-  }
-
-  console.log(`Grey scale mode ${isGreyScale.value ? 'enabled' : 'disabled'}`);
-};
-
 /* --------------------------------TEXT-TO-SPEECH FUNCTION------------------ */
 let speechSynthesisUtterance = null;
-let chunkIndex = 0;
-let chunks = [];
 
 const readPageAloud = () => {
-  const maxChunkLength = 160; // Maximum number of characters per chunk
-  const text = document.body.innerText;
-  chunks = text.match(new RegExp('.{1,' + maxChunkLength + '}', 'g'));
-  chunkIndex = 0;
-
   if (window.speechSynthesis.speaking) {
     window.speechSynthesis.cancel();
   }
 
-  speakChunk();
-};
-
-const speakChunk = () => {
-  if (chunkIndex >= chunks.length) return;
-
   speechSynthesisUtterance = new SpeechSynthesisUtterance();
-  speechSynthesisUtterance.lang = 'es-ES';
-  speechSynthesisUtterance.text = chunks[chunkIndex];
+  speechSynthesisUtterance.lang = 'es-ES'; // Set the language to Spanish (Spain)
+  speechSynthesisUtterance.text = document.body.innerText;
   speechSynthesisUtterance.pitch = 1;
   speechSynthesisUtterance.rate = 1;
 
   speechSynthesisUtterance.onend = () => {
-    chunkIndex++;
-    speakChunk();
+    console.log('Speech synthesis finished.');
   };
 
   speechSynthesisUtterance.onerror = (event) => {
     console.error('Speech synthesis error:', event.error);
-    chunkIndex++;
-    speakChunk();
   };
 
   window.speechSynthesis.speak(speechSynthesisUtterance);
@@ -153,6 +124,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+
 .container {
   position: relative;
 }
@@ -177,7 +149,7 @@ onBeforeUnmount(() => {
   right: -250px; /* Start off-screen */
   transform: translateY(-50%);
   width: 250px;
-  background-color: greenyellow;
+  background-color: #ffff00bb;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   z-index: 999; /* Ensure the navbar is above other content */
   transition: right 0.3s ease-in-out;
@@ -211,7 +183,7 @@ onBeforeUnmount(() => {
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: greenyellow;
+  background-color: #ffff00bb;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -227,23 +199,5 @@ onBeforeUnmount(() => {
 .popup-navbar button:hover {
   background-color: red;
 }
-
-body.high-contrast {
-  background-color: black;
-  color: yellow;
-}
-
-body.negative-contrast {
-  background-color: black;
-  color: white;
-}
-
-body.negative-contrast * {
-  background-color: inherit;
-  color: inherit;
-}
-
-body.grey-scale {
-  filter: grayscale(100%) !important;
-}
 </style>
+

@@ -26,6 +26,8 @@
 </template>
 
 <style scoped>
+
+
 .hometext{
   padding-top: 2rem;
   display: flex;
@@ -36,6 +38,7 @@
   text-align: center;
   background: linear-gradient(var(--ligthorange) 0%, var(--white) 100%);
 }
+
 .text {
   max-width: 75rem;
   margin: auto;

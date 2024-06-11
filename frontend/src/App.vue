@@ -7,15 +7,25 @@ import PopupNavbar from './components/PopupNavbar.vue';
 
 
 const isHighContrast = ref(false);
+const isGreyScale = ref(false);
+const isNegativeContrast = ref(false); // Add this line
 
 provide('isHighContrast', isHighContrast);
 provide('toggleHighContrast', () => {
   isHighContrast.value = !isHighContrast.value;
 });
+provide('isGreyScale', isGreyScale); // Add this line
+provide('toggleGreyScale', () => {
+  isGreyScale.value = !isGreyScale.value;
+});
+provide('isNegativeContrast', isNegativeContrast); // Add this line
+provide('toggleNegativeContrast', () => {
+  isNegativeContrast.value = !isNegativeContrast.value;
+}); // Add this line
 </script>
 
 <template>
-    <div :class="['general', { 'high-contrast': isHighContrast }]">
+    <div :class="['general', { 'high-contrast': isHighContrast, 'negative-contrast': isNegativeContrast, 'grey-scale': isGreyScale }]">
     <NavBar />
     <LanguageSelector />
     <main class="content">
@@ -29,13 +39,6 @@ provide('toggleHighContrast', () => {
 </template>
 
 <style>
-:root {
-  --bg-color: white;
-  --text-color: black;
-  --high-contrast-bg: black;
-  --high-contrast-text: yellow;
-}
-
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -45,6 +48,11 @@ body {
 body.high-contrast {
   background-color: var(--high-contrast-bg);
   color: var(--high-contrast-text);
+}
+
+body.negative-contrast {
+  background-color: var(--negative-contrast-bg);
+  color: var(--negative-contrast-text);
 }
 
 
@@ -57,6 +65,14 @@ body.high-contrast {
 }
 
 :root {
+  --bg-color: white ;
+  --text-color: black ;
+  --high-contrast-bg: black;
+  --high-contrast-text: yellow;
+  --negative-contrast-bg: black; /* Invert these colors as needed */
+  --negative-contrast-text: white; /* Invert these colors as needed */
+  --ligthorange: #ffcc99;
+
   --black: #000000;
   --white: #ffffff;
 
@@ -83,6 +99,8 @@ body.high-contrast {
   cursor: default;
   
 }
+
+/* Add the necessary styles for negative contrast here */
 
 
 h2, h3, h4, p {
