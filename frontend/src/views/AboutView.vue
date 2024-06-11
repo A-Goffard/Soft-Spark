@@ -23,7 +23,7 @@
         </a>
         <a href="https://www.discovia.fr/home" target="_blank" class="sponsors soft2"
           @mouseover="handleHover(true, 'soft2')" @mouseout="handleHover(false, 'soft2')">
-          <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="DISCOVIA" class="sponsors" style="width: 20rem;">
+          <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="DISCOVIA" class="sponsors">
         </a>
         <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors soft1 soft2"
           @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
@@ -50,7 +50,6 @@
           <img src="/public/sponsors/escuelaLogo.png" alt="E2o ESPAÑA" class="sponsors" id="escuela">
         </a>
       </div>
-
       <div class="socios">
         <img :class="{ grayscale: !hoverSoft1 }" src="/public/logos/softskill1.png" id="logoSoft1" alt="">
         <img :class="{ grayscale: !hoverSoft2 }" src="/public/logos/softskill2.png" id="logoSoft2" alt="">
@@ -75,22 +74,40 @@ const handleHover = (hovering, ...groups) => {
 
 
 <style scoped>
+*{
+  margin: 0;
+  padding: 0;
+}
+.general {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
 h1 {
   color: black;
   text-align: center;
-  margin: 4rem;
+  margin-bottom: 1rem;
 }
-
+p{
+  margin-top: 0.5rem ;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.header {
+  height: 50rem;
+  width: 50rem;
+  padding-top: 12rem;
+  margin-left: 7rem ;
+}
 .mainJ {
-  width: auto;;
-  background-color: white;
-  padding-bottom: 2rem;
-  margin: auto;
-  justify-content: center;
-  align-content: center;
+  width: 60rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-top: 7rem;
 }
-
 .btn {
   margin: auto;
   display: flex;
@@ -108,11 +125,11 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 28rem;
 }
-
 .textAbout {
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  margin-bottom: 9rem;
   text-align: center;
 }
 .imgSponsors {
@@ -120,26 +137,26 @@ h1 {
   width: 60%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  padding: 2rem;
+  gap: 3rem;
+  margin-right: 15rem;
 }
 #escuela{
-  width: 10rem;
+  width: 8rem;
 }
 #workinn{
-  width: 11rem;
+  width: 9rem;
 }
 .sponsors {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: auto;
+  width: 12rem;
 }
-
 .solivers {
   background-color: rgb(255, 255, 255);
-  height: 4rem;
+  height: 3.5rem;
+  width: 13rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,8 +169,8 @@ h1 {
   align-items: center;
   margin: auto;
   border: solid 1px rgb(#ffc000);
-  width: 50%;
-  border-radius: 4rem;
+  width: 35rem;
+  border-radius: 2rem;
   -webkit-box-shadow: 0px 0px 43px 3px rgba(255, 192, 0, 1);
   -moz-box-shadow: 0px 0px 43px 3px rgba(255, 192, 0, 1);
   box-shadow: 0px 0px 43px 3px rgba(255, 192, 0, 1);
@@ -187,7 +204,31 @@ h1 {
   .imgSponsors {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    
+  }
+  .general{
+    grid-template-columns: repeat(1, 1fr);
+    display: block;
+  }
+  .header{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 3rem;
+    height: 33rem;
+    margin-bottom: 1rem;
+  }
+  .mainJ {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem;
   }
 }
 @media (max-width: 1150px){
@@ -199,11 +240,17 @@ h1 {
     width: 20rem;
     height: 12rem;
   }
-  .imgSponsors{
-    grid-template-columns: repeat(2, 1fr);
+  .mainJ {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    margin-bottom: 10rem;
   }
 }
+
 @media (max-width: 1090px){
   #logoSoft1 {
     width: 19rem;
@@ -233,10 +280,121 @@ h1 {
     width: 18rem;
     height: 10rem;
   }
+  .mainJ {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem;
+  }
 }
 @media (max-width: 750px) {
   p {
     font-size: 1.3rem;
+    margin: 0rem;
+    text-align: center;
+  }
+  .header{
+    height: 29rem;
+    border: solid 1px ;
+  }
+  .mainJ {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem;
+  }
+  h1{
+    margin: auto;
+  }
+  .general{
+    display: block;
+  }
+  .imgSponsors{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  .sponsors{
+    width: 8rem;
+  }
+  #escuela{
+  width: 5rem;
+  }
+  #workinn{
+  width: 6rem;
+  }
+  .solivers{
+    width:9rem;
+    height: 2.5rem;
+  }
+  #logoSoft1{
+    width: 13rem;
+    height: 7rem;
+  }
+  #logoSoft2{
+    width: 13rem;
+    height: 7rem;
+  }
+  .socios{
+    width: 32rem;
+    height: 8rem;
+    border-radius: 3rem;
+  }
+}
+@media (max-width: 520px) {
+  p {
+    font-size: 1.3rem;
+    margin: 0rem;
+    text-align: center;
+  }
+  .header{
+    height: 33rem;
+    border: solid 1px ;
+  }
+  h1{
+    margin: 0;
+  }
+  .general{
+    display: block;
+  }
+  .imgSponsors{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  .sponsors{
+    width: 7rem;
+  }
+  #escuela{
+  width: 4rem;
+  }
+  #workinn{
+  width: 6rem;
+  }
+  .solivers{
+    width: 8rem;
+    height: 2.5rem;
+  }
+  #logoSoft1{
+    width: 13rem;
+    height: 7rem;
+  }
+  #logoSoft2{
+    width: 13rem;
+    height: 7rem;
+  }
+  .socios{
+    width: 32rem;
+    height: 8rem;
+    border-radius: 3rem;
   }
 }
 
