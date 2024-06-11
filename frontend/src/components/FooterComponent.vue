@@ -113,5 +113,15 @@ ul {
     height:40px;
     min-height:40px;
   }
+  p {
+    font-size: medium;
+  }
+}
+@media (max-width: 450px) {
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

@@ -73,6 +73,7 @@ h2, h3, h4, p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 5rem;
 }
 .main {
   display: flex;

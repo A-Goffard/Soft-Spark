@@ -23,16 +23,7 @@
 </template>
   
 <style scoped>
-.general {
-  padding-top: 5rem;
-}
-.cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
+
 </style>
 
 <script setup>
