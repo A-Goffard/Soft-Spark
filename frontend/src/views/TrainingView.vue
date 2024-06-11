@@ -2,7 +2,7 @@
   <div class="general">
     <div class="main">
       <h1>Training</h1>
-      <DestinationList />
+      <!-- <Pedagogia /> -->
       <div class="cards">
         <Kit/>
         <ToolCardsTrainSoftSkills/>
@@ -29,9 +29,9 @@
   padding-top: 5rem;
 }
 </style>
-
+../components/PedagogiaCard.vue
 <script setup>
-import DestinationList from '../components/DestinationList.vue';
+/* import Pedagogia from '../components/PedagogiaCard.vue'; */
 import Kit from '../components/training/Kit.vue';
 import ToolCardsTrainSoftSkills from '../components/training/ToolCardsTrainSoftSkills.vue';
 import CertificatesTrainees from '../components/training/CertificatesTrainees.vue';

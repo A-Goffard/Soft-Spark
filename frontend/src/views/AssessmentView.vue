@@ -2,7 +2,7 @@
   <div class="general">
     <div class="main">
       <h1>Assessment</h1>
-      <DestinationList />
+      <!-- <Pedagogia /> -->
       <div class="cards">
         <AProtocol/>
         <GerenicPlacementGrid/>
@@ -26,9 +26,9 @@
   padding-top: 5rem;
 }
 </style>
-
+../components/PedagogiaCard.vue
 <script setup>
-import DestinationList from '../components/DestinationList.vue';
+/* import Pedagogia from '../components/PedagogiaCard.vue'; */
 import AProtocol from '../components/assessment/AProtocol.vue';
 import GerenicPlacementGrid from '../components/assessment/GerenicPlacementGrid.vue';
 import SpecificPlacementGrids from '../components/assessment/SpecificPlacementGrids.vue';

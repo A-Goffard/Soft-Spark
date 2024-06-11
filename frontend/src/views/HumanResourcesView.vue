@@ -2,7 +2,7 @@
   <div class="general">
     <div class="main">
       <h1>Human Resources</h1>
-      <DestinationList />
+     <!--  <Pedagogia /> -->
       <div class="cards">
         <HRM/>
 
@@ -23,6 +23,6 @@
 </style>
 
 <script setup>
-import DestinationList from '../components/DestinationList.vue';
+/* import Pedagogia from '../components/PedagogiaCard.vue'; */
 import HRM from '../components/human/HRM.vue';
  </script>
