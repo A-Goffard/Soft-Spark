@@ -9,6 +9,7 @@ import PopupNavbar from './components/PopupNavbar.vue';
 const isHighContrast = ref(false);
 const isGreyScale = ref(false);
 const isNegativeContrast = ref(false); // Add this line
+const isReadableFont = ref(false);
 
 provide('isHighContrast', isHighContrast);
 provide('toggleHighContrast', () => {
@@ -21,11 +22,16 @@ provide('toggleGreyScale', () => {
 provide('isNegativeContrast', isNegativeContrast); // Add this line
 provide('toggleNegativeContrast', () => {
   isNegativeContrast.value = !isNegativeContrast.value;
-}); // Add this line
+});
+// Provide the readable font state and toggle method
+provide('isReadableFont', isReadableFont);
+provide('toggleReadableFont', () => {
+  isReadableFont.value = !isReadableFont.value;
+});
 </script>
 
 <template>
-    <div :class="['general', { 'high-contrast': isHighContrast, 'negative-contrast': isNegativeContrast, 'grey-scale': isGreyScale }]">
+    <div :class="['general', { 'high-contrast': isHighContrast, 'negative-contrast': isNegativeContrast, 'grey-scale': isGreyScale, 'readable-font': isReadableFont }]">
     <NavBar />
     <LanguageSelector />
     <main class="content">
@@ -241,7 +247,10 @@ p {
   text-align: center;
 }
 
-
+/* Readable font styles */
+body.readable-font, .readable-font {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
 
 /*Shrinking for mobile*/
 @media (max-width: 768px) {

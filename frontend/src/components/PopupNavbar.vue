@@ -12,7 +12,7 @@
         <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">Restablecer texto</button></li>
         <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">Alto contraste</button></li>
         <li><button @click="toggleNegativeContrast"><img src="/contrastenegativo.png" alt="Icon 5">Contraste Negativo</button></li>
-        <li><button @click="handleButtonClick(6)"><img src="/readablefont.png" alt="Icon 6">Fuente Legible</button></li>
+        <li><button @click="toggleReadableFont"><img src="/readablefont.png" alt="Icon 6">Fuente Legible</button></li>
         <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
         <li><button @click="toggleGreyScale"><img src="/greyscale.png" alt="Icon 8">Escalas de grises</button></li>
       </ul>
@@ -30,6 +30,10 @@ const isHighContrast = ref(false);
 const isGreyScale = ref(false);
 const isNegativeContrast = inject('isNegativeContrast'); // Add this line
 const toggleNegativeContrast = inject('toggleNegativeContrast'); // Add this line
+
+// Readable font
+const isReadableFont = inject('isReadableFont');
+const toggleReadableFont = inject('toggleReadableFont');
 
 const toggleHighContrast = () => {
   isHighContrast.value = !isHighContrast.value;
@@ -89,7 +93,7 @@ const resetTextSize = () => {
 };
 
 /* --------------------------------TEXT-TO-SPEECH FUNCTION------------------ */
-let speechSynthesisUtterance = null;
+/* let speechSynthesisUtterance = null;
 
 const readPageAloud = () => {
   if (window.speechSynthesis.speaking) {
@@ -104,6 +108,7 @@ const readPageAloud = () => {
 
   speechSynthesisUtterance.onend = () => {
     console.log('Speech synthesis finished.');
+    readPageAloud();
   };
 
   speechSynthesisUtterance.onerror = (event) => {
@@ -112,7 +117,65 @@ const readPageAloud = () => {
 
   window.speechSynthesis.speak(speechSynthesisUtterance);
 };
+ */
+ let speechSynthesisUtterance = null;
+let chunkIndex = 0;
+let textChunks = [];
 
+const splitTextIntoChunks = (text, chunkSize = 120) => {
+  const words = text.split(' ');
+  const chunks = [];
+  let chunk = '';
+
+  words.forEach(word => {
+    if (chunk.length + word.length + 1 <= chunkSize) {
+      chunk += (chunk ? ' ' : '') + word;
+    } else {
+      chunks.push(chunk);
+      chunk = word;
+    }
+  });
+
+  if (chunk) {
+    chunks.push(chunk);
+  }
+
+  return chunks;
+};
+
+const readNextChunk = () => {
+  if (chunkIndex < textChunks.length) {
+    speechSynthesisUtterance = new SpeechSynthesisUtterance();
+    speechSynthesisUtterance.lang = 'es-ES';
+    speechSynthesisUtterance.text = textChunks[chunkIndex];
+    speechSynthesisUtterance.pitch = 1;
+    speechSynthesisUtterance.rate = 1;
+
+    speechSynthesisUtterance.onend = () => {
+      chunkIndex++;
+      readNextChunk();
+    };
+
+    speechSynthesisUtterance.onerror = (event) => {
+      console.error('Speech synthesis error:', event.error);
+    };
+
+    window.speechSynthesis.speak(speechSynthesisUtterance);
+  } else {
+    console.log('Speech synthesis finished.');
+  }
+};
+
+const readPageAloud = () => {
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+  }
+
+  const text = document.body.innerText;
+  textChunks = splitTextIntoChunks(text);
+  chunkIndex = 0;
+  readNextChunk();
+};
 /* --------------------------CLICK OUTSIDE NAVBAR TO CLOSE IT------------------- */
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
@@ -149,7 +212,7 @@ onBeforeUnmount(() => {
   right: -250px; /* Start off-screen */
   transform: translateY(-50%);
   width: 250px;
-  background-color: #ffff00bb;
+  background-color: greenyellow;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   z-index: 999; /* Ensure the navbar is above other content */
   transition: right 0.3s ease-in-out;
@@ -183,7 +246,7 @@ onBeforeUnmount(() => {
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: #ffff00bb;
+  background-color: greenyellow;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
