@@ -16,8 +16,6 @@
     imageId: String,
     storyId: String,
     title: String,
-/*     description: String,
-    imageUrl: String  */
   })
   </script>
   
@@ -44,12 +42,8 @@
   
   .info h3 {
     text-align: center;
-/*     color: var(--white); */
   }
   
-/*   .info p {
-    padding: 1rem;
-    text-align: center;
-  } */
+
   </style>
   

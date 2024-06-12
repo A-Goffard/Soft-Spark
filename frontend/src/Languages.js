@@ -983,7 +983,7 @@ const messages = {
       // Agrega todas las traducciones
     }
   },
-  /* eu: {
+  eu: {
     message: {
       homepage: 'Hasiera',
       btnhomed: 'Impact measurement report',
@@ -1066,7 +1066,8 @@ const messages = {
       footertu: 'Erabilera-baldintzak',
       footerl: 'Lege-politika',
       // Agrega todas las traducciones
-    } */
+    }
+  }
 };
 
 const i18n = createI18n({

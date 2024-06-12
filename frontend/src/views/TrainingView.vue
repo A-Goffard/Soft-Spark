@@ -10,9 +10,7 @@
           :id="'c' + index"
           :image-id="'i' + index"
           :story-id="'s' + index"
-          :title="destination.title"
-          :description="destination.description"
-          :image-url="destination.imageUrl"
+          :title="$t(destination.title)"
           @click="changeActiveComponent(destination.componentName)"
         />
       </div>
@@ -44,18 +42,22 @@ import SurveyTrainers from '../components/training/SurveyTrainers.vue';
 import TTWBL from '../components/training/TTWBL.vue';
 import THWBL from '../components/training/THWBL.vue';
 
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 const destinations = ref([
-{ title: 'Kit', description: 'Target 1 description', imageUrl: '/public/trainig materials/kit.jpg', componentName: 'Kit' },
-  { title: 'ToolCardsTrainSoftSkills', description: 'Target 1 description', imageUrl: '/public/trainig materials/toolcards.jpg', componentName: 'ToolCardsTrainSoftSkills' },
-  { title: 'CertificatesTrainees', description: 'Target 2 description', imageUrl: '/public/trainig materials/trainers.jpg', componentName: 'CertificatesTrainees' },
-  { title: 'AttendanceSheet', description: 'Target 3 description', imageUrl: '/public/trainig materials/attendanceSheet.jpg', componentName: 'AttendanceSheet' },
-  { title: 'SurveyTrainees', description: 'Target 4 description', imageUrl: '/public/trainig materials/surveyTrainers.jpg', componentName: 'SurveyTrainees' },
-  { title: 'Techniques', description: 'Target 5 description', imageUrl: '/public/trainig materials/techniques.jpg', componentName: 'Techniques' },
-  { title: 'SSTTrainers', description: 'Target 6 description', imageUrl: '/8.png', componentName: 'SSTTrainers' },
-  { title: 'CertificatesTrainers', description: 'Target 7 description', imageUrl: '/public/trainig materials/trainercertificates.jpg', componentName: 'CertificatesTrainers' },
-  { title: 'SurveyTrainers', description: 'Target 8 description', imageUrl: '/public/trainig materials/surveytrainees.jpg', componentName: 'SurveyTrainers' },
-  { title: 'TTWBL', description: 'Target 8 description', imageUrl: '/6.png', componentName: 'TTWBL'},
-  { title: 'THWBL', description: 'Target 8 description', imageUrl: '/7.png', componentName: 'THWBL'}
+  { title: 'message.trainingmaterial1title', componentName: 'Kit' },
+  { title: 'message.trainingmaterial2title', componentName: 'ToolCardsTrainSoftSkills' },
+  { title: 'message.trainingmaterial3title', componentName: 'CertificatesTrainees' },
+  { title: 'message.trainingmaterial4title', componentName: 'AttendanceSheet' },
+  { title: 'message.trainingmaterial5title', componentName: 'SurveyTrainees' },
+  { title: 'message.trainingmaterial6title', componentName: 'Techniques' },
+  { title: 'message.trainingmaterial7title', componentName: 'SSTTrainers' },
+  { title: 'message.trainingmaterial8title', componentName: 'CertificatesTrainers' },
+  { title: 'message.trainingmaterial9title', componentName: 'SurveyTrainers' },
+  { title: 'message.trainingmaterial10title', componentName: 'TTWBL'},
+  { title: 'message.trainingmaterial11title', componentName: 'THWBL'}
 ]);
 
 const activeComponent = ref('');
@@ -84,10 +86,6 @@ const getComponent = (name) => {
 </script>
 
 <style scoped>
-.general {
-  padding-top: 5rem;
-}
-
 .cards {
   display: flex;
   flex-direction: column;
@@ -97,11 +95,20 @@ const getComponent = (name) => {
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4rem;
-  max-width: 1200px;
-  margin-top: 20px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 65rem;
+}
+
+@media (max-width: 1200px) {
+  .general {
+  padding-top: 0rem;
+}
 }
 </style>
 
