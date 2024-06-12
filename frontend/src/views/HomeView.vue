@@ -37,7 +37,7 @@
   background: linear-gradient(var(--ligthorange) 0%, var(--white) 100%);
 }
 .text {
-  max-width: 75rem;
+  max-width: 65rem;
   margin: auto;
 }
 
