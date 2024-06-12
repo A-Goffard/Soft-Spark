@@ -196,8 +196,9 @@ const messages = {
       footerpp: 'Privacy Policy',
       footertu: 'Terms of Use',
       footerl: 'Legal Policy',
-      // Agrega todas las traducciones
 
+      footerLogo: '/UELogo/EN_logo_ue.png',
+      // Agrega todas las traducciones
     }
   },
   es: {
@@ -270,7 +271,7 @@ const messages = {
 
       subtitle: 'Formar y desarrollar soft skills',
       paragraph1: '¿Te interesan las soft skills y te gustaría integrarlas en tu práctica?',
-      paragraph2: 'Las soft skills son habilidades relacionales y humanas cercanas a los rasgos de la personalidad que son esenciales en la vida profesional y que complementan las habilidades y conocimientos especializados (hard skills). Tod@s y cada un@ de nosotr@s las adquirimos parcialmente, independientemente de nuestra trayectoria profesional o personal.',
+      paragraph2: 'Las soft skills son habilidades relacionales y humanas cercanas a los rasgos de la personalidad que son esenciales en la vida profesional y que complementan las habilidades y conocimientos especializados (hard skills). Todas y cada una de las personas las adquirimos parcialmente, independientemente de nuestra trayectoria profesional o personal.',
       paragraph3: 'Sin embargo, hoy en día, la formación en soft skills parece estar orientada de forma más natural a las personas altamente cualificadas.',
       paragraph4: 'El proyecto Erasmus+ "Soft skills" tiene como objetivo facilitar el acceso a las soft skills a las personas con bajo nivel de cualificación y/o con discapacidad, para favorecer su inclusión profesional e incluso social y la igualdad de oportunidades. El dominio de una actividad profesional no sólo requiere la puesta en práctica de habilidades técnicas específicas del trabajo (hard skills), sino que también se basa en las soft skills.',
       paragraph5: 'Nuestro enfoque: tener en cuenta todo el proceso de adquisición de las soft skills. Hemos elaborado numerosos materiales complementarios a los que se puede acceder gratuitamente en este sitio web.',
@@ -391,6 +392,8 @@ const messages = {
       footerpp: 'Política de privacidad',
       footertu: 'Términos de uso',
       footerl: 'Política Legal',
+
+      footerLogo: '/UELogo/ES_logo_ue.png',
       // Agrega todas las traducciones
 
     }
@@ -589,6 +592,8 @@ const messages = {
       footerpp: 'Politique de confidentialité',
       footertu:  'Conditions d\'utilisation',
       footerl: 'Politique juridique',
+
+      footerLogo: '/UELogo/FR_logo_ue.png',
       // Agrega todas las traducciones
     }
   },
@@ -783,6 +788,8 @@ const messages = {
       footerpp: 'Datenschutzerklärung',
       footertu: 'Nutzungsbedingungen',
       footerl: 'Rechtspolitik',
+
+      footerLogo: '/UELogo/DE_logo_ue.png',
       // Agrega todas las traducciones
     }
   },
@@ -980,6 +987,8 @@ const messages = {
       footerpp: 'Politika zasebnosti',
       footertu: 'Pogoji uporabe',
       footerl: 'Pravna politika',
+
+      footerLogo: '/UELogo/SL_logo_ue.png',
       // Agrega todas las traducciones
     }
   },
@@ -1065,6 +1074,8 @@ const messages = {
       footerpp: 'Pribatutasun politika',
       footertu: 'Erabilera-baldintzak',
       footerl: 'Lege-politika',
+
+      footerLogo: '/UELogo/EN_logo_ue.png',
       // Agrega todas las traducciones
     }
   }
