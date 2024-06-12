@@ -38,14 +38,14 @@ import Occupational from '../components/pedagogy/Occupational.vue';
 import CorporateCulture from '../components/pedagogy/CorporateCulture.vue';
 
 const destinations = ref([
-  { title: 'Catalogue', description: 'Target 1 description', imageUrl: '/public/oranje1.png', componentName: 'Catalogue' },
-  { title: 'SSPictograms', description: 'Target 2 description', imageUrl: '/public/oranje1.png', componentName: 'SSPictograms' },
-  { title: 'SSBase', description: 'Target 3 description', imageUrl: '/public/oranje1.png', componentName: 'SSBase' },
-  { title: 'Wheels', description: 'Target 4 description', imageUrl: '/public/oranje1.png', componentName: 'Wheels' },
-  { title: 'Summary', description: 'Target 5 description', imageUrl: '/public/oranje1.png', componentName: 'Summary' },
-  { title: 'Zerobarrier', description: 'Target 6 description', imageUrl: '/public/oranje1.png', componentName: 'Zerobarrier' },
-  { title: 'Occupational', description: 'Target 7 description', imageUrl: '/public/oranje1.png', componentName: 'Occupational' },
-  { title: 'CorporateCulture', description: 'Target 8 description', imageUrl: '/public/oranje1.png', componentName: 'CorporateCulture' },
+  { title: 'Catalogue', description: 'Target 1 description', imageUrl: '/public/pedagogia/catalogo.jpg', componentName: 'Catalogue' },
+  { title: 'SSPictograms', description: 'Target 2 description', imageUrl: '/public/pedagogia/pictograms.jpg', componentName: 'SSPictograms' },
+  { title: 'SSBase', description: 'Target 3 description', imageUrl: '/public/pedagogia/base.jpg', componentName: 'SSBase' },
+  { title: 'Wheels', description: 'Target 4 description', imageUrl: '/public/pedagogia/wheels.jpg', componentName: 'Wheels' },
+  { title: 'Summary', description: 'Target 5 description', imageUrl: '/public/pedagogia/summary.jpg', componentName: 'Summary' },
+  { title: 'Zerobarrier', description: 'Target 6 description', imageUrl: '/public/pedagogia/zerobarrier.jpg', componentName: 'Zerobarrier' },
+  { title: 'Occupational', description: 'Target 7 description', imageUrl: '/public/pedagogia/occupational.jpg', componentName: 'Occupational' },
+  { title: 'CorporateCulture', description: 'Target 8 description', imageUrl: '/public/pedagogia/corporateculture.jpg', componentName: 'CorporateCulture' },
 ]);
 
 const activeComponent = ref('');
@@ -90,9 +90,16 @@ const getComponent = (name) => {
   max-width: 1200px;
   margin-top: 20px;
 }
-DestinationCard img {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* Asegura que la imagen no se deforme */
+
+@media (max-width: 1200px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

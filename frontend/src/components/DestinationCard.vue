@@ -30,14 +30,14 @@ const emits = defineEmits(['click']);
 <style scoped>
 .container {
   width: 100%;
-  height: auto;
+  height: 20rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background: #ff7b00;
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0px 20px 50px #555;
+  box-shadow: 0px 20px 40px #555;
   overflow:hidden;
   transition: 0.6s;
 }
@@ -49,14 +49,17 @@ const emits = defineEmits(['click']);
 
 .image {
   width: 100%;
-  height: auto;
-  object-fit: cover; /* Asegura que la imagen no se deforme */
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .city-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   max-width: 100%;
   max-height: 100%;
 }
