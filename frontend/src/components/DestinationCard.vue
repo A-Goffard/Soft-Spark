@@ -42,7 +42,6 @@ const emits = defineEmits(['click']);
   transition: 0.6s;
 }
 .container:hover {
-  cursor: pointer;
   z-index: 10;
   -webkit-transform:scale(0.1);transform:scale(1.4);
 }
