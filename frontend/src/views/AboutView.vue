@@ -17,7 +17,9 @@
         <img :class="{ grayscale: !hoverSoft2 }" src="/public/logos/softskill2.png" id="logoSoft2" alt="">
       </div>
       <div class="imgSponsors">
-        <a href="https://www.chanceb-gruppe.at/" target="_blank" class="sponsors soft1 soft2"
+
+        <div class="logotrio">
+          <a href="https://www.chanceb-gruppe.at/" target="_blank" class="sponsors soft1 soft2"
            @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/CHance B.png" alt="CHANGE B">
         </a>
@@ -29,7 +31,11 @@
            @mouseover="handleHover(true, 'soft2')" @mouseout="handleHover(false, 'soft2')">
           <img src="/public/sponsors/DISCOVIA_BLEU_SS.jpg" alt="DISCOVIA" >
         </a>
-        <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors soft1 soft2"
+
+        </div>
+
+        <div class="logotrio">
+          <a href="http://www.leplope.be/index.php" target="_blank" class="sponsors soft1 soft2"
            @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/le-plope-1-3.gif" alt="LE PLOPE" >
         </a>
@@ -41,7 +47,11 @@
            @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/logo régie.jpg" alt="REGIE DE ESCRIVANS">
         </a>
-        <a href="https://www.grupopenascal.com/" target="_blank" class="sponsors soft1 soft2"
+
+        </div>
+
+        <div class="logotrio">
+          <a href="https://www.grupopenascal.com/" target="_blank" class="sponsors soft1 soft2"
            @mouseover="handleHover(true, 'soft1', 'soft2')" @mouseout="handleHover(false, 'soft1', 'soft2')">
           <img src="/public/sponsors/Penascal.png" alt="PENASCAL KOOPERATIVA">
         </a>
@@ -53,6 +63,10 @@
            @mouseover="handleHover(true, 'soft1')" @mouseout="handleHover(false, 'soft1')">
           <img src="/public/sponsors/escuelaLogo.png" alt="E2o ESPAÑA" >
         </a>
+
+        </div>
+
+
       </div>
 
     </div>
@@ -102,6 +116,7 @@ const handleHover = (hovering, ...groups) => {
   width: 90%;
   margin: auto;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 /* .imgSponsors {
@@ -115,9 +130,13 @@ const handleHover = (hovering, ...groups) => {
 
 .imgSponsors {
 display: flex;
-flex-wrap: wrap;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
-
+.logotrio {
+  display: flex;
+}
 /* .main {
   max-width: 75%;
 } */
@@ -160,13 +179,13 @@ img {
 }
 
 #logoSoft1 {
-  max-width: 21rem;
+  max-width: 15rem;
   margin: 0.5rem;
   width: 40%;
 }
 
 #logoSoft2 {
-  max-width: 21rem;
+  max-width: 15rem;
   margin: 0.5rem;
   width: 40%;
 }
@@ -187,9 +206,14 @@ img {
   transform: scale(1.3);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 720px) {
   p {
     font-size: 1.3rem;
   }
+
+  .logotrio {
+  display: flex;
+  flex-direction: column;
+}
 }
 </style>

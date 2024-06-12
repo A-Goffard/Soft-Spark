@@ -100,6 +100,7 @@ h1 {
   letter-spacing: 2px;
   font-size:3rem;
   padding: 1rem;
+  text-align: center;
 }
 p {
   font-family: 'Lato', sans-serif;
