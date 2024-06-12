@@ -29,25 +29,28 @@ const emits = defineEmits(['click']);
 
 <style scoped>
 .container {
-  width: calc(33.333% - 20px);
-  height: 320px;
-  background: #fff;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: #ff7b00;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 20px 50px #555;
-  transition: transform 0.5s ease, z-index 0.5s ease;
-  transform: rotateX(50deg) scale(0.85);
+  overflow:hidden;
+  transition: 0.6s;
 }
-
 .container:hover {
   cursor: pointer;
-  transform: rotateX(0deg) scale(1) translateY(10px);
   z-index: 10;
+  -webkit-transform:scale(0.1);transform:scale(1.4);
 }
 
 .image {
   width: 100%;
-  height: 50%;
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen no se deforme */
 }
 
 .city-image {

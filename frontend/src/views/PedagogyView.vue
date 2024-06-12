@@ -84,12 +84,15 @@ const getComponent = (name) => {
 }
 
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
   max-width: 1200px;
   margin-top: 20px;
-  perspective: 1000px;
+}
+DestinationCard img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen no se deforme */
 }
 </style>

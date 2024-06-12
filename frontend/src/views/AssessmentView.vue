@@ -40,13 +40,11 @@
 }
 
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
   max-width: 1200px;
   margin-top: 20px;
-  perspective: 1000px;
 }
 </style>
 
