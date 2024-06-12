@@ -79,6 +79,40 @@
   max-width: 75rem;
   margin: auto;
 }
+
+/* ---------------- media queries-------------------- */
+
+@media (max-width: 1024px) {
+  .container1, .container2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container1 img, .container2 img {
+    width: 80%;
+    margin: 1rem 0;
+  }
+
+  .container1 div, .container2 div {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container1 img, .container2 img {
+    width: 100%;
+  }
+
+  .hometext_1, .hometext_2 {
+    padding: 0 1rem;
+  }
+  
+  .btn {
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
 </style>
 
 <script setup>
