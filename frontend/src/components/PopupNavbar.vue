@@ -22,8 +22,7 @@
 
 <script setup>
 import { ref, inject, onMounted, onBeforeUnmount } from 'vue';
-/* import franc from 'franc';
-import iso6393 from 'iso-639-3'; */
+
 
 /* --------------------------------HIGH CONTRAST/GREY SCALE TOGGLE FUNCTION------------------ */
 
@@ -120,47 +119,35 @@ const readPageAloud = () => {
   window.speechSynthesis.speak(speechSynthesisUtterance);
 };
  */
-let speechSynthesisUtterance = null;
+ let speechSynthesisUtterance = null;
 let chunkIndex = 0;
 let textChunks = [];
-let languageChunks = [];
-
-const detectLanguage = (text) => {
-  const langCode = franc(text);
-  const language = iso6393.find(lang => lang.iso6393 === langCode);
-  return language ? language.iso6391 : 'en'; // Default to 'en' if language detection fails
-};
 
 const splitTextIntoChunks = (text, chunkSize = 120) => {
   const words = text.split(' ');
   const chunks = [];
-  const languages = [];
   let chunk = '';
-  let currentLanguage = detectLanguage(text);
 
   words.forEach(word => {
     if (chunk.length + word.length + 1 <= chunkSize) {
       chunk += (chunk ? ' ' : '') + word;
     } else {
       chunks.push(chunk);
-      languages.push(currentLanguage);
       chunk = word;
-      currentLanguage = detectLanguage(chunk);
     }
   });
 
   if (chunk) {
     chunks.push(chunk);
-    languages.push(currentLanguage);
   }
 
-  return [chunks, languages];
+  return chunks;
 };
 
 const readNextChunk = () => {
   if (chunkIndex < textChunks.length) {
     speechSynthesisUtterance = new SpeechSynthesisUtterance();
-    speechSynthesisUtterance.lang = languageChunks[chunkIndex];
+    speechSynthesisUtterance.lang = 'en-EN';
     speechSynthesisUtterance.text = textChunks[chunkIndex];
     speechSynthesisUtterance.pitch = 1;
     speechSynthesisUtterance.rate = 1;
@@ -186,7 +173,7 @@ const readPageAloud = () => {
   }
 
   const text = document.body.innerText;
-  [textChunks, languageChunks] = splitTextIntoChunks(text);
+  textChunks = splitTextIntoChunks(text);
   chunkIndex = 0;
   readNextChunk();
 };
