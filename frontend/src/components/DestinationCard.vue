@@ -56,7 +56,9 @@ const emits = defineEmits(['click']);
 .city-image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Mantener la proporción de la imagen */
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .story {
@@ -79,4 +81,17 @@ const emits = defineEmits(['click']);
   text-align: center;
   letter-spacing: 1px;
 }
+
+@media (max-width: 1200px) {
+  .container {
+    width: calc(50% - 20px); /* Dos columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 20px); /* Una columna en pantallas pequeñas */
+  }
+}
+
 </style>
