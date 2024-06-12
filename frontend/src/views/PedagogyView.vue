@@ -3,17 +3,23 @@
       <div class="main">
         <h1>{{ $t('message.pedagogypage') }}</h1>
         
-        <DestinationList />
-        <div class="cards">
-          <Catalogue/>
-          <SSPictograms/>
-          <SSBase/>
-          <Wheels/>
-          <Summary/>
-          <Zerobarrier/>
-          <Occupational/>
-          <CorporateCulture/>
-        </div>
+        <div class="wrapper">
+        <DestinationCard
+          v-for="(destination, index) in destinations"
+          :key="index"
+          :id="'c' + index"
+          :image-id="'i' + index"
+          :story-id="'s' + index"
+          :title="destination.title"
+          :description="destination.description"
+          :image-url="destination.imageUrl"
+          @click="changeActiveComponent(destination.componentName)"
+        />
+      </div>
+        
+      <div class="cards">
+        <component :is="getComponent(activeComponent)" />
+      </div>
         
       </div>
     
@@ -22,19 +28,78 @@
 
 </template>
   
-<style scoped>
-
-</style>
-
 <script setup>
-  import Cards from '../components/Cards.vue';
-  import DestinationList from '../components/DestinationList.vue';
-  import Catalogue from '../components/pedagogy/Catalogue.vue';
-  import SSPictograms from '../components/pedagogy/SSPictograms.vue';
-  import SSBase from '../components/pedagogy/SSBase.vue';
-  import Wheels from '../components/pedagogy/Wheels.vue';
-  import Summary from '../components/pedagogy/Summary.vue';
-  import Zerobarrier from '../components/pedagogy/Zerobarrier.vue';
-  import Occupational from '../components/pedagogy/Occupational.vue';
-  import CorporateCulture from '../components/pedagogy/CorporateCulture.vue';
+import { ref } from 'vue';
+import DestinationCard from '../components/DestinationCard.vue';
+
+import Catalogue from '../components/pedagogy/Catalogue.vue';
+import SSPictograms from '../components/pedagogy/SSPictograms.vue';
+import SSBase from '../components/pedagogy/SSBase.vue';
+import Wheels from '../components/pedagogy/Wheels.vue';
+import Summary from '../components/pedagogy/Summary.vue';
+import Zerobarrier from '../components/pedagogy/Zerobarrier.vue';
+import Occupational from '../components/pedagogy/Occupational.vue';
+import CorporateCulture from '../components/pedagogy/CorporateCulture.vue';
+
+const destinations = ref([
+  { title: 'Catalogue', description: 'Target 1 description', imageUrl: '/public/pedagogia/catalogo.jpg', componentName: 'Catalogue' },
+  { title: 'SSPictograms', description: 'Target 2 description', imageUrl: '/public/pedagogia/pictograms.jpg', componentName: 'SSPictograms' },
+  { title: 'SSBase', description: 'Target 3 description', imageUrl: '/public/pedagogia/base.jpg', componentName: 'SSBase' },
+  { title: 'Wheels', description: 'Target 4 description', imageUrl: '/public/pedagogia/wheels.jpg', componentName: 'Wheels' },
+  { title: 'Summary', description: 'Target 5 description', imageUrl: '/public/pedagogia/summary.jpg', componentName: 'Summary' },
+  { title: 'Zerobarrier', description: 'Target 6 description', imageUrl: '/public/pedagogia/zerobarrier.jpg', componentName: 'Zerobarrier' },
+  { title: 'Occupational', description: 'Target 7 description', imageUrl: '/public/pedagogia/occupational.jpg', componentName: 'Occupational' },
+  { title: 'CorporateCulture', description: 'Target 8 description', imageUrl: '/public/pedagogia/corporateculture.jpg', componentName: 'CorporateCulture' },
+]);
+
+const activeComponent = ref('');
+
+const changeActiveComponent = (componentName) => {
+  activeComponent.value = componentName;
+};
+
+const componentMap = {
+  Catalogue,
+  SSPictograms,
+  SSBase,
+  Wheels,
+  Summary,
+  Zerobarrier,
+  Occupational,
+  CorporateCulture
+};
+
+const getComponent = (name) => {
+  return componentMap[name] || null;
+};
 </script>
+
+<style scoped>
+.general {
+  padding-top: 5rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 65rem;
+  border: solid red;
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+</style>
