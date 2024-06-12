@@ -1,26 +1,65 @@
 <template>
   <div class="container">
     <div class="navbar-trigger" @click="toggleNavbar">
-      <img src="/iconoaccesibilidad.png" alt="Menu Icon">
+      <img src="/accesibility.png" alt="Menu Icon">
     </div>
     
     <div :class="['popup-navbar', { 'visible': isNavbarVisible }]" ref="popupNavbar">
       <ul>
+        <li><h3>Herramientas de accesibilidad</h3></li>
         <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">Incremento de texto</button></li>
         <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">Decremento de texto</button></li>
         <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">Restablecer texto</button></li>
         <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">Alto contraste</button></li>
-        <li><button @click="handleButtonClick(5)"><img src="/contrastenegativo.png" alt="Icon 5">Contraste Negativo</button></li>
-        <li><button @click="handleButtonClick(6)"><img src="/readablefont.png" alt="Icon 6">Fuente Legible</button></li>
+        <li><button @click="toggleNegativeContrast"><img src="/contrastenegativo.png" alt="Icon 5">Contraste Negativo</button></li>
+        <li><button @click="toggleReadableFont"><img src="/readablefont.png" alt="Icon 6">Fuente Legible</button></li>
         <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
+        <li><button @click="toggleGreyScale"><img src="/greyscale.png" alt="Icon 8">Escalas de grises</button></li>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, inject, onMounted, onBeforeUnmount } from 'vue';
+/* import franc from 'franc';
+import iso6393 from 'iso-639-3'; */
 
+/* --------------------------------HIGH CONTRAST/GREY SCALE TOGGLE FUNCTION------------------ */
+
+const isHighContrast = ref(false);
+
+const isGreyScale = ref(false);
+const isNegativeContrast = inject('isNegativeContrast'); // Add this line
+const toggleNegativeContrast = inject('toggleNegativeContrast'); // Add this line
+
+// Readable font
+const isReadableFont = inject('isReadableFont');
+const toggleReadableFont = inject('toggleReadableFont');
+
+const toggleHighContrast = () => {
+  isHighContrast.value = !isHighContrast.value;
+  if (isHighContrast.value) {
+    document.documentElement.style.setProperty('--bg-color', 'var(--high-contrast-bg)');
+    document.documentElement.style.setProperty('--text-color', 'var(--high-contrast-text)');
+  } else {
+    document.documentElement.style.setProperty('--bg-color', 'white');
+    document.documentElement.style.setProperty('--text-color', 'black');
+  }
+};
+
+/* ----------------GREYSCALE PART--------------- */
+
+const toggleGreyScale = () => {
+  isGreyScale.value = !isGreyScale.value;
+  if (isGreyScale.value) {
+    document.documentElement.style.filter = 'grayscale(100%)';
+  } else {
+    document.documentElement.style.filter = '';
+  }
+};
+
+/* ------------------------------POPUP NAVBAR------------------------ */
 const isNavbarVisible = ref(false);
 const popupNavbar = ref(null);
 
@@ -35,7 +74,7 @@ const handleClickOutside = (event) => {
   }
 };
 
-/* -----------------------INCREMENT, DECREMENT, RESET TEXT SIZE, AND TOGGLE HIGH CONTRAST------------------- */
+/* -----------------------INCREMENT, DECREMENT, RESET TEXT SIZE------------------ */
 const handleButtonClick = (itemNumber) => {
   console.log(`Button ${itemNumber} clicked`);
   // Add your button click handling logic here
@@ -55,23 +94,8 @@ const resetTextSize = () => {
   document.documentElement.style.fontSize = '';
 };
 
-/* --------------------------------HIGH CONTRAST TOGGLE FUNCTION------------------ */
-
-const isHighContrast = ref(false);
-
-const toggleHighContrast = () => {
-  isHighContrast.value = !isHighContrast.value;
-  if (isHighContrast.value) {
-    document.documentElement.style.setProperty('--bg-color', 'var(--high-contrast-bg)');
-    document.documentElement.style.setProperty('--text-color', 'var(--high-contrast-text)');
-  } else {
-    document.documentElement.style.setProperty('--bg-color', 'white');
-    document.documentElement.style.setProperty('--text-color', 'black');
-  }
-};
-
 /* --------------------------------TEXT-TO-SPEECH FUNCTION------------------ */
-let speechSynthesisUtterance = null;
+/* let speechSynthesisUtterance = null;
 
 const readPageAloud = () => {
   if (window.speechSynthesis.speaking) {
@@ -86,6 +110,7 @@ const readPageAloud = () => {
 
   speechSynthesisUtterance.onend = () => {
     console.log('Speech synthesis finished.');
+    readPageAloud();
   };
 
   speechSynthesisUtterance.onerror = (event) => {
@@ -94,7 +119,77 @@ const readPageAloud = () => {
 
   window.speechSynthesis.speak(speechSynthesisUtterance);
 };
+ */
+let speechSynthesisUtterance = null;
+let chunkIndex = 0;
+let textChunks = [];
+let languageChunks = [];
 
+const detectLanguage = (text) => {
+  const langCode = franc(text);
+  const language = iso6393.find(lang => lang.iso6393 === langCode);
+  return language ? language.iso6391 : 'en'; // Default to 'en' if language detection fails
+};
+
+const splitTextIntoChunks = (text, chunkSize = 120) => {
+  const words = text.split(' ');
+  const chunks = [];
+  const languages = [];
+  let chunk = '';
+  let currentLanguage = detectLanguage(text);
+
+  words.forEach(word => {
+    if (chunk.length + word.length + 1 <= chunkSize) {
+      chunk += (chunk ? ' ' : '') + word;
+    } else {
+      chunks.push(chunk);
+      languages.push(currentLanguage);
+      chunk = word;
+      currentLanguage = detectLanguage(chunk);
+    }
+  });
+
+  if (chunk) {
+    chunks.push(chunk);
+    languages.push(currentLanguage);
+  }
+
+  return [chunks, languages];
+};
+
+const readNextChunk = () => {
+  if (chunkIndex < textChunks.length) {
+    speechSynthesisUtterance = new SpeechSynthesisUtterance();
+    speechSynthesisUtterance.lang = languageChunks[chunkIndex];
+    speechSynthesisUtterance.text = textChunks[chunkIndex];
+    speechSynthesisUtterance.pitch = 1;
+    speechSynthesisUtterance.rate = 1;
+
+    speechSynthesisUtterance.onend = () => {
+      chunkIndex++;
+      readNextChunk();
+    };
+
+    speechSynthesisUtterance.onerror = (event) => {
+      console.error('Speech synthesis error:', event.error);
+    };
+
+    window.speechSynthesis.speak(speechSynthesisUtterance);
+  } else {
+    console.log('Speech synthesis finished.');
+  }
+};
+
+const readPageAloud = () => {
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+  }
+
+  const text = document.body.innerText;
+  [textChunks, languageChunks] = splitTextIntoChunks(text);
+  chunkIndex = 0;
+  readNextChunk();
+};
 /* --------------------------CLICK OUTSIDE NAVBAR TO CLOSE IT------------------- */
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
@@ -106,17 +201,6 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-:root {
-  --bg-color: white;
-  --text-color: black;
-  --high-contrast-bg: black;
-  --high-contrast-text: yellow;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
 
 .container {
   position: relative;

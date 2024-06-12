@@ -1,12 +1,37 @@
 <script setup>
+import { ref, provide } from 'vue';
 import NavBar from './components/NavBar.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import LanguageSelector from './components/LanguageSelector.vue';
 import PopupNavbar from './components/PopupNavbar.vue';
+
+
+const isHighContrast = ref(false);
+const isGreyScale = ref(false);
+const isNegativeContrast = ref(false); // Add this line
+const isReadableFont = ref(false);
+
+provide('isHighContrast', isHighContrast);
+provide('toggleHighContrast', () => {
+  isHighContrast.value = !isHighContrast.value;
+});
+provide('isGreyScale', isGreyScale); // Add this line
+provide('toggleGreyScale', () => {
+  isGreyScale.value = !isGreyScale.value;
+});
+provide('isNegativeContrast', isNegativeContrast); // Add this line
+provide('toggleNegativeContrast', () => {
+  isNegativeContrast.value = !isNegativeContrast.value;
+});
+// Provide the readable font state and toggle method
+provide('isReadableFont', isReadableFont);
+provide('toggleReadableFont', () => {
+  isReadableFont.value = !isReadableFont.value;
+});
 </script>
 
 <template>
-  <div class="general">
+    <div :class="['general', { 'high-contrast': isHighContrast, 'negative-contrast': isNegativeContrast, 'grey-scale': isGreyScale, 'readable-font': isReadableFont }]">
     <NavBar />
     <LanguageSelector />
     <main class="content">
@@ -15,11 +40,27 @@ import PopupNavbar from './components/PopupNavbar.vue';
     <footer>
       <FooterComponent />
     </footer>
-    <PopupNavbar /> <!-- Include PopupNavbar component -->
+    <PopupNavbar />
   </div>
 </template>
 
 <style>
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+body.high-contrast {
+  background-color: var(--high-contrast-bg);
+  color: var(--high-contrast-text);
+}
+
+body.negative-contrast {
+  background-color: var(--negative-contrast-bg);
+  color: var(--negative-contrast-text);
+}
+
 
 * {
   margin: 0;
@@ -30,6 +71,14 @@ import PopupNavbar from './components/PopupNavbar.vue';
 }
 
 :root {
+  --bg-color: white ;
+  --text-color: black ;
+  --high-contrast-bg: black;
+  --high-contrast-text: yellow;
+  --negative-contrast-bg: black; /* Invert these colors as needed */
+  --negative-contrast-text: white; /* Invert these colors as needed */
+  --ligthorange: #ffcc99;
+
   --black: #000000;
   --white: #ffffff;
 
@@ -57,16 +106,18 @@ import PopupNavbar from './components/PopupNavbar.vue';
   
 }
 
+/* Add the necessary styles for negative contrast here */
+
 
 h2, h3, h4, p {
   margin: 1rem;
 }
 
+
 .img {
   width: 90%;
   margin: 1rem;
   border-radius: 8px;
-
 }
 
 .general {
@@ -88,10 +139,6 @@ h2, h3, h4, p {
 .main {
   background-color: var(--white);
   padding: 2rem;
-}
-
-body {
-  margin:0;
 }
 
 h1 {
@@ -124,7 +171,7 @@ p {
   padding: 0;
 }
 
-.flex { /*Flexbox for containers*/
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,7 +247,10 @@ p {
   text-align: center;
 }
 
-
+/* Readable font styles */
+body.readable-font, .readable-font {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
 
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
@@ -216,3 +266,5 @@ p {
   }
 }
 </style>
+
+
