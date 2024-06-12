@@ -3,6 +3,7 @@ import { createI18n } from 'vue-i18n';
 const messages = {
   en: {
     message: {
+      title:'catalogue',
       subtitle: 'Train and develop soft skills',
       paragraph1: 'Are you interested in Soft Skills and would like to integrate them into your practice?',
       paragraph2: 'Soft Skills are relational and human skills close to personality traits that are essential in professional life and that complement specialized skills and knowledge (Hard Skills). Each and every one of us acquires them partially regardless of our professional or personal background.',
@@ -132,6 +133,7 @@ const messages = {
   },
   es: {
     message: {
+      title:'catalogo',
       subtitle: 'Formar y desarrollar soft skills',
       paragraph1: '¿Te interesan las soft skills y te gustaría integrarlas en tu práctica?',
       paragraph2: 'Las soft skills son habilidades relacionales y humanas cercanas a los rasgos de la personalidad que son esenciales en la vida profesional y que complementan las habilidades y conocimientos especializados (hard skills). Tod@s y cada un@ de nosotr@s las adquirimos parcialmente, independientemente de nuestra trayectoria profesional o personal.',

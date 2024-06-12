@@ -10,7 +10,7 @@
           :id="'c' + index"
           :image-id="'i' + index"
           :story-id="'s' + index"
-          :title="destination.title"
+          :title="t(destination.title)"
           :description="destination.description"
           :image-url="destination.imageUrl"
           @click="changeActiveComponent(destination.componentName)"
@@ -27,6 +27,9 @@
 <script setup>
 import { ref } from 'vue';
 import DestinationCard from '../components/DestinationCard.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 import Catalogue from '../components/pedagogy/Catalogue.vue';
 import SSPictograms from '../components/pedagogy/SSPictograms.vue';
@@ -38,7 +41,7 @@ import Occupational from '../components/pedagogy/Occupational.vue';
 import CorporateCulture from '../components/pedagogy/CorporateCulture.vue';
 
 const destinations = ref([
-  { title: 'Catalogue', description: 'Target 1 description', imageUrl: '/public/pedagogia/catalogo.jpg', componentName: 'Catalogue' },
+  { title: 'message.title', description: 'Target 1 description', imageUrl: '/public/pedagogia/catalogo.jpg', componentName: 'Catalogue' },
   { title: 'SSPictograms', description: 'Target 2 description', imageUrl: '/public/pedagogia/pictograms.jpg', componentName: 'SSPictograms' },
   { title: 'SSBase', description: 'Target 3 description', imageUrl: '/public/pedagogia/base.jpg', componentName: 'SSBase' },
   { title: 'Wheels', description: 'Target 4 description', imageUrl: '/public/pedagogia/wheels.jpg', componentName: 'Wheels' },
