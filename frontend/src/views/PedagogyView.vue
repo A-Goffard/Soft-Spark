@@ -1,7 +1,7 @@
 <template>
   <div class="general">
     <div class="main">
-      <h1>Pedagogía</h1>
+      <h1>{{$t('message.nav')}}</h1>
 
       <div class="wrapper">
         <DestinationCard

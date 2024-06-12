@@ -5,7 +5,7 @@
     </div>
     <ul :class="{ 'nav-links': true, 'active': isMenuOpen }">
       <li v-for="tab in tabs" :key="tab.name" :class="{ active: isActiveTab(tab.component) }" @click="setCurrentTab(tab)">
-        {{ tab.name }}
+        {{ t(tab.name)  }}
       </li>
     </ul>
   </nav>
@@ -21,12 +21,16 @@ import TrainingView from '../views/TrainingView.vue';
 import AssessmentView from '../views/AssessmentView.vue';
 import AboutView from '../views/AboutView.vue';
 
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 const router = useRouter();
 const route = useRoute();
 
 const tabs = [
   { path: '/', name: 'Home', component: HomeView },
-  { path: '/pedagogy', name: 'Pedagogy', component: PedagogyView },
+  { path: '/pedagogy', name: 'message.nav', component: PedagogyView },
   { path: '/training', name: 'Training materials', component: TrainingView },
   { path: '/assessment', name: 'Assessment', component: AssessmentView },
   { path: '/humanresources', name: 'Human resources', component: HumanResourcesView },

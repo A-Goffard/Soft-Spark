@@ -3,6 +3,7 @@ import { createI18n } from 'vue-i18n';
 const messages = {
   en: {
     message: {
+      nav:'Pedagogy',
       title:'catalogue',
       subtitle: 'Train and develop soft skills',
       paragraph1: 'Are you interested in Soft Skills and would like to integrate them into your practice?',
@@ -133,6 +134,7 @@ const messages = {
   },
   es: {
     message: {
+      nav:'Pedagogia',
       title:'catalogo',
       subtitle: 'Formar y desarrollar soft skills',
       paragraph1: '¿Te interesan las soft skills y te gustaría integrarlas en tu práctica?',
