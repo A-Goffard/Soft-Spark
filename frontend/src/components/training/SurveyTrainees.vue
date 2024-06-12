@@ -9,7 +9,7 @@
             
             <div class="comp-downloads">
 
-                <button class="btn" @click="handleFile($t('/Satisfaction survey - Training of trainees/message.trainingmaterial5download1'))">{{ $t('message.btntrainingmaterial5download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.trainingmaterial5download1'))">{{ $t('message.btntrainingmaterial5download1') }}</button>
 
             </div>
             
@@ -28,7 +28,7 @@ const { t } = useI18n();
 
 const handleFile = (fileName) => {
 const fileExtension = fileName.split('.').pop().toLowerCase();
-const fileUrl = `/archives/Satisfaction surveys/${fileName}`;
+const fileUrl = `/archives/Satisfaction surveys/Satisfaction survey - Training of trainees/${fileName}`;
 if (fileExtension === 'pdf') {
   // Abrir PDFs en una nueva pestaña
   window.open(fileUrl, '_blank');
