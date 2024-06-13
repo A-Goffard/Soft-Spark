@@ -671,7 +671,7 @@ const messages = {
       paragraph1: 'Sie interessieren sich für Soft Skills und möchten diese in Ihre Praxis integrieren?',
       paragraph2: 'Soft Skills sind soziale und personale Kompetenzen, die den Persönlichkeitsmerkmalen nahekommen, im Berufsleben unverzichtbar sind und die die fachlichen Fähigkeiten und Kenntnisse (Hard Skills) ergänzen. Jede/r von uns erwirbt sie bis zu einem gewissen Grad unabhängig von seinen beruflichen oder persönlichen Hintergrund. Heutzutage hat man jedoch den Eindruck, dass sich Angebote für Soft Skills Schulungen ganz selbstverständlich vor allem an hochqualifizierte Menschen richten.',
       paragraph3: 'Das Erasmus+ Projekt "Soft Skills" zielt darauf ab, den Zugang zu Soft Skills für Menschen mit niedrigem Qualifikationsniveau und/oder mit Behinderungen zu erleichtern, um ihre berufliche und sogar soziale Integration und Chancengleichheit zu fördern. Die Bewältigung einer beruflichen Tätigkeit erfordert nicht nur die Umsetzung von berufsspezifischen technischen Fähigkeiten (Hard Skills), sondern ist auch auf Soft Skills angewiesen.',
-      paragraph4: 'faltatexto',
+      paragraph4: '',
       paragraph5: 'Dabei wurde der Ansatz verfolgt, den gesamten Erwerbsprozess von Soft Skills zu berücksichtigen. Dazu wurden zahlreiche ergänzende Materialien entwickelt, die auf dieser Website kostenfrei zugänglich sind.',
       paragraph6: 'Zusätzlich zu diesen kostenlosen Materialien ist die digitale Plattform Zerobarrier gegen eine Gebühr zugänglich. Diese Plattform ermöglicht es Ihnen, den Erwerbsprozess von Soft Skills für Teilnehmer/innen online zu verwalten und zu dokumentieren.',
       button1: 'Bericht zur Wirkungsmessung',
