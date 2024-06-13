@@ -6,13 +6,17 @@
     
     <div :class="['popup-navbar', { 'visible': isNavbarVisible }]" ref="popupNavbar">
       <ul>
+        <li><h3>Herramientas de accesibilidad</h3></li>
         <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">Incrementar texto</button></li>
         <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">Disminuir texto</button></li>
         <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">Restablecer texto</button></li>
-<!--         <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">Alto contraste</button></li>
-        <li><button @click="toggleNegativeContrast"><img src="/contrastenegativo.png" alt="Icon 5">Contraste negativo</button></li>
-        <li><button @click="toggleReadableFont"><img src="/readablefont.png" alt="Icon 6">Fuente legible</button></li>
- -->        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
+        <li><button @click="toggleGreyScale"><img src="/greyscale.png" alt="Icon 8">Escalas de grises</button></li>
+        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
+        <li><button :class="{ 'selected-language': selectedLanguage.value === 'es' }" @click="changeLanguage('es')">Español</button></li>
+        <li><button :class="{ 'selected-language': selectedLanguage.value === 'en' }" @click="changeLanguage('en')">Inglés</button></li>
+        <li><button :class="{ 'selected-language': selectedLanguage.value === 'sl' }" @click="changeLanguage('sl')">Esloveno</button></li>
+        <li><button :class="{ 'selected-language': selectedLanguage.value === 'fr' }" @click="changeLanguage('fr')">Francés</button></li>
+        <li><button :class="{ 'selected-language': selectedLanguage.value === 'de' }" @click="changeLanguage('de')">Alemán</button></li>
       </ul>
     </div>
   </div>
@@ -23,6 +27,17 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const isNavbarVisible = ref(false);
 const popupNavbar = ref(null);
+const selectedLanguage = ref('es'); // Valor predeterminado en español
+const isGreyScale = ref(false);
+
+const toggleGreyScale = () => {
+  isGreyScale.value = !isGreyScale.value;
+  if (isGreyScale.value) {
+    document.documentElement.style.filter = 'grayscale(100%)';
+  } else {
+    document.documentElement.style.filter = '';
+  }
+};
 
 const toggleNavbar = (event) => {
   event.stopPropagation();
@@ -49,19 +64,27 @@ const resetTextSize = () => {
   document.documentElement.style.fontSize = '';
 };
 
-const isHighContrast = ref(false);
-
-const toggleHighContrast = () => {
-  isHighContrast.value = !isHighContrast.value;
-  document.documentElement.style.filter = isHighContrast.value ? 'contrast(1.5)' : 'contrast(1)';
+const changeLanguage = (language) => {
+  console.log(`Changing language to: ${language}`);
+  selectedLanguage.value = language;
+  console.log(`Current selected language: ${selectedLanguage.value}`);
 };
 
-const toggleNegativeContrast = () => {
-  document.documentElement.style.filter = document.documentElement.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
-};
-
-const toggleReadableFont = () => {
-  document.body.style.fontFamily = document.body.style.fontFamily === 'Arial, sans-serif' ? 'inherit' : 'Arial, sans-serif';
+const getLangCode = (language) => {
+  switch (language) {
+    case 'es':
+      return 'es-ES';
+    case 'en':
+      return 'en-US';
+    case 'sl':
+      return 'sl-SI';
+    case 'fr':
+      return 'fr-FR';
+    case 'de':
+      return 'de-DE';
+    default:
+      return 'es-ES';
+  }
 };
 
 let speechSynthesisUtterance = null;
@@ -77,7 +100,7 @@ const readChunk = () => {
   if (currentChunkIndex >= textChunks.length) return;
 
   speechSynthesisUtterance = new SpeechSynthesisUtterance();
-  speechSynthesisUtterance.lang = 'es-ES';
+  speechSynthesisUtterance.lang = getLangCode(selectedLanguage.value);
   speechSynthesisUtterance.text = textChunks[currentChunkIndex];
   speechSynthesisUtterance.pitch = 1;
   speechSynthesisUtterance.rate = 1;
@@ -113,7 +136,6 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
 });
 </script>
-
 
 <style scoped>
 :root {
@@ -203,6 +225,15 @@ body {
 }
 
 .popup-navbar button:hover {
+  background-color: var(--orange);
+}
+
+li {
+  background-color: var(--ligthyellow);
+}
+
+.selected-language {
+  border: 2px solid orange; /* Borde naranja */
   background-color: var(--orange);
 }
 </style>

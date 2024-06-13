@@ -20,7 +20,6 @@
     es: 'ES',
     de: 'DE',
     fr: 'FR',
-    eu: 'EU',
     sl: 'SL',
   };
   
