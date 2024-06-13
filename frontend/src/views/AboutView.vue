@@ -1,7 +1,7 @@
 <template>
-  <div class="general aboutg">
+  <div class="aboutg">
     <div class="header">
-      <!--Content before waves-->
+
       <div class="about flex">
         <div class="header-content">
           <h1>{{ $t('message.subtitle2') }}</h1>
@@ -95,6 +95,7 @@ const handleHover = (hovering, ...groups) => {
 .mainJ {
   max-width: 80%;
   background-color: white;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   margin: auto;
   justify-content: center;
@@ -103,7 +104,8 @@ const handleHover = (hovering, ...groups) => {
 }
 
 .header-content {
-  max-width: 75rem;
+  max-width: 50rem;
+  margin: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,6 +122,9 @@ const handleHover = (hovering, ...groups) => {
 
 .aboutg{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 2rem;
 }
 .imgSponsors {
 display: flex;
@@ -187,7 +192,23 @@ img {
   transform: scale(1.3);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1200px) {
+  .header-content {
+    margin: 1rem;
+  }
+  .aboutg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+  .mainJ {
+    padding-top: 0rem;
+  }
+
+}
+
+@media (max-width: 780px) {
   p {
     font-size: 1.3rem;
   }
