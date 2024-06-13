@@ -1,5 +1,5 @@
 <template>
-  <div class="general">
+  <div class="general aboutg">
     <div class="header">
       <!--Content before waves-->
       <div class="about flex">
@@ -100,7 +100,6 @@ const handleHover = (hovering, ...groups) => {
   justify-content: center;
   align-content: center;
   align-items: center;
-
 }
 
 .header-content {
@@ -119,15 +118,9 @@ const handleHover = (hovering, ...groups) => {
   margin-bottom: 1rem;
 }
 
-/* .imgSponsors {
-  margin: auto;
-  width: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  padding: 2rem;
-} */
-
+.aboutg{
+  display: flex;
+}
 .imgSponsors {
 display: flex;
 flex-direction: column;
@@ -137,9 +130,6 @@ align-items: center;
 .logotrio {
   display: flex;
 }
-/* .main {
-  max-width: 75%;
-} */
 
 .sponsors {
   width: 10rem;
@@ -153,14 +143,6 @@ img {
   width: 100%;
 
 }
-/* .solivers {
-  background-color: rgb(255, 255, 255);
-  height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-} */
 
 .socios {
 
@@ -170,7 +152,6 @@ img {
   align-items: center;
   margin: auto;
   border: solid 1px rgb(#ffc000);
-/*   width: 60%; */
   border-radius: 4rem;
   -webkit-box-shadow: 0px 0px 43px 3px rgba(255, 192, 0, 1);
   -moz-box-shadow: 0px 0px 43px 3px rgba(255, 192, 0, 1);
