@@ -2,7 +2,7 @@
   <div class="general">
     <div class="main">
       <h1>{{ $t('message.pedagogypage') }}</h1>
-        
+      
       <div class="wrapper">
         <DestinationCard
           v-for="(destination, index) in destinations"
@@ -14,15 +14,14 @@
           @click="changeActiveComponent(destination.componentName)"
         />
       </div>
-        
+      
       <div class="cards">
         <component :is="getComponent(activeComponent)" />
       </div>
     </div>
-    </div>
   </div>
 </template>
-  
+
 <script setup>
 import { ref } from 'vue';
 import DestinationCard from '../components/DestinationCard.vue';
@@ -95,7 +94,7 @@ const getComponent = (name) => {
 
 @media (max-width: 1200px) {
   .general {
-  padding-top: 0rem;
-}
+    padding-top: 0rem;
+  }
 }
 </style>

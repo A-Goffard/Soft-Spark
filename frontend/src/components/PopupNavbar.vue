@@ -23,19 +23,19 @@
 <script setup>
 import { ref, inject, onMounted, onBeforeUnmount } from 'vue';
 
-
-/* --------------------------------HIGH CONTRAST/GREY SCALE TOGGLE FUNCTION------------------ */
+/* ---------------------------------- ACCESSIBILITY TOGGLE FUNCTIONS ---------------------------------- */
 
 const isHighContrast = ref(false);
-
 const isGreyScale = ref(false);
-const isNegativeContrast = inject('isNegativeContrast'); // Add this line
-const toggleNegativeContrast = inject('toggleNegativeContrast'); // Add this line
 
 // Readable font
-const isReadableFont = inject('isReadableFont');
-const toggleReadableFont = inject('toggleReadableFont');
+const isReadableFont = inject('isReadableFont', ref(false));
+const toggleReadableFont = inject('toggleReadableFont', () => {
+  isReadableFont.value = !isReadableFont.value;
+  document.body.style.fontFamily = isReadableFont.value ? 'Arial, sans-serif' : 'inherit';
+});
 
+// High contrast
 const toggleHighContrast = () => {
   isHighContrast.value = !isHighContrast.value;
   if (isHighContrast.value) {
@@ -47,38 +47,18 @@ const toggleHighContrast = () => {
   }
 };
 
-/* ----------------GREYSCALE PART--------------- */
-
+// Grey scale
 const toggleGreyScale = () => {
   isGreyScale.value = !isGreyScale.value;
-  if (isGreyScale.value) {
-    document.documentElement.style.filter = 'grayscale(100%)';
-  } else {
-    document.documentElement.style.filter = '';
-  }
+  document.documentElement.style.filter = isGreyScale.value ? 'grayscale(100%)' : '';
 };
 
-/* ------------------------------POPUP NAVBAR------------------------ */
-const isNavbarVisible = ref(false);
-const popupNavbar = ref(null);
-
-const toggleNavbar = (event) => {
-  event.stopPropagation();
-  isNavbarVisible.value = !isNavbarVisible.value;
+// Negative contrast
+const toggleNegativeContrast = () => {
+  document.documentElement.style.filter = document.documentElement.style.filter === 'invert(1)' ? '' : 'invert(1)';
 };
 
-const handleClickOutside = (event) => {
-  if (popupNavbar.value && !popupNavbar.value.contains(event.target)) {
-    isNavbarVisible.value = false;
-  }
-};
-
-/* -----------------------INCREMENT, DECREMENT, RESET TEXT SIZE------------------ */
-const handleButtonClick = (itemNumber) => {
-  console.log(`Button ${itemNumber} clicked`);
-  // Add your button click handling logic here
-};
-
+// Increment, decrement, reset text size
 const increaseTextSize = () => {
   const currentSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
   document.documentElement.style.fontSize = `${currentSize * 1.1}px`;
@@ -93,52 +73,31 @@ const resetTextSize = () => {
   document.documentElement.style.fontSize = '';
 };
 
-const isHighContrast = ref(false);
+// Navbar toggle
+const isNavbarVisible = ref(false);
+const popupNavbar = ref(null);
 
-const toggleHighContrast = () => {
-  isHighContrast.value = !isHighContrast.value;
-  document.documentElement.style.filter = isHighContrast.value ? 'contrast(1.5)' : 'contrast(1)';
+const toggleNavbar = (event) => {
+  event.stopPropagation();
+  isNavbarVisible.value = !isNavbarVisible.value;
 };
 
-const toggleNegativeContrast = () => {
-  document.documentElement.style.filter = document.documentElement.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
+const handleClickOutside = (event) => {
+  if (popupNavbar.value && !popupNavbar.value.contains(event.target)) {
+    isNavbarVisible.value = false;
+  }
 };
 
-const toggleReadableFont = () => {
-  document.body.style.fontFamily = document.body.style.fontFamily === 'Arial, sans-serif' ? 'inherit' : 'Arial, sans-serif';
-};
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
 
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside);
+});
+
+// Read page aloud
 let speechSynthesisUtterance = null;
-let textChunks = [];
-let currentChunkIndex = 0;
-
-const splitTextIntoChunks = (text, chunkSize = 160) => {
-  const regex = new RegExp(`.{1,${chunkSize}}`, 'g');
-  return text.match(regex);
-};
-
-const readChunk = () => {
-  if (currentChunkIndex >= textChunks.length) return;
-
-  speechSynthesisUtterance = new SpeechSynthesisUtterance();
-  speechSynthesisUtterance.lang = 'es-ES';
-  speechSynthesisUtterance.text = textChunks[currentChunkIndex];
-  speechSynthesisUtterance.pitch = 1;
-  speechSynthesisUtterance.rate = 1;
-
-  speechSynthesisUtterance.onend = () => {
-    currentChunkIndex++;
-    readChunk();
-  };
-
-  speechSynthesisUtterance.onerror = (event) => {
-    console.error('Speech synthesis error:', event.error);
-  };
-
-  window.speechSynthesis.speak(speechSynthesisUtterance);
-};
- */
- let speechSynthesisUtterance = null;
 let chunkIndex = 0;
 let textChunks = [];
 
@@ -166,7 +125,7 @@ const splitTextIntoChunks = (text, chunkSize = 120) => {
 const readNextChunk = () => {
   if (chunkIndex < textChunks.length) {
     speechSynthesisUtterance = new SpeechSynthesisUtterance();
-    speechSynthesisUtterance.lang = 'en-EN';
+    speechSynthesisUtterance.lang = 'es-ES';
     speechSynthesisUtterance.text = textChunks[chunkIndex];
     speechSynthesisUtterance.pitch = 1;
     speechSynthesisUtterance.rate = 1;
@@ -196,16 +155,7 @@ const readPageAloud = () => {
   chunkIndex = 0;
   readNextChunk();
 };
-/* --------------------------CLICK OUTSIDE NAVBAR TO CLOSE IT------------------- */
-onMounted(() => {
-  document.addEventListener('click', handleClickOutside);
-});
-
-onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClickOutside);
-});
 </script>
-
 
 <style scoped>
 :root {
