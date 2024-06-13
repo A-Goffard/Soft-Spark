@@ -9,13 +9,13 @@
             
             <div class="comp-downloads">
 
-                <button class="btn" @click="handleFile($t('message.assessment3download1'))">{{ $t('message.assessment3download1') }}</button>
-                <button class="btn" @click="handleFile($t('message.assessment3download2'))">{{ $t('message.assessment3download2') }}</button>
-                <button class="btn" @click="handleFile($t('message.assessment3download3'))">{{ $t('message.assessment3download3') }}</button>
-                <button class="btn" @click="handleFile($t('message.assessment3download4'))">{{ $t('message.assessment3download4') }}</button>
-                <button class="btn" @click="handleFile($t('message.assessment3download5'))">{{ $t('message.assessment3download5') }}</button>
-                <button class="btn" @click="handleFile($t('message.assessment3download6'))">{{ $t('message.assessment3download6') }}</button>
-                <button class="btn" @click="handleFile($t('message.assessment3download7'))">{{ $t('message.assessment3download7') }}</button>
+                <button class="btn" @click="handleFile($t('message.assessment3download1'))">{{ $t('message.btnassessment3download1') }}</button>
+                <button class="btn" @click="handleFile($t('message.assessment3download2'))">{{ $t('message.btnassessment3download2') }}</button>
+                <button class="btn" @click="handleFile($t('message.assessment3download3'))">{{ $t('message.btnassessment3download3') }}</button>
+                <button class="btn" @click="handleFile($t('message.assessment3download4'))">{{ $t('message.btnassessment3download4') }}</button>
+                <button class="btn" @click="handleFile($t('message.assessment3download5'))">{{ $t('message.btnassessment3download5') }}</button>
+                <button class="btn" @click="handleFile($t('message.assessment3download6'))">{{ $t('message.btnassessment3download6') }}</button>
+                <button class="btn" @click="handleFile($t('message.assessment3download7'))">{{ $t('message.btnassessment3download7') }}</button>
 
             </div>
             

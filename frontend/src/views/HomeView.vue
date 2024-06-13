@@ -1,40 +1,33 @@
-<!-- src/views/HomeView.vue -->
 <template>
   <div class="general">
     <Header />
 
     <div class="hometext">
       <div class="text">
+        <h1>{{ $t("message.subtitle") }}</h1>
+        
         <div class="container1">
           <div class="hometext_1">
-            <h1>{{ $t("message.subtitle") }}</h1>
             <p>{{ $t("message.paragraph1") }}</p>
             <p>{{ $t("message.paragraph2") }}</p>
           </div>
           <img class="img" src="/public/1.png" alt="Skills" />
         </div>
 
-        <br><br><br><br>
-
         <div class="container2">
+          <img class="img" src="/public/2.png" alt="Skills" />
           <div class="hometext_2">
             <p>{{ $t("message.paragraph3") }}</p>
             <p>{{ $t("message.paragraph4") }}</p>
           </div>
-          <img class="img" src="/public/2.png" alt="Skills" />
         </div>
 
-        <br><br><br><br>
+        <div class="container3">
+          <p>{{ $t("message.paragraph5") }}</p>
+          <p>{{ $t("message.paragraph6") }}</p>
+        </div>
 
-        <p>{{ $t("message.paragraph5") }}</p>
-        <p>{{ $t("message.paragraph6") }}</p>
-
-        <br><br><br><br>
-
-
-        <button class="btn" @click="handleFile($t('message.button1'))">
-          {{ $t("message.button1") }}
-        </button>
+        <button class="btn" @click="handleFile($t('message.button1'))">{{ $t('message.btnhomed') }}</button>
       </div>
     </div>
   </div>
@@ -76,42 +69,26 @@
 }
 
 .text {
-  max-width: 75rem;
+  max-width: 65rem;
   margin: auto;
 }
-
-/* ---------------- media queries-------------------- */
-
-@media (max-width: 1024px) {
-  .container1, .container2 {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .container1 img, .container2 img {
-    width: 80%;
-    margin: 1rem 0;
-  }
-
-  .container1 div, .container2 div {
-    width: 100%;
-  }
+.container1,
+.container2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
 }
-
-@media (max-width: 768px) {
-  .container1 img, .container2 img {
-    width: 100%;
-  }
-
-  .hometext_1, .hometext_2 {
-    padding: 0 1rem;
-  }
-  
-  .btn {
-    width: 80%;
-    margin: 1rem auto;
-  }
+.hometext_1,
+.hometext_2 {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+img {
+  max-width: 45%;
+  height: auto;
 }
 </style>
 
@@ -122,14 +99,14 @@ import { useI18n } from "vue-i18n";
 const { t } = useI18n();
 
 const handleFile = (fileName) => {
-  const fileExtension = fileName.split(".").pop().toLowerCase();
+  const fileExtension = fileName.split('.').pop().toLowerCase();
   const fileUrl = `/archives/Impact measurement report/${fileName}`;
-  if (fileExtension === "pdf") {
+  if (fileExtension === 'pdf') {
     // Abrir PDFs en una nueva pestaña
-    window.open(fileUrl, "_blank");
+    window.open(fileUrl, '_blank');
   } else {
     // Descargar otros tipos de archivos
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = fileUrl;
     link.download = fileName;
     link.click();

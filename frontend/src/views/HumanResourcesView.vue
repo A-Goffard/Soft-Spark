@@ -1,8 +1,8 @@
 <template>
   <div class="general">
     <div class="main">
-      <h1>Human Resources</h1>
-    
+      <h1>{{ $t('message.humanrpage') }}</h1>
+        
       <div class="wrapper">
         <DestinationCard
           v-for="(destination, index) in destinations"
@@ -10,45 +10,17 @@
           :id="'c' + index"
           :image-id="'i' + index"
           :story-id="'s' + index"
-          :title="destination.title"
-          :description="destination.description"
-          :image-url="destination.imageUrl"
+          :title="$t(destination.title)"
           @click="changeActiveComponent(destination.componentName)"
         />
       </div>
-
+        
       <div class="cards">
         <component :is="getComponent(activeComponent)" />
       </div>
-      
     </div>
-  
-
-</div>
-
+  </div>
 </template>
-
-<style scoped>
-.general {
-  padding-top: 5rem;
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4rem;
-  max-width: 1200px;
-  margin-top: 20px;
-}
-</style>
 
 <script setup>
 import { ref } from 'vue';
@@ -56,8 +28,12 @@ import DestinationCard from '../components/DestinationCard.vue';
 
 import HRM from '../components/human/HRM.vue';
 
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 const destinations = ref([
-  { title: 'HRM', description: 'Target 1 description', imageUrl: '/1.png', componentName: 'HRM' },
+  { title: 'message.humanresources1title', componentName: 'HRM' },
 
 ]);
 
@@ -74,4 +50,32 @@ const componentMap = {
 const getComponent = (name) => {
   return componentMap[name] || null;
 };
- </script>
+</script>
+
+<style scoped>
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.wrapper {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 65rem;
+}
+
+@media (max-width: 1200px) {
+  .general {
+  padding-top: 0rem;
+}
+}
+</style>
+

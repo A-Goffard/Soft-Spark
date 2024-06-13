@@ -63,7 +63,7 @@ const isNavbarVisible = ref(false);
 const popupNavbar = ref(null);
 
 const toggleNavbar = (event) => {
-  event.stopPropagation(); // Prevent the click event from propagating to the document
+  event.stopPropagation();
   isNavbarVisible.value = !isNavbarVisible.value;
 };
 
@@ -96,14 +96,12 @@ const resetTextSize = () => {
 /* --------------------------------TEXT-TO-SPEECH FUNCTION------------------ */
 /* let speechSynthesisUtterance = null;
 
-const readPageAloud = () => {
-  if (window.speechSynthesis.speaking) {
-    window.speechSynthesis.cancel();
-  }
+const readChunk = () => {
+  if (currentChunkIndex >= textChunks.length) return;
 
   speechSynthesisUtterance = new SpeechSynthesisUtterance();
-  speechSynthesisUtterance.lang = 'es-ES'; // Set the language to Spanish (Spain)
-  speechSynthesisUtterance.text = document.body.innerText;
+  speechSynthesisUtterance.lang = 'es-ES';
+  speechSynthesisUtterance.text = textChunks[currentChunkIndex];
   speechSynthesisUtterance.pitch = 1;
   speechSynthesisUtterance.rate = 1;
 
@@ -187,6 +185,7 @@ onBeforeUnmount(() => {
 });
 </script>
 
+
 <style scoped>
 
 .container {
@@ -199,7 +198,7 @@ onBeforeUnmount(() => {
   right: 20px;
   transform: translateY(-50%);
   cursor: pointer;
-  z-index: 1000; /* Ensure the icon is above other content */
+  z-index: 1000;
 }
 
 .navbar-trigger img {
@@ -210,20 +209,21 @@ onBeforeUnmount(() => {
 .popup-navbar {
   position: fixed;
   top: 50%;
-  right: -250px; /* Start off-screen */
+  right: -250px;
   transform: translateY(-50%);
   width: 250px;
-  background-color: greenyellow;
+  background-color: var(--white);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 999; /* Ensure the navbar is above other content */
+  z-index: 999;
   transition: right 0.3s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--orange);
 }
 
 .popup-navbar.visible {
-  right: 0; /* Move on-screen */
+  right: 0;
 }
 
 .popup-navbar ul {
@@ -237,7 +237,7 @@ onBeforeUnmount(() => {
 }
 
 .popup-navbar li {
-  margin: 0px 0;
+  margin: 0;
   width: 100%;
   text-align: center;
 }
@@ -247,7 +247,7 @@ onBeforeUnmount(() => {
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: greenyellow;
+  background-color: var(--ligthyellow);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -261,7 +261,6 @@ onBeforeUnmount(() => {
 }
 
 .popup-navbar button:hover {
-  background-color: red;
+  background-color: var(--orange);
 }
 </style>
-

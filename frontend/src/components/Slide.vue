@@ -16,8 +16,5 @@
   </script>
   
   <style scoped>
-  .slide {
-    /* Estilos para el slide */
-  }
   </style>
   

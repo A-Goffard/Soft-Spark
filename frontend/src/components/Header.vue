@@ -1,5 +1,5 @@
 <template>
-    <div class="general">
+    <div>
     
     <div class="header">
 
@@ -49,7 +49,7 @@ h1 {
 }
 .inner-header {
   position: relative;
-  padding-top: 5rem;
+
 }
 .triangulitos {
   position: relative;
@@ -129,8 +129,16 @@ h1 {
 @media (max-width: 450px) {
 
   h1 {
-    font-size:1.5px;
+    font-size: 3rem;
   }
+
+  .triangulitos {
+  position: relative;
+  top: -5rem;
+  right: 3rem;
+  width: 6rem;
+  filter: drop-shadow(0px 0px 7px var(--salmon));
+}
 }
 </style>
   

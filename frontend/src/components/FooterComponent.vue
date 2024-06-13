@@ -4,34 +4,41 @@
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
       <defs>
-      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
       </defs>
       <g class="parallax">
-      <use xlink:href="#gentle-wave" x="48" y="0" fill="var(--yellowtransp)" />
-      <use xlink:href="#gentle-wave" x="48" y="3" fill="var(--salmontransp)" />
-      <use xlink:href="#gentle-wave" x="48" y="5" fill="var(--orangetransp)" />
-      <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--ligthorange)" />
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="var(--yellowtransp)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="var(--salmontransp)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="var(--orangetransp)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--ligthorange)" />
       </g>
       </svg>
     </div>
     <div>
-
     </div>
     <div class="general">
       <p>&#169; Powered by <a href="#">Voltus V</a> | Peñascal F5</p>
       <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Legal</a></li>
+        <li><a href="#">{{ $t('message.footerpp') }}</a></li>
+        <li><a href="#">{{ $t('message.footertu') }}</a></li>
+        <li><a href="#">{{ $t('message.footerl') }}</a></li>
       </ul>
+      <div>
+        <img :src="footerLogo()" alt="Footer Logo" class="footer-logo" />
+      </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
+
+const footerLogo = () => t('message.footerLogo'); // Función que devuelve la ruta según el idioma
 
 </script>
+
 
 <style scoped>
 div {
@@ -64,7 +71,10 @@ ul {
   display: flex;
   flex-direction: column;
 }
-
+.footer-logo {
+  height: 3rem;
+  margin: 1rem;
+}
 .olas{
   width: 100%;
 }
@@ -112,6 +122,16 @@ ul {
   .waves {
     height:40px;
     min-height:40px;
+  }
+  p {
+    font-size: medium;
+  }
+}
+@media (max-width: 450px) {
+
+  ul {
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>

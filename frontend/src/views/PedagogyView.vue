@@ -1,8 +1,8 @@
 <template>
   <div class="general">
     <div class="main">
-      <h1>Pedagogía</h1>
-
+      <h1>{{ $t('message.pedagogypage') }}</h1>
+        
       <div class="wrapper">
         <DestinationCard
           v-for="(destination, index) in destinations"
@@ -10,20 +10,18 @@
           :id="'c' + index"
           :image-id="'i' + index"
           :story-id="'s' + index"
-          :title="destination.title"
-          :description="destination.description"
-          :image-url="destination.imageUrl"
+          :title="$t(destination.title)"
           @click="changeActiveComponent(destination.componentName)"
         />
       </div>
-
+        
       <div class="cards">
         <component :is="getComponent(activeComponent)" />
       </div>
     </div>
   </div>
 </template>
-
+  
 <script setup>
 import { ref } from 'vue';
 import DestinationCard from '../components/DestinationCard.vue';
@@ -37,15 +35,19 @@ import Zerobarrier from '../components/pedagogy/Zerobarrier.vue';
 import Occupational from '../components/pedagogy/Occupational.vue';
 import CorporateCulture from '../components/pedagogy/CorporateCulture.vue';
 
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
 const destinations = ref([
-  { title: 'Catalogue', description: 'Target 1 description', imageUrl: '/public/pedagogia/catalogo.jpg', componentName: 'Catalogue' },
-  { title: 'SSPictograms', description: 'Target 2 description', imageUrl: '/public/pedagogia/pictograms.jpg', componentName: 'SSPictograms' },
-  { title: 'SSBase', description: 'Target 3 description', imageUrl: '/public/pedagogia/base.jpg', componentName: 'SSBase' },
-  { title: 'Wheels', description: 'Target 4 description', imageUrl: '/public/pedagogia/wheels.jpg', componentName: 'Wheels' },
-  { title: 'Summary', description: 'Target 5 description', imageUrl: '/public/pedagogia/summary.jpg', componentName: 'Summary' },
-  { title: 'Zerobarrier', description: 'Target 6 description', imageUrl: '/public/pedagogia/zerobarrier.jpg', componentName: 'Zerobarrier' },
-  { title: 'Occupational', description: 'Target 7 description', imageUrl: '/public/pedagogia/occupational.jpg', componentName: 'Occupational' },
-  { title: 'CorporateCulture', description: 'Target 8 description', imageUrl: '/public/pedagogia/corporateculture.jpg', componentName: 'CorporateCulture' },
+  { title: 'message.pedagogy1title', componentName: 'Catalogue' },
+  { title: 'message.pedagogy2title', componentName: 'SSPictograms' },
+  { title: 'message.pedagogy3title', componentName: 'SSBase' },
+  { title: 'message.pedagogy4title', componentName: 'Wheels' },
+  { title: 'message.pedagogy5title', componentName: 'Summary' },
+  { title: 'message.pedagogy6title', componentName: 'Zerobarrier' },
+  { title: 'message.pedagogy7title', componentName: 'Occupational' },
+  { title: 'message.pedagogy8title', componentName: 'CorporateCulture' },
 ]);
 
 const activeComponent = ref('');
@@ -71,10 +73,6 @@ const getComponent = (name) => {
 </script>
 
 <style scoped>
-.general {
-  padding-top: 5rem;
-}
-
 .cards {
   display: flex;
   flex-direction: column;
@@ -84,22 +82,19 @@ const getComponent = (name) => {
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4rem;
-  max-width: 1200px;
-  margin-top: 20px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 65rem;
 }
 
 @media (max-width: 1200px) {
-  .wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .general {
+  padding-top: 0rem;
 }
-
-@media (max-width: 768px) {
-  .wrapper {
-    grid-template-columns: 1fr;
-  }
 }
 </style>
