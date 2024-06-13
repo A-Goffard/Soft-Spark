@@ -2,6 +2,11 @@
     <div>
     
     <div class="header">
+
+      <div class="logo-navbar-container">
+        <!-- Logo image -->
+        <img src="/UELogo/EN_logo_ue.png" alt="Logo" class="logo">
+      </div>
       
       <!--Content before waves-->
     <div class="inner-header flex">
@@ -69,6 +74,19 @@ h1 {
   margin-bottom:-7px; /*Fix for safari gap*/
   min-height:100px;
   max-height:150px;
+}
+
+.logo-navbar-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+.logo {
+  
+  width: 20%; /*adjust size of the logo*/
 }
 
 /* Animation */

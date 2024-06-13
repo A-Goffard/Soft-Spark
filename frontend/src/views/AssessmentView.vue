@@ -17,12 +17,16 @@
         
       <div class="cards">
         <component :is="getComponent(activeComponent)" />
+        <component :is="getComponent(activeComponent)" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import DestinationCard from '../components/DestinationCard.vue';
+
 import { ref } from 'vue';
 import DestinationCard from '../components/DestinationCard.vue';
 

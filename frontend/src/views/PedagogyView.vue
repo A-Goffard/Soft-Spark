@@ -19,6 +19,7 @@
         <component :is="getComponent(activeComponent)" />
       </div>
     </div>
+    </div>
   </div>
 </template>
   
