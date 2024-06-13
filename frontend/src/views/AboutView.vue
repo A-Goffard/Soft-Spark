@@ -200,7 +200,7 @@ p{
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
-@media (max-width: 1425px){
+@media (max-width: 1580px){
   .imgSponsors {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
@@ -219,9 +219,9 @@ p{
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 3rem;
     height: 33rem;
     margin-bottom: 1rem;
+    width: 85%;
   }
   .mainJ {
     width: 100%;
@@ -251,35 +251,55 @@ p{
     justify-content: center;
     margin-bottom: 10rem;
   }
+  .socios{
+    width: 35rem;
+    margin-top: 2rem;
+  }
+  #logoSoft1 {
+    width: 13rem;
+    height: 9rem;
+  }
+  #logoSoft2 {
+    width: 13rem;
+    height: 9rem;
+  }
 }
 @media (max-width: 1090px){
   #logoSoft1 {
-    width: 19rem;
-    height: 11rem;
+    width: 13rem;
+    height: 9rem;
   }
   #logoSoft2 {
-    width: 19rem;
-    height: 11rem;
+    width: 13rem;
+    height: 9rem;
+  }
+  .socios{
+    width: 35rem;
+    margin-top: 2rem;
   }
 }
 @media (max-width: 1040px){
   #logoSoft1 {
-    width: 18rem;
-    height: 10rem;
+    width: 12rem;
+    height: 8rem;
   }
   #logoSoft2 {
-    width: 17rem;
-    height: 10rem;
+    width: 12rem;
+    height: 8rem;
+  }
+  .socios{
+    width: 35rem;
+    margin-top: 2rem;
   }
 }
 @media (max-width: 1000px){
   #logoSoft1 {
-    width: 17rem;
-    height: 10rem;
+    width: 12rem;
+    height: 8rem;
   }
   #logoSoft2 {
-    width: 18rem;
-    height: 10rem;
+    width: 12rem;
+    height: 8rem;
   }
   .mainJ {
     width: 100%;
@@ -289,6 +309,72 @@ p{
     align-items: center;
     justify-content: center;
     margin-bottom: 10rem
+  }
+  .socios{
+    width: 35rem;
+    margin-top: 3rem;
+  }
+}
+@media (max-width: 815px) {
+  p {
+    font-size: 1.4rem;
+    margin: 0rem;
+    text-align: center;
+    margin-top: 1rem ;
+  }
+  .header{
+    height: 29rem;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+  }
+  .mainJ {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem;
+  }
+  h1{
+    margin: auto;
+  }
+  .general{
+    display: block;
+  }
+  .imgSponsors{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  .sponsors{
+    width: 12em;
+  }
+  #escuela{
+  width: 7rem;
+  }
+  #workinn{
+  width: 8rem;
+  }
+  .solivers{
+    width:11rem;
+    height: 3rem;
+  }
+  #logoSoft1{
+    width: 13rem;
+    height: 7rem;
+  }
+  #logoSoft2{
+    width: 13rem;
+    height: 7rem;
+  }
+  .socios{
+    width: 31rem;
+    height: 8rem;
+    border-radius: 2rem;
+    margin-top: 4rem;
   }
 }
 @media (max-width: 750px) {
@@ -325,16 +411,69 @@ p{
     align-items: center;
   }
   .sponsors{
-    width: 8rem;
+    width: 10rem;
+  }
+  #escuela{
+  width: 6rem;
+  }
+  #workinn{
+  width: 8rem;
+  }
+  .solivers{
+    width:9rem;
+    height: 2.5rem;
+  }
+  #logoSoft1{
+    width: 13rem;
+    height: 7rem;
+  }
+  #logoSoft2{
+    width: 13rem;
+    height: 7rem;
+  }
+  .socios{
+    width: 32rem;
+    height: 8rem;
+    border-radius: 3rem;
+  }
+}
+@media (max-width: 650px) {
+  p {
+    font-size: 1.3rem;
+    margin: 0rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .header{
+    height: 33rem;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+
+  }
+  h1{
+    margin: 0;
+  }
+  .general{
+    display: block;
+  }
+  .imgSponsors{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  .sponsors{
+    width: 9rem;
   }
   #escuela{
   width: 5rem;
   }
   #workinn{
-  width: 6rem;
+  width: 7.5rem;
   }
   .solivers{
-    width:9rem;
+    width: 9rem;
     height: 2.5rem;
   }
   #logoSoft1{
@@ -356,12 +495,13 @@ p{
     font-size: 1.3rem;
     margin: 0rem;
     text-align: center;
+    margin-top: 1rem;
   }
   .header{
     height: 33rem;
     text-align: center;
     justify-content: center;
-    width: 29rem;
+    width: 100%;
 
   }
   h1{
@@ -377,13 +517,13 @@ p{
     align-items: center;
   }
   .sponsors{
-    width: 7rem;
+    width: 7.5rem;
   }
   #escuela{
-  width: 4rem;
+  width: 4.5rem;
   }
   #workinn{
-  width: 6rem;
+  width: 6.5rem;
   }
   .solivers{
     width: 8rem;
@@ -401,6 +541,12 @@ p{
     width: 32rem;
     height: 8rem;
     border-radius: 3rem;
+  }
+}
+@media (max-width: 530px) {
+  .socios{
+    width: 30rem;
+    border-radius: 2rem;
   }
 }
 
