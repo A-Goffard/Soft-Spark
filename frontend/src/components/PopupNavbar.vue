@@ -9,10 +9,10 @@
         <li><button @click="increaseTextSize"><img src="/increase.png" alt="Icon 1">Incrementar texto</button></li>
         <li><button @click="decreaseTextSize"><img src="/decrease.png" alt="Icon 2">Disminuir texto</button></li>
         <li><button @click="resetTextSize"><img src="/resetvalues.png" alt="Icon 3">Restablecer texto</button></li>
-        <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">Alto contraste</button></li>
+<!--         <li><button @click="toggleHighContrast"><img src="/contraste.png" alt="Icon 4">Alto contraste</button></li>
         <li><button @click="toggleNegativeContrast"><img src="/contrastenegativo.png" alt="Icon 5">Contraste negativo</button></li>
         <li><button @click="toggleReadableFont"><img src="/readablefont.png" alt="Icon 6">Fuente legible</button></li>
-        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
+ -->        <li><button @click="readPageAloud"><img src="/navegarsonido.png" alt="Icon 7">Navegar en voz alta</button></li>
       </ul>
     </div>
   </div>
