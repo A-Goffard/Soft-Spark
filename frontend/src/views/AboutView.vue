@@ -12,10 +12,7 @@
       </div>
     </div>
     <div class="mainJ">
-      <div class="socios">
-        <img :class="{ grayscale: !hoverSoft1 }" src="/public/logos/softskill1.png" id="logoSoft1" alt="">
-        <img :class="{ grayscale: !hoverSoft2 }" src="/public/logos/softskill2.png" id="logoSoft2" alt="">
-      </div>
+
       <div class="imgSponsors">
 
         <div class="logotrio">
@@ -65,7 +62,11 @@
         </a>
 
         </div>
-
+        
+        <div class="socios">
+          <img :class="{ grayscale: !hoverSoft1 }" src="/public/logos/softskill1.png" id="logoSoft1" alt="">
+          <img :class="{ grayscale: !hoverSoft2 }" src="/public/logos/softskill2.png" id="logoSoft2" alt="">
+        </div>
 
       </div>
 
@@ -105,7 +106,7 @@ const handleHover = (hovering, ...groups) => {
 
 .header-content {
   max-width: 50rem;
-  margin: 3rem;
+  margin: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
