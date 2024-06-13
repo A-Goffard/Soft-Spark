@@ -32,8 +32,7 @@ import { ref } from 'vue';
 import DestinationCard from '../components/DestinationCard.vue';
 
 
-import { ref } from 'vue';
-import DestinationCard from '../components/DestinationCard.vue';
+
 
 import Kit from '../components/training/Kit.vue';
 import ToolCardsTrainSoftSkills from '../components/training/ToolCardsTrainSoftSkills.vue';

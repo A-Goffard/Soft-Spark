@@ -27,8 +27,7 @@
 import { ref } from 'vue';
 import DestinationCard from '../components/DestinationCard.vue';
 
-import { ref } from 'vue';
-import DestinationCard from '../components/DestinationCard.vue';
+;
 
 import AProtocol from '../components/assessment/AProtocol.vue';
 import GerenicPlacementGrid from '../components/assessment/GerenicPlacementGrid.vue';
